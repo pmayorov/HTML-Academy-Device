@@ -8,7 +8,7 @@
 
 **Ссылки на макет проекта:**
 - [Figma](https://www.figma.com/file/QmD8DItdZW19iMVJ2mtz64/HTML-DEVICE)
-- [PDF](gitfiles/html_device.pdf)
+- [PDF](files/html_device.pdf)
 
 ---
 [Contributing.md](Contributing.md)
