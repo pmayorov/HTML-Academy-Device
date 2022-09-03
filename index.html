@@ -3,12 +3,238 @@
 
 <head>
   <meta charset="utf-8">
-  <title>HTML Academy: Интернет-магазин DEVICE</title>
+  <title>HTML Academy &bull; Проект DEVICE</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/layout-markup.css">
 </head>
 
 <body>
 
-  <p>Репозиторий создан для обучения на профессиональном онлайн‑курсе «<a href="https://htmlacademy.ru/intensive/htmlcss">HTML и CSS. Профессиональная вёрстка сайтов</a>».</p>
+  <!-- Заголовок -->
+  <header>
+    <img src="" alt="Логотип DEVICE">
+    <div>
+      <form name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
+        <input type="search" name="field-search" placeholder="Текст поиска">
+        <button type="submit">Найти</button>
+      </form>
+      <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
+        * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
+      <ul>
+        <li><a href="#"><span class="visually-hidden">ico</span>Войти</a></li>
+        <li><a href="#"><span class="visually-hidden">ico</span>Сравнить</a></li>
+        <li><a href="#"><span class="visually-hidden">ico</span>Корзина</a></li>
+      </ul>
+    </div>
+    <!-- Нижнее в хедере меню оформил как основная навигация.  -->
+    <nav>
+      <ul>
+        <li><a href="#">Каталог товаров <span class="visually-hidden">Логотип субменю</span></a>
+          <ul>
+            <li><a href="##">Виртуальная реальность</a></li>
+            <li><a href="##">Моноподы для селфи</a></li>
+            <li><a href="##">Экшн-камеры</a></li>
+            <li><a href="##">Фитнес-браслеты</a></li>
+            <li><a href="##">Умные часы</a></li>
+            <li><a href="##">Квадрокоптеры</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="visually-hidden">Интернет-магазин электронной техники &laquo;<span lang="en">DEVICE</span>&raquo;</h1>
+    <section>
+      <h2 class="visually-hidden">Популярные товары интернет-магазина</h2>
+      <!-- Слайдер. Список с фотографиями -->
+      <div>
+        <ol>
+          <li>
+            <img src="" width="560" height="560" alt="Белый квадрокоптер оснащенный лазером">
+          </li>
+          <li>
+            <img src="" width="560" height="560" alt="Чёрный фитнес-браслет с текстом на дисплее &laquo;Я вижу, что ты снова ешь!&raquo;">
+          </li>
+          <li>
+            <img src="" width="560" height="560" alt="Три черных селфи палки">
+          </li>
+        </ol>
+        <!-- Кнопки смены слайдов -->
+        <div>
+          <button type="button"><span class="visually-hidden">Предыдущий слайд</span></button>
+          <button type="button"><span class="visually-hidden">Следующий слайд</span></button>
+        </div>
+      </div>
+      <!-- Слайдер. Список с описаниями -->
+      <ol>
+        <li>
+          <p><strong>Порхает как бабочка, жалит как пчела!</strong></p>
+          <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+          <a href="#">Подробнее</a>
+          <dl>
+            <dt>Дальность полета</dt>
+            <dd>800 м</dd>
+            <dt>Радиус поражения</dt>
+            <dd>50 м</dd>
+          </dl>
+        </li>
+        <li>
+          <p><strong>Худеем правильно!</strong></p>
+          <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+          <a href="#">Подробнее</a>
+          <dl>
+            <dt>Без подзарядки</dt>
+            <dd>48 часов</dd>
+          </dl>
+          </dl>
+        </li>
+        <li>
+          <p><strong>Делай селфи, как Бен Стиллер!</strong></p>
+          <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
+          <a href="#">Подробнее</a>
+          <dl>
+            <dt>Длина палки</dt>
+            <dd>8,5 м</dd>
+            <dt>Вес палки</dt>
+            <dd>5 кг</dd>
+            <dt>Материал</dt>
+            <dd>Карбон</dd>
+          </dl>
+          </dl>
+        </li>
+      </ol>
+      <!-- Индикация текущего слайда -->
+      <ol>
+        <li>Первый слайд</li>
+        <li>Второй слайд</li>
+        <li>Третий слайд</li>
+      </ol>
+    </section>
+
+    <!-- Список категорий товаров -->
+    <section>
+      <h2 class="visually-hidden">Список категорий товаров</h2>
+      <ul>
+        <li><a href="#"><span class="visually-hidden">Логотип виртуальных очков</span><span>Виртуальная реальность</span></a></li>
+        <li><a href="#"><span class="visually-hidden">Логотип монопода</span><span>Моноподы для селфи</span></a></li>
+        <li><a href="#"><span class="visually-hidden">Логотип экшн-камеры</span><span>Экшн-камеры</span></a></li>
+        <li><a href="#"><span class="visually-hidden">Логотип фитнес-браслета</span><span>Фитнес-браслеты</span></a></li>
+        <li><a href="#"><span class="visually-hidden">Логотип умных часов</span><span>Умные часы</span></a></li>
+        <li><a href="#"><span class="visually-hidden">Логотип квадрокоптера</span><span>Квадрокоптеры</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Предлагаемые услуги: доставка, гарантия, кредит -->
+    <section>
+      <div>
+        <ul>
+          <li><a href="#">Доставка</a></li>
+          <li><a href="#">Гарантия</a></li>
+          <li><a href="#">Кредит</a></li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <h2>Доставка</h2>
+            <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+            <span class="visually-hidden">Логотип. Доствка</span>
+          </li>
+          <li>
+            <h2>Гарантия</h2>
+            <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
+            <span class="visually-hidden">Логотип. Гарантия</span>
+          </li>
+          <li>
+            <h2>Кредит</h2>
+            <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
+            <span class="visually-hidden">Логотип. Кредиты</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Заказ редкого товара. Ссылка на форму заказа -->
+    <section>
+      <h2 class="visually-hidden">Заказ товара</h2>
+      <a href="#">
+        <span class="visually-hidden">Логотип. Доставка товара</span>
+        <span>Доставим редкий товар под заказ</span>
+        <span class="visually-hidden">ico</span>
+      </a>
+    </section>
+
+    <!-- Информация о магазине. Контакты -->
+    <section>
+      <span class="visually-hidden">Декоративная линия</span>
+
+      <h2>О нас</h2>
+      <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+      <p>Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
+      <ul>
+        <li>Меловые линии</li>
+        <li>СДИК</li>
+        <li>ТоксБерри</li>
+      </ul>
+      <a href="#">Подробнее о нас</a>
+    </section>
+    <section>
+      <span class="visually-hidden">Декоративная линия</span>
+      <h2>Контакты</h2>
+      <p>Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки.</p>
+      <h3>Интернет-магазин «Девайс»</h3>
+      <address>
+        Санкт-Петербург, набережная реки Карповки, 5, литера П.<br>
+        <a href="tel:+78128121212">+7 (812) 812-12-12</a>
+      </address>
+      <h3>Время работы</h3>
+      <ol>
+        <li>пн—пт: с 10:00 до 22:00</li>
+        <li>сб—вс: с 10:00 до 19:00</li>
+      </ol>
+    </section>
+
+    <!-- Форма подписки на рассылку -->
+    <section>
+
+      <h2>Подпишитесь на рассылку</h2>
+      <p>Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
+      <div>
+        <form name="form-subscribe" action="https://echo.htmlacademy.ru/courses" method="GET">
+          <input type="email" name="field-email" placeholder="Ваш e-mail">
+          <button type="submit">Подписаться</button>
+        </form>
+        <span>[ico] Это бесплатно</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подвал -->
+  <footer>
+    <img src="" alt="Логотип DEVICE">
+    <div>
+      <address>Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
+      <ul>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <a href="tel:+78128121212">+7 (812) 812-12-12</a>
+    </div>
+    <div>
+      <span class="visually-hidden">Декоративная линия</span>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+      <a href="https://htmlacademy.org"><img src="" alt="Логотип .htmlacademy"></a>
+    </div>
+  </footer>
 
 </body>
 
