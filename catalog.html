@@ -3,10 +3,157 @@
 
 <head>
   <meta charset="utf-8">
-  <title>HTML Academy: Интернет-магазин DEVICE</title>
+  <title>HTML Academy &bull; Проект DEVICE</title>
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/layout-markup.css">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
+
 <body>
+
+  <!-- Заголовок -->
+  <header>
+    <img src="" alt="Логотип DEVICE">
+    <div>
+      <form name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
+        <input type="search" name="field-search" placeholder="Текст поиска">
+        <button type="submit">Найти</button>
+      </form>
+      <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
+          * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
+      <ul>
+        <li><a href="#"><span class="visually-hidden">ico</span>Имя Фамилия</a></li>
+        <li><a href="#"><span class="visually-hidden">ico</span>Выйти</a></li>
+        <li><a href="#"><span class="visually-hidden">ico</span>Сравнить</a></li>
+        <li><a href="#"><span class="visually-hidden">ico</span>Корзина</a></li>
+      </ul>
+    </div>
+    <!-- Нижнее в хедере меню оформил как основная навигация.  -->
+    <nav>
+      <ul>
+        <li><a href="#">Каталог товаров <span class="visually-hidden">Логотип субменю</span></a>
+          <ul>
+            <li><a href="##">Виртуальная реальность</a></li>
+            <li><a href="##">Моноподы для селфи</a></li>
+            <li><a href="##">Экшн-камеры</a></li>
+            <li><a href="##">Фитнес-браслеты</a></li>
+            <li><a href="##">Умные часы</a></li>
+            <li><a href="##">Квадрокоптеры</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Заголовок страницы -->
+    <header>
+      <h1>Моноподы под селфи</h1>
+      <ol>
+        <li><a href="#">Главная</a></li>
+        <li><a href="#">Каталог товаров</a></li>
+        <li><a title="Текущая страница ">Моноподы для селфи</a></li>
+      </ol>
+    </header>
+
+    <!-- Карточки товаров. Фильтры. Сортировка. -->
+    <section>
+      <h2 class="visually-hidden">Список товара с фильтрами и сортировкой</h2>
+
+      <!-- Фильтры -->
+      <h3>Фильтр:</h3>
+      <form name="form-filter" action="https://echo.htmlacademy.ru/courses" method="get">
+        <!-- Фильтр - стоимость -->
+        <fieldset>
+          <legend>Стоимость</legend>
+          <button type="button"><span>Минимальная цена</span></button>
+          <button type="button"><span>Максимальная цена</span></button>
+          <label>от <input type="number"></label>
+          <label>до <input type="number"></label>
+        </fieldset>
+        <!-- Фильтр - цвет -->
+        <fieldset>
+          <legend>Цвет</legend>
+          <ul>
+            <li><label><input class="visually-hidden" type="checkbox" name="black" checked><span>_checkbox_</span><span>Черный</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="white" checked><span>_checkbox_</span><span>Белый</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="blue"><span>_checkbox_</span><span>Синий</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="red"><span>_checkbox_</span><span>Красный</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="pink"><span>_checkbox_</span><span>Розовый</span></label></li>
+          </ul>
+        </fieldset>
+        <!-- Фильтр - bluetooth -->
+        <fieldset>
+          <legend>Bluetooth</legend>
+          <ul>
+            <li><label><input type="radio" name="bluetooth" class="visually-hidden" checked><span>_radiomark_</span><span>Есть</span></label></li>
+            <li><label><input type="radio" name="bluetooth" class="visually-hidden"><span>_radiomark_</span><span>Нет</span></label></li>
+          </ul>
+        </fieldset>
+        <button type="submit">Показать</button>
+      </form>
+
+      <!-- Сортировка -->
+      <h3>Сортировка:</h3>
+      <form name="form-sorting" action="https://echo.htmlacademy.ru/courses" method="get">
+        <label class="visually-hidden" for="sorting">Выбор вариантов сортировки</label>
+        <select name="sorting" id="sorting">
+          <option value="popular">Популярные</option>
+        </select>
+        <button class="visually-hidden">Выбрать сортировку товара</button>
+      </form>
+      <span>
+        <button class="visually-hidden">Сортировать по возрастанию</button>
+        <button class="visually-hidden">Сортировать по убыванию</button>
+      </span>
+
+      <!-- Карточки товаров -->
+      <h3 class="visually-hidden">Карточки товаров:</h3>
+      <ul>
+        <li>
+          <img src="" alt="Описание товара" sizes="" srcset="">
+          <a href="##">Наименование товара</a>
+          <!-- Ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие. -->
+          <span>500&nbsp;&#8381;</span>
+        </li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
+    </section>
+
+
+  </main>
+
+
+  <!-- Подвал -->
+  <footer>
+    <img src="" alt="Логотип DEVICE">
+    <div>
+      <address>Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
+      <ul>
+        <li><a href="#">Доставка</a></li>
+        <li><a href="#">Гарантия</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <a href="tel:+78128121212">+7 (812) 812-12-12</a>
+    </div>
+    <div>
+      <span class="visually-hidden">Декоративная линия</span>
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+      <a href="https://htmlacademy.org"><img src="" alt="Логотип .htmlacademy"></a>
+    </div>
+  </footer>
 
 
 
