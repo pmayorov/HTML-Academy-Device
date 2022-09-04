@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/layout-markup.css">
+  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -22,19 +22,19 @@
       <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
         * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
       <ul>
-        <li><a href="#"><span class="visually-hidden">ico</span>Войти</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Выйти !скрыть!</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Сравнить</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Корзина</a></li>
+        <li><a href="#"><span></span>Войти</a></li>
+        <li><a href="#">Выйти</a></li>
+        <li><a href="#"><span></span>Сравнить</a></li>
+        <li><a href="#"><span>&thinsp;12&thinsp;</span><span></span>Корзина</a></li>
       </ul>
     </div>
     <!-- Нижнее в хедере меню оформил как основная навигация.  -->
     <nav>
       <ul>
-        <li><a href="#">Каталог товаров <span class="visually-hidden">Логотип субменю</span></a>
+        <li><a href="#">Каталог товаров <span></span></a>
           <ul>
             <li><a href="##">Виртуальная реальность</a></li>
-            <li><a href="##">Моноподы для селфи</a></li>
+            <li><a href="catalog.html">Моноподы для селфи</a></li>
             <li><a href="##">Экшн-камеры</a></li>
             <li><a href="##">Фитнес-браслеты</a></li>
             <li><a href="##">Умные часы</a></li>
@@ -49,7 +49,7 @@
   </header>
 
   <main>
-    <h1 class="visually-hidden">Интернет-магазин электронной техники &laquo;<span lang="en">DEVICE</span>&raquo;</h1>
+    <h1 class="visually-hidden">Интернет-магазин электронной техники <span lang="en">&laquo;DEVICE&raquo;</span></h1>
     <section>
       <h2 class="visually-hidden">Популярные товары интернет-магазина</h2>
       <!-- Слайдер. Список с фотографиями -->
@@ -121,12 +121,12 @@
     <section>
       <h2 class="visually-hidden">Список категорий товаров</h2>
       <ul>
-        <li><a href="#"><span class="visually-hidden">Логотип виртуальных очков</span><span>Виртуальная реальность</span></a></li>
-        <li><a href="#"><span class="visually-hidden">Логотип монопода</span><span>Моноподы для селфи</span></a></li>
-        <li><a href="#"><span class="visually-hidden">Логотип экшн-камеры</span><span>Экшн-камеры</span></a></li>
-        <li><a href="#"><span class="visually-hidden">Логотип фитнес-браслета</span><span>Фитнес-браслеты</span></a></li>
-        <li><a href="#"><span class="visually-hidden">Логотип умных часов</span><span>Умные часы</span></a></li>
-        <li><a href="#"><span class="visually-hidden">Логотип квадрокоптера</span><span>Квадрокоптеры</span></a></li>
+        <li><a href="#"><span></span>Виртуальная реальность</a></li>
+        <li><a href="#"><span></span>Моноподы для селфи</a></li>
+        <li><a href="#"><span></span>Экшн-камеры</a></li>
+        <li><a href="#"><span></span>Фитнес-браслеты</a></li>
+        <li><a href="#"><span></span>Умные часы</a></li>
+        <li><a href="#"><span></span>Квадрокоптеры</a></li>
       </ul>
     </section>
 
@@ -144,17 +144,17 @@
           <li>
             <h2>Доставка</h2>
             <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
-            <span class="visually-hidden">Логотип. Доствка</span>
+            <span></span>
           </li>
           <li>
             <h2>Гарантия</h2>
             <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
-            <span class="visually-hidden">Логотип. Гарантия</span>
+            <span></span>
           </li>
           <li>
             <h2>Кредит</h2>
             <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
-            <span class="visually-hidden">Логотип. Кредиты</span>
+            <span></span>
           </li>
         </ul>
       </div>
@@ -164,16 +164,15 @@
     <section>
       <h2 class="visually-hidden">Заказ товара</h2>
       <a href="#">
-        <span class="visually-hidden">Логотип. Доставка товара</span>
+        <span></span>
         <span>Доставим редкий товар под заказ</span>
-        <span class="visually-hidden">ico</span>
+        <span></span>
       </a>
     </section>
 
     <!-- Информация о магазине. Контакты -->
     <section>
-      <span class="visually-hidden">Декоративная линия</span>
-
+      <span></span>
       <h2>О нас</h2>
       <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
       <p>Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
@@ -185,7 +184,7 @@
       <a href="#">Подробнее о нас</a>
     </section>
     <section>
-      <span class="visually-hidden">Декоративная линия</span>
+      <span></span>
       <h2>Контакты</h2>
       <p>Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки.</p>
       <h3>Интернет-магазин «Девайс»</h3>
@@ -202,7 +201,6 @@
 
     <!-- Форма подписки на рассылку -->
     <section>
-
       <h2>Подпишитесь на рассылку</h2>
       <p>Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
       <div>
@@ -210,7 +208,7 @@
           <input type="email" name="field-email" placeholder="Ваш e-mail">
           <button type="submit">Подписаться</button>
         </form>
-        <span>[ico] Это бесплатно</span>
+        <span> Это бесплатно</span>
       </div>
     </section>
   </main>
@@ -228,7 +226,7 @@
       <a href="tel:+78128121212">+7 (812) 812-12-12</a>
     </div>
     <div>
-      <span class="visually-hidden">Декоративная линия</span>
+      <span></span>
       <ul>
         <li><a href="#">Facebook</a></li>
         <li><a href="#">Instagram</a></li>

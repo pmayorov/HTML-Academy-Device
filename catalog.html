@@ -5,16 +5,15 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/layout-markup.css">
+  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 
 <body>
 
   <!-- Заголовок -->
   <header>
-    <img src="" alt="Логотип DEVICE">
+    <a href="index.html"><img src="" alt="Логотип DEVICE"></a>
     <div>
       <form name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
         <input type="search" name="field-search" placeholder="Текст поиска">
@@ -23,16 +22,16 @@
       <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
           * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
       <ul>
-        <li><a href="#"><span class="visually-hidden">ico</span>Имя Фамилия</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Выйти</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Сравнить</a></li>
-        <li><a href="#"><span class="visually-hidden">ico</span>Корзина</a></li>
+        <li><a href="#"><span></span>Имя Фамилия</a></li>
+        <li><a href="#">Выйти</a></li>
+        <li><a href="#"><span></span>Сравнить</a></li>
+        <li><a href="#"><span></span>Корзина</a></li>
       </ul>
     </div>
     <!-- Нижнее в хедере меню оформил как основная навигация.  -->
     <nav>
       <ul>
-        <li><a href="#">Каталог товаров <span class="visually-hidden">Логотип субменю</span></a>
+        <li><a href="#">Каталог товаров <span></span></a>
           <ul>
             <li><a href="##">Виртуальная реальность</a></li>
             <li><a href="##">Моноподы для селфи</a></li>
@@ -63,7 +62,7 @@
 
     <!-- Карточки товаров. Фильтры. Сортировка. -->
     <section>
-      <h2 class="visually-hidden">Список товара с фильтрами и сортировкой</h2>
+      <h2 class="visually-hidden">Карточки товаров с фильтрами и сортировкой</h2>
 
       <!-- Фильтры -->
       <h3>Фильтр:</h3>
@@ -80,19 +79,19 @@
         <fieldset>
           <legend>Цвет</legend>
           <ul>
-            <li><label><input class="visually-hidden" type="checkbox" name="black" checked><span>_checkbox_</span><span>Черный</span></label></li>
-            <li><label><input class="visually-hidden" type="checkbox" name="white" checked><span>_checkbox_</span><span>Белый</span></label></li>
-            <li><label><input class="visually-hidden" type="checkbox" name="blue"><span>_checkbox_</span><span>Синий</span></label></li>
-            <li><label><input class="visually-hidden" type="checkbox" name="red"><span>_checkbox_</span><span>Красный</span></label></li>
-            <li><label><input class="visually-hidden" type="checkbox" name="pink"><span>_checkbox_</span><span>Розовый</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="black" checked><span></span><span>Черный</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="white" checked><span></span><span>Белый</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="blue"><span></span><span>Синий</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="red"><span></span><span>Красный</span></label></li>
+            <li><label><input class="visually-hidden" type="checkbox" name="pink"><span></span><span>Розовый</span></label></li>
           </ul>
         </fieldset>
         <!-- Фильтр - bluetooth -->
         <fieldset>
           <legend>Bluetooth</legend>
           <ul>
-            <li><label><input type="radio" name="bluetooth" class="visually-hidden" checked><span>_radiomark_</span><span>Есть</span></label></li>
-            <li><label><input type="radio" name="bluetooth" class="visually-hidden"><span>_radiomark_</span><span>Нет</span></label></li>
+            <li><label><input type="radio" name="bluetooth" class="visually-hidden" checked><span></span><span>Есть</span></label></li>
+            <li><label><input type="radio" name="bluetooth" class="visually-hidden"><span></span><span>Нет</span></label></li>
           </ul>
         </fieldset>
         <button type="submit">Показать</button>
@@ -104,8 +103,9 @@
         <label class="visually-hidden" for="sorting">Выбор вариантов сортировки</label>
         <select name="sorting" id="sorting">
           <option value="popular">Популярные</option>
+          <option value="new">Новинки</option>
         </select>
-        <button class="visually-hidden">Выбрать сортировку товара</button>
+        <button class="visually-hidden">Выбрать сортировку</button>
       </form>
       <span>
         <button class="visually-hidden">Сортировать по возрастанию</button>
@@ -116,25 +116,47 @@
       <h3 class="visually-hidden">Карточки товаров:</h3>
       <ul>
         <li>
-          <img src="" alt="Описание товара" sizes="" srcset="">
-          <a href="##">Наименование товара</a>
+          <a href="##"><img src="" alt="Фото товара"></a>
+          <h4>Любительская селфи-палка</h4>
           <!-- Ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие. -->
           <span>500&nbsp;&#8381;</span>
         </li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>
+          <a href="##"><img src="" alt="Фото товара"></a>
+          <h4>Профессиональная селфи-палка</h4>
+          <span>1500&nbsp;&#8381;</span>
+        </li>
+        <li>
+          <a href="##"><img src="" alt="Фото товара"></a>
+          <h4>Непотопляемая селфи-палка</h4>
+          <span>1500&nbsp;&#8381;</span>
+        </li>
+        <li>
+          <a href="##"><img src="" alt="Фото товара"></a>
+          <h4>Селфи-палка &laquo;Следуй за мной&raquo;</h4>
+          <span>1500&nbsp;&#8381;</span>
+        </li>
       </ul>
-
+      <!-- Кнопка "Загрузить ещё" -->
+      <button type="button">Загрузить ещё</button>
+      <!-- Пагинация -->
+      <div>
+        <span><a href="">Назад</a></span>
+        <ol>
+          <li> <a href="##">1</a> </li>
+          <li> <a href="##">2</a> </li>
+          <li> <a href="##">3</a> </li>
+          <li> <a>…</a> </li>
+          <li> <a href="##">15</a> </li>
+        </ol>
+        <span><a href="">Вперёд</a></span>
+      </div>
     </section>
-
-
   </main>
-
 
   <!-- Подвал -->
   <footer>
-    <img src="" alt="Логотип DEVICE">
+    <a href="#"><img src="" alt="Логотип DEVICE"></a>
     <div>
       <address>Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
       <ul>
@@ -154,8 +176,6 @@
       <a href="https://htmlacademy.org"><img src="" alt="Логотип .htmlacademy"></a>
     </div>
   </footer>
-
-
 
 </body>
 
