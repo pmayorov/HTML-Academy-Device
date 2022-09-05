@@ -1,7 +1,6 @@
+/*
 .visually-hidden:not(:focus):not(:active) {
-  color: initial;
-
-  /* position: absolute;
+  position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
   margin: -1px;
@@ -10,5 +9,11 @@
   height: 1px;
   border: 0;
   white-space: nowrap;
-  clip-path: inset(100%); */
+  clip-path: inset(100%);
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+*/

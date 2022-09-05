@@ -5,45 +5,41 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="stylesheet" href="styles/normalize.css">
-  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
+  <link rel="stylesheet" href="styles/layout-markup.css">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
 
   <!-- Заголовок -->
-  <header>
-    <a href="index.html"><img src="" alt="Логотип DEVICE"></a>
-    <div>
-      <form name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
+  <header class="page-header">
+    <a href="index.html"><img class="device-logo" src="" alt="Логотип DEVICE"></a>
+    <!-- Поле поиска -->
+    <nav class="navigation">
+      <form class="navigation-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="get">
         <input type="search" name="field-search" placeholder="Текст поиска">
         <button type="submit">Найти</button>
       </form>
-      <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
-          * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
-      <ul>
-        <li><a href="#"><span></span>Имя Фамилия</a></li>
-        <li><a href="#">Выйти</a></li>
-        <li><a href="#"><span></span>Сравнить</a></li>
-        <li><a href="#"><span></span>Корзина</a></li>
+      <ul class="profile-menu">
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link hidden" href="#">Выйти</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span>12</span><span class="icon-purchases"></span>Корзина</a></li>
       </ul>
-    </div>
-    <!-- Нижнее в хедере меню оформил как основная навигация.  -->
-    <nav>
-      <ul>
-        <li><a href="#">Каталог товаров <span></span></a>
-          <ul>
-            <li><a href="##">Виртуальная реальность</a></li>
-            <li><a href="##">Моноподы для селфи</a></li>
-            <li><a href="##">Экшн-камеры</a></li>
-            <li><a href="##">Фитнес-браслеты</a></li>
-            <li><a href="##">Умные часы</a></li>
-            <li><a href="##">Квадрокоптеры</a></li>
+      <ul class="main-menu">
+        <li class="main-menu-item"><a class="menu-link" href="#">Каталог товаров <span></span></a>
+          <ul class="goods-menu">
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Виртуальная реальность</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link">Моноподы для селфи</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Экшн-камеры</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Фитнес-браслеты</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Умные часы</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Квадрокоптеры</a></li>
           </ul>
         </li>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Гарантия</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Доставка</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Гарантия</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Контакты</a></li>
       </ul>
     </nav>
   </header>
@@ -99,6 +95,10 @@
 
       <!-- Сортировка -->
       <h3>Сортировка:</h3>
+      <details>
+        <summary>Популярные</summary>
+      </details>
+      <!--
       <form name="form-sorting" action="https://echo.htmlacademy.ru/courses" method="get">
         <label class="visually-hidden" for="sorting">Выбор вариантов сортировки</label>
         <select name="sorting" id="sorting">
@@ -107,9 +107,10 @@
         </select>
         <button class="visually-hidden">Выбрать сортировку</button>
       </form>
+      -->
       <span>
-        <button class="visually-hidden">Сортировать по возрастанию</button>
-        <button class="visually-hidden">Сортировать по убыванию</button>
+        <a href="" class="visually-hidden">Сортировать по возрастанию</a>
+        <a href="" class="visually-hidden">Сортировать по убыванию</a>
       </span>
 
       <!-- Карточки товаров -->
@@ -167,7 +168,7 @@
       <a href="tel:+78128121212">+7 (812) 812-12-12</a>
     </div>
     <div>
-      <span class="visually-hidden">Декоративная линия</span>
+      <span></span>
       <ul>
         <li><a href="#">Facebook</a></li>
         <li><a href="#">Instagram</a></li>

@@ -5,77 +5,75 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="stylesheet" href="styles/normalize.css">
-  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
+  <link rel="stylesheet" href="styles/layout-markup.css">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
 
   <!-- Заголовок -->
-  <header>
-    <img src="" alt="Логотип DEVICE">
-    <div>
-      <form name="form-search" action="https://echo.htmlacademy.ru/courses" method="get">
+  <header class="page-header">
+    <img class="device-logo" src="" alt="Логотип DEVICE">
+    <!-- Поле поиска -->
+    <nav class="navigation">
+      <form class="navigation-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="get">
         <input type="search" name="field-search" placeholder="Текст поиска">
         <button type="submit">Найти</button>
       </form>
-      <!-- Верхнее в хедере меню не оформлял в тег <nav>, предполагая, что это второстепенная навигация.
-        * Тред по теме https://stackoverflow.com/questions/9583301/is-there-a-penalty-to-using-two-nav-elements-in-a-header -->
-      <ul>
-        <li><a href="#"><span></span>Войти</a></li>
-        <li><a href="#">Выйти</a></li>
-        <li><a href="#"><span></span>Сравнить</a></li>
-        <li><a href="#"><span>&thinsp;12&thinsp;</span><span></span>Корзина</a></li>
+      <ul class="profile-menu">
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link hidden" href="#">Выйти</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+        <li class="profile-menu-item"><a class="profile-menu-link" href="#"><span>12</span><span class="icon-purchases"></span>Корзина</a></li>
       </ul>
-    </div>
-    <!-- Нижнее в хедере меню оформил как основная навигация.  -->
-    <nav>
-      <ul>
-        <li><a href="#">Каталог товаров <span></span></a>
-          <ul>
-            <li><a href="##">Виртуальная реальность</a></li>
-            <li><a href="catalog.html">Моноподы для селфи</a></li>
-            <li><a href="##">Экшн-камеры</a></li>
-            <li><a href="##">Фитнес-браслеты</a></li>
-            <li><a href="##">Умные часы</a></li>
-            <li><a href="##">Квадрокоптеры</a></li>
+      <ul class="main-menu">
+        <li class="main-menu-item"><a class="menu-link" href="#">Каталог товаров <span></span></a>
+          <ul class="goods-menu">
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Виртуальная реальность</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="catalog.html">Моноподы для селфи</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Экшн-камеры</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Фитнес-браслеты</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Умные часы</a></li>
+            <li class="goods-menu-item"><a class="goods-menu-link" href="##">Квадрокоптеры</a></li>
           </ul>
         </li>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Гарантия</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Доставка</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Гарантия</a></li>
+        <li class="main-menu-item"><a class="menu-link" href="#">Контакты</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
     <h1 class="visually-hidden">Интернет-магазин электронной техники <span lang="en">&laquo;DEVICE&raquo;</span></h1>
-    <section>
+    <section class="goods-promo">
       <h2 class="visually-hidden">Популярные товары интернет-магазина</h2>
+
       <!-- Слайдер. Список с фотографиями -->
-      <div>
-        <ol>
-          <li>
+      <div class="box-promo-images">
+        <ol class="promo-images-list">
+          <li class="promo-images-item">
             <img src="" width="560" height="560" alt="Белый квадрокоптер оснащенный лазером">
           </li>
-          <li>
+          <li class="promo-images-item">
             <img src="" width="560" height="560" alt="Чёрный фитнес-браслет с текстом на дисплее &laquo;Я вижу, что ты снова ешь!&raquo;">
           </li>
-          <li>
+          <li class="promo-images-item">
             <img src="" width="560" height="560" alt="Три черных селфи палки">
           </li>
         </ol>
         <!-- Кнопки смены слайдов -->
-        <div>
-          <button type="button"><span class="visually-hidden">Предыдущий слайд</span></button>
-          <button type="button"><span class="visually-hidden">Следующий слайд</span></button>
+        <div class="box-promo-button">
+          <button class="button" type="button"><span class="visually-hidden">Предыдущий слайд</span></button>
+          <button class="button" type="button"><span class="visually-hidden">Следующий слайд</span></button>
         </div>
       </div>
+
       <!-- Слайдер. Список с описаниями -->
-      <ol>
-        <li>
-          <p><strong>Порхает как бабочка, жалит как пчела!</strong></p>
-          <p>Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
+      <ol class="promo-desc-list">
+        <li class="promo-desc-item">
+          <strong class="section-title">Порхает как бабочка, жалит как пчела!</strong>
+          <p class="body-text">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
           <a href="#">Подробнее</a>
           <dl>
             <dt>Дальность полета</dt>
@@ -84,9 +82,9 @@
             <dd>50 м</dd>
           </dl>
         </li>
-        <li>
-          <p><strong>Худеем правильно!</strong></p>
-          <p>Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
+        <li class="promo-desc-item">
+          <strong class="section-title">Худеем правильно!</strong>
+          <p class="body-text">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
           <a href="#">Подробнее</a>
           <dl>
             <dt>Без подзарядки</dt>
@@ -94,9 +92,9 @@
           </dl>
           </dl>
         </li>
-        <li>
-          <p><strong>Делай селфи, как Бен Стиллер!</strong></p>
-          <p>Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
+        <li class="promo-desc-item">
+          <strong class="section-title">Делай селфи, как Бен Стиллер!</strong>
+          <p class="body-text">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
           <a href="#">Подробнее</a>
           <dl>
             <dt>Длина палки</dt>
@@ -134,26 +132,26 @@
     <section>
       <div>
         <ul>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Гарантия</a></li>
-          <li><a href="#">Кредит</a></li>
+          <li><a class="menu-link" href="#">Доставка</a></li>
+          <li><a class="menu-link" href="#">Гарантия</a></li>
+          <li><a class="menu-link" href="#">Кредит</a></li>
         </ul>
       </div>
       <div>
         <ul>
           <li>
-            <h2>Доставка</h2>
-            <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
+            <h2 class="section-title">Доставка</h2>
+            <p class="body-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
             <span></span>
           </li>
           <li>
-            <h2>Гарантия</h2>
-            <p>Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
+            <h2 class="section-title">Гарантия</h2>
+            <p class="body-text">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
             <span></span>
           </li>
           <li>
-            <h2>Кредит</h2>
-            <p>Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
+            <h2 class="section-title">Кредит</h2>
+            <p class="body-text">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
             <span></span>
           </li>
         </ul>
@@ -173,40 +171,40 @@
     <!-- Информация о магазине. Контакты -->
     <section>
       <span></span>
-      <h2>О нас</h2>
-      <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
-      <p>Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
+      <h2 class="section-title">О нас</h2>
+      <p class="body-text">Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+      <p class="body-text">Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
       <ul>
         <li>Меловые линии</li>
         <li>СДИК</li>
         <li>ТоксБерри</li>
       </ul>
-      <a href="#">Подробнее о нас</a>
+      <a class="menu-link" href="#">Подробнее о нас</a>
     </section>
     <section>
       <span></span>
-      <h2>Контакты</h2>
-      <p>Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки.</p>
-      <h3>Интернет-магазин «Девайс»</h3>
-      <address>
+      <h2 class="section-title">Контакты</h2>
+      <p class="body-text">Вы можете забрать товар сами, заехав в наш офис. Заодно сможете проверить работоспособность покупки.</p>
+      <h3 class="section-subtitle">Интернет-магазин «Девайс»</h3>
+      <address class="body-text">
         Санкт-Петербург, набережная реки Карповки, 5, литера П.<br>
         <a href="tel:+78128121212">+7 (812) 812-12-12</a>
       </address>
-      <h3>Время работы</h3>
+      <h3 class="section-subtitle">Время работы</h3>
       <ol>
-        <li>пн—пт: с 10:00 до 22:00</li>
-        <li>сб—вс: с 10:00 до 19:00</li>
+        <li class="body-text">пн—пт: с 10:00 до 22:00</li>
+        <li class="body-text">сб—вс: с 10:00 до 19:00</li>
       </ol>
     </section>
 
     <!-- Форма подписки на рассылку -->
     <section>
-      <h2>Подпишитесь на рассылку</h2>
-      <p>Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
+      <h2 class="section-title">Подпишитесь на рассылку</h2>
+      <p class="body-text">Еженедельный дайджест с обзорами новинок, длительными тест-драйвами, распаковками, а также акции, спецпредложения и вот это вот всё.</p>
       <div>
         <form name="form-subscribe" action="https://echo.htmlacademy.ru/courses" method="GET">
           <input type="email" name="field-email" placeholder="Ваш e-mail">
-          <button type="submit">Подписаться</button>
+          <button class="menu-link" type="submit">Подписаться</button>
         </form>
         <span> Это бесплатно</span>
       </div>
@@ -215,13 +213,13 @@
 
   <!-- Подвал -->
   <footer>
-    <img src="" alt="Логотип DEVICE">
+    <a href="#"><img src="" alt="Логотип DEVICE"></a>
     <div>
       <address>Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
       <ul>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Гарантия</a></li>
-        <li><a href="#">Контакты</a></li>
+        <li><a class="menu-link color-white" href="#">Доставка</a></li>
+        <li><a class="menu-link color-white" href="#">Гарантия</a></li>
+        <li><a class="menu-link color-white" href="#">Контакты</a></li>
       </ul>
       <a href="tel:+78128121212">+7 (812) 812-12-12</a>
     </div>
