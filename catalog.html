@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/layout-markup.css">
+  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -95,19 +95,14 @@
 
       <!-- Сортировка -->
       <h3>Сортировка:</h3>
+
+      <!--
+      Ранее оформлял через form - select > options. Наставник рекомендовал этот вариант. Еще не разобрался как это будет работать.
+      * Тут лучше разметить как summary/details со списком ссылок внутри и двумя ссылками соотвественно. Эти элементы находятся вне формы и при использовании ссылок сортировку можно будет реализовать с помощью GET-параметров (пример device.com/catalog/monopods/?sort=popuplar)
+      -->
       <details>
         <summary>Популярные</summary>
       </details>
-      <!--
-      <form name="form-sorting" action="https://echo.htmlacademy.ru/courses" method="get">
-        <label class="visually-hidden" for="sorting">Выбор вариантов сортировки</label>
-        <select name="sorting" id="sorting">
-          <option value="popular">Популярные</option>
-          <option value="new">Новинки</option>
-        </select>
-        <button class="visually-hidden">Выбрать сортировку</button>
-      </form>
-      -->
       <span>
         <a href="" class="visually-hidden">Сортировать по возрастанию</a>
         <a href="" class="visually-hidden">Сортировать по убыванию</a>
