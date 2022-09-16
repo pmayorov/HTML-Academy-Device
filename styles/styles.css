@@ -28,6 +28,7 @@
   --basic-dark: #444444;
   --basic-gray: #dcdcdc;
   --basic-lightgray: #ebebeb;
+  --basic-light: #f0f0f0;
   --basic-white: #ffffff;
   --status-success: #08af00;
   --status-error: #ff3d3d;
@@ -58,7 +59,7 @@ body {
   color: var(--basic-black);
 }
 
-.section-subtitle {
+.contacts-subtitle {
   font-family: var(--titles-font);
   font-size: 24px;
   color: initial;
@@ -157,6 +158,64 @@ address {
 .text-small {
   font-size: 16px;
   line-height: 20px;
+}
+
+/* Стили каталога */
+.catalog-filter {
+  background-color: var(--basic-light);
+}
+
+.breadcrumbs-link {
+  line-height: 19px;
+}
+
+.filter-title {
+  font-family: var(--titles-font);
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 19px;
+  letter-spacing: 0.2em;
+  color: var(--basic-black);
+  text-transform: uppercase;
+}
+
+.catalog-subtitle {
+  line-height: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--basic-black);
+}
+
+.filter-list-label {
+  font-size: 16px;
+  line-height: 19px;
+  color: inherit;
+}
+
+.sorting-list {
+  color: var(--basic-black);
+}
+
+.goods-cards {
+  background-color: var(--basic-white);
+}
+
+.price-limit-label {
+  font-size: 15px;
+  line-height: 18px;
+  opacity: 0.3;
+  text-align: center;
+}
+
+.item-price {
+  line-height: 21px;
+}
+
+.num-page {
+  font-size: 16px;
+  line-height: 20px;
+  opacity: 0.3;
+  text-decoration: none;
 }
 
 /* .text-smaller {
