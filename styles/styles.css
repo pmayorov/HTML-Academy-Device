@@ -3,6 +3,7 @@
   font-weight: 400;
   font-style: normal;
   src: url("../fonts/rubik-400.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
@@ -10,6 +11,7 @@
   font-weight: 700;
   font-style: normal;
   src: url("../fonts/rubik-700.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
@@ -17,12 +19,150 @@
   font-weight: 800;
   font-style: normal;
   src: url("../fonts/raleway-800.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  /* Project colors */
+  --basic-black: #000000;
+  --basic-dark: #444444;
+  --basic-gray: #dcdcdc;
+  --basic-lightgray: #ebebeb;
+  --basic-white: #ffffff;
+  --status-success: #08af00;
+  --status-error: #ff3d3d;
+  --status-warning: #fd912e;
+  --special-yellow-dark: #ffc700;
+  --special-yellow-light: #ffe17f;
+  --special-purple: #af4fff;
+  --special-brown: #64534a;
+  /* Project fonts */
+  --titles-font: "Raleway", sans-serif;
+  --text-font: "Rubik", "Roboto", sans-serif;
 }
 
 body {
-  font-family: "Rubik", "Roboto", "Arial", sans-serif;
+  font-family: var(--text-font);
+  font-style: normal;
   font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--basic-dark);
 }
+
+.section-title {
+  font-family: var(--titles-font);
+  font-weight: 800;
+  font-size: 50px;
+  line-height: 50px;
+  color: var(--basic-black);
+}
+
+.section-subtitle {
+  font-family: var(--titles-font);
+  font-size: 24px;
+  color: initial;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.search-input::placeholder {
+  opacity: 0.3;
+}
+
+.subscribe-input::placeholder {
+  opacity: 0.5;
+}
+
+.subscribe-input {
+  line-height: 30px;
+}
+
+.link {
+  font-family: var(--titles-font);
+  font-weight: 800;
+  line-height: 21px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: inherit;
+  color: var(--basic-black);
+}
+
+.text-link {
+  color: inherit;
+}
+
+.catalog-link {
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: inherit;
+  color: var(--basic-black);
+}
+
+.page-link {
+  text-align: center;
+}
+
+.features-name {
+  font-size: 36px;
+  color: var(--basic-black);
+}
+
+.features-param {
+  font-size: 16px;
+}
+
+.category-link {
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+.order-link {
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+}
+
+/* .divider {} */
+
+.bg-black {
+  background-color: var(--basic-black);
+}
+
+.section-list-item {
+  font-family: var(--titles-font);
+  font-weight: 800;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: initial;
+}
+
+address {
+  font-style: normal;
+}
+
+.page-footer {
+  background-color: var(--basic-dark);
+}
+
+.footer-menu .link,
+.page-footer .text-small {
+  color: var(--basic-white);
+}
+
+.text-small {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+/* .text-smaller {
+  font-size: 14px;
+  line-height: 20px;
+} */
 
 /*
 .visually-hidden:not(:focus):not(:active) {
@@ -41,5 +181,4 @@ body {
 .hidden {
   visibility: hidden;
 }
-
 */
