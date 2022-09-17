@@ -6,7 +6,6 @@
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/normalize.css">
-  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -31,12 +30,12 @@
       <ul class="main-menu">
         <li class="main-menu-item"><a class="link" href="#">Каталог товаров <span></span></a>
           <ul class="goods-menu">
-            <li class="goods-menu-item"><a class="catalog-link" href="##">Виртуальная реальность</a></li>
+            <li class="goods-menu-item"><a class="catalog-link" href="#">Виртуальная реальность</a></li>
             <li class="goods-menu-item"><a class="catalog-link">Моноподы для селфи</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="##">Экшн-камеры</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="##">Фитнес-браслеты</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="##">Умные часы</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="##">Квадрокоптеры</a></li>
+            <li class="goods-menu-item"><a class="catalog-link" href="#">Экшн-камеры</a></li>
+            <li class="goods-menu-item"><a class="catalog-link" href="#">Фитнес-браслеты</a></li>
+            <li class="goods-menu-item"><a class="catalog-link" href="#">Умные часы</a></li>
+            <li class="goods-menu-item"><a class="catalog-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
         <li class="main-menu-item"><a class="link" href="#">Доставка</a></li>
@@ -65,31 +64,31 @@
       <!-- Фильтры -->
       <h3 class="filter-title">Фильтр:</h3>
       <form name="form-filter" action="https://echo.htmlacademy.ru/courses" method="get">
-        <!-- Фильтр - стоимость -->
+        <!-- Фильтр / СТОИМОСТЬ -->
         <fieldset>
-          <legend class="catalog-subtitle">Стоимость</legend>
-          <button type="button"><span>Минимальная цена</span></button>
-          <button type="button"><span>Максимальная цена</span></button>
+          <legend class="filter-subtitle">Стоимость</legend>
           <label class="price-limit-label">от <input type="number"></label>
           <label class="price-limit-label">до <input type="number"></label>
+          <button type="button"><span class="visually-hidden">Минимальная цена</span></button>
+          <button type="button"><span class="visually-hidden">Максимальная цена</span></button>
         </fieldset>
-        <!-- Фильтр - цвет -->
+        <!-- Фильтр / ЦВЕТ -->
         <fieldset>
-          <legend class="catalog-subtitle">Цвет</legend>
+          <legend class="filter-subtitle">Цвет</legend>
           <ul class="filter-list">
-            <li class="filter-list-item"><label class="filter-list-label"><input class="visually-hidden" type="checkbox" name="black" checked>Черный</label></li>
-            <li><label class="filter-list-label"><input class="visually-hidden" type="checkbox" name="white" checked>Белый</label></li>
-            <li><label class="filter-list-label"><input class="visually-hidden" type="checkbox" name="blue">Синий</label></li>
-            <li><label class="filter-list-label"><input class="visually-hidden" type="checkbox" name="red">Красный</label></li>
-            <li><label class="filter-list-label"><input class="visually-hidden" type="checkbox" name="pink">Розовый</label></li>
+            <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="black" checked><span class="label-item">Черный</span></label></li>
+            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="white" checked><span class="label-item">Белый</span></label></li>
+            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="blue"><span class="label-item">Синий</span></label></li>
+            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="red"><span class="label-item">Красный</span></label></li>
+            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="pink"><span class="label-item">Розовый</span></label></li>
           </ul>
         </fieldset>
-        <!-- Фильтр - bluetooth -->
+        <!-- Фильтр / BLUETOOTH -->
         <fieldset>
-          <legend class="catalog-subtitle">Bluetooth</legend>
+          <legend class="filter-subtitle">Bluetooth</legend>
           <ul>
-            <li><label class="filter-list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked>Есть</label></li>
-            <li><label class="filter-list-label"><input type="radio" name="bluetooth" class="visually-hidden">Нет</label></li>
+            <li><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked><span class="label-item">Есть</span></label></li>
+            <li><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden"><span class="label-item">Нет</span></label></li>
           </ul>
         </fieldset>
         <button class="link" type="submit">Показать</button>
@@ -99,15 +98,22 @@
       <h3 class="filter-title">Сортировка:</h3>
 
       <!--
-      Ранее оформлял через form - select > options. Наставник рекомендовал этот вариант. Еще не разобрался как это будет работать.
+      Оформил через form - select > options. Наставник рекомендовал иной вариант, но еще не разобрался как это будет работать.
       * Тут лучше разметить как summary/details со списком ссылок внутри и двумя ссылками соотвественно. Эти элементы находятся вне формы и при использовании ссылок сортировку можно будет реализовать с помощью GET-параметров (пример device.com/catalog/monopods/?sort=popuplar)
       -->
-      <details class="sorting-list">
-        <summary>Популярные</summary>
-      </details>
+
+      <form class="sorting">
+        <label class="visually-hidden" for="sorting">Сортировка</label>
+        <select class="sorting-list" id="sorting" name="sorting">
+          <option value="popular">Популярные</option>
+          <option value="cheap">Новинки</option>
+          <option value="expensive">Стоимость</option>
+        </select>
+        <button class="visually-hidden" type="submit">Выбрать</button>
+      </form>
       <span>
-        <a href="" class="visually-hidden">Сортировать по возрастанию</a>
-        <a href="" class="visually-hidden">Сортировать по убыванию</a>
+        <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по возрастанию</span></a>
+        <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по убыванию</span></a>
       </span>
 
       <!-- Карточки товаров -->
@@ -115,40 +121,44 @@
         <h3 class="filter-title visually-hidden">Карточки товаров:</h3>
         <ul>
           <li>
-            <a href="##"><img src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара"></a>
-            <h4 class="catalog-subtitle">Любительская селфи-палка</h4>
+            <a class="goods-cards-link" href="#"><img src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
+              <h4 class="filter-subtitle">Любительская селфи-палка</h4>
+            </a>
             <!-- Ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие. -->
             <span class="item-price">500&nbsp;&#8381;</span>
           </li>
           <li>
-            <a href="##"><img src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара"></a>
-            <h4 class="catalog-subtitle">Профессиональная селфи-палка</h4>
+            <a class="goods-cards-link" href="#"><img src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
+              <h4 class="filter-subtitle">Профессиональная селфи-палка</h4>
+            </a>
             <span class="item-price">1500&nbsp;&#8381;</span>
           </li>
           <li>
-            <a href="##"><img src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара"></a>
-            <h4 class="catalog-subtitle">Непотопляемая селфи-палка</h4>
+            <a class="goods-cards-link" href="#"><img src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
+              <h4 class="filter-subtitle">Непотопляемая селфи-палка</h4>
+            </a>
             <span class="item-price">1500&nbsp;&#8381;</span>
           </li>
           <li>
-            <a href="##"><img src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара"></a>
-            <h4 class="catalog-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
+            <a class="goods-cards-link" href="#"><img src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+              <h4 class="filter-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
+            </a>
             <span class="item-price">1500&nbsp;&#8381;</span>
           </li>
         </ul>
         <!-- Кнопка "Загрузить ещё" -->
         <button class="filter-title" type="button">Загрузить ещё</button>
-        <!-- Пагинация -->
-        <div>
-          <span><a class="link" href="">Назад</a></span>
-          <ol>
-            <li><a class="num-page" href="">1</a></li>
-            <li><a class="num-page" href="">2</a></li>
-            <li><a class="num-page" href="">3</a></li>
-            <li><a class="num-page" href="">…</a></li>
-            <li><a class="num-page" href="">15</a></li>
-          </ol>
-          <span><a class="link" href="">Вперёд</a></span>
+        <!-- Пагинация карточек -->
+        <div class="box-pagination">
+          <a class="link" href="#">Назад</a>
+          <ul class="pagination">
+            <li><a class="pagination-link" href="#">1</a></li>
+            <li><a class="pagination-link" href="#">2</a></li>
+            <li><a class="pagination-link" href="#">3</a></li>
+            <li><a class="pagination-link" href="#">…</a></li>
+            <li><a class="pagination-link" href="#">15</a></li>
+          </ul>
+          <a class="link" href="#">Вперёд</a>
         </div>
       </section>
     </section>

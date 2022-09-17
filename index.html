@@ -6,7 +6,6 @@
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles/normalize.css">
-  <!-- <link rel="stylesheet" href="styles/layout-markup.css"> -->
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -30,12 +29,12 @@
       <ul class="main-menu">
         <li class="main-menu-item"><a class="link" href="#">Каталог товаров <span></span></a>
           <ul class="catalog-menu">
-            <li class="catalog-menu-item"><a class="catalog-link" href="##">Виртуальная реальность</a></li>
+            <li class="catalog-menu-item"><a class="catalog-link" href="#">Виртуальная реальность</a></li>
             <li class="catalog-menu-item"><a class="catalog-link" href="catalog.html">Моноподы для селфи</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="##">Экшн-камеры</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="##">Фитнес-браслеты</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="##">Умные часы</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="##">Квадрокоптеры</a></li>
+            <li class="catalog-menu-item"><a class="catalog-link" href="#">Экшн-камеры</a></li>
+            <li class="catalog-menu-item"><a class="catalog-link" href="#">Фитнес-браслеты</a></li>
+            <li class="catalog-menu-item"><a class="catalog-link" href="#">Умные часы</a></li>
+            <li class="catalog-menu-item"><a class="catalog-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
         <li class="main-menu-item"><a class="link" href="#">Доставка</a></li>
@@ -46,9 +45,9 @@
   </header>
 
   <main>
-    <h1 class="visually-hidden">Интернет-магазин электронной техники <span lang="en">&laquo;DEVICE&raquo;</span></h1>
+    <h1 class="section-title visually-hidden">Интернет-магазин электронной техники <span lang="en">&laquo;DEVICE&raquo;</span></h1>
     <section class="catalog-promo">
-      <h2 class="visually-hidden">Популярные товары интернет-магазина</h2>
+      <h2 class="section-title visually-hidden">Популярные товары интернет-магазина</h2>
 
       <!-- Слайдер. Список с фотографиями -->
       <div class="box-promo-images">
@@ -110,9 +109,9 @@
       </ol>
       <!-- Индикация текущего слайда -->
       <ol>
-        <li>Первый слайд</li>
-        <li>Второй слайд</li>
-        <li>Третий слайд</li>
+        <li><button type="button"><span class="visually-hidden">Первый слайд</span></button></li>
+        <li><button type="button"><span class="visually-hidden">Второй слайд</span></button></li>
+        <li><button type="button"><span class="visually-hidden">Третий слайд</span></button></li>
       </ol>
     </section>
 
@@ -129,7 +128,7 @@
       </ul>
     </section>
 
-    <!-- Предлагаемые услуги: доставка, гарантия, кредит -->
+    <!-- Услуги: доставка, гарантия, кредит -->
     <section>
       <div>
         <ul>
@@ -159,7 +158,7 @@
       </div>
     </section>
 
-    <!-- Заказ редкого товара. Ссылка на форму заказа -->
+    <!-- Доставим товар под заказ -->
     <section>
       <h2 class="section-title visually-hidden">Заказ товара</h2>
       <a class="link order-link" href="#">
@@ -171,7 +170,7 @@
 
     <!-- Информация о магазине. Контакты -->
     <section>
-      <span class="divider bg-black"></span>
+      <span class="divider"></span>
       <h2 class="section-title">О нас</h2>
       <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
       <p>Мы можем доставить ваш товар в самые отдалённые уголки России транспортными компаниями:</p>
@@ -209,7 +208,7 @@
         <input class="subscribe-input" type="email" name="field-email" placeholder="Ваш e-mail">
         <button class="link" type="submit">Подписаться</button>
       </form>
-      <span> Это бесплатно</span>
+      <span>Это бесплатно</span>
     </section>
   </main>
 
@@ -226,9 +225,9 @@
     <a class="text-small" href="tel:+78128121212">+7 (812) 812-12-12</a>
     <span class="divider"></span>
     <ul class="page-footer-social">
-      <li><a href="#"><span class="visually-hidden">Facebook</span></a></li>
-      <li><a href="#"><span class="visually-hidden">Instagram</span></a></li>
-      <li><a href="#"><span class="visually-hidden">Twitter</a></span></li>
+      <li><a class="link" href="#"><span class="visually-hidden">Facebook</span></a></li>
+      <li><a class="link" href="#"><span class="visually-hidden">Instagram</span></a></li>
+      <li><a class="link" href="#"><span class="visually-hidden">Twitter</a></span></li>
     </ul>
     <a href="https://htmlacademy.org"><img src="images/logo-htmlacademy-footer.svg" alt="Разработано HTML Academy"></a>
   </footer>
