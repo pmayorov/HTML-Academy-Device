@@ -9,33 +9,34 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
+<body class="body">
 
-  <!-- Заголовок -->
+  <!-- Заголовок страницы -->
 
   <header class="page-header">
-    <a href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
-    <!-- Поле поиска -->
-    <nav class="navigation">
+    <div class="box-account-menu">
+      <a href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
       <form class="search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
         <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
         <button class="text-small" type="submit">Найти</button>
       </form>
-      <ul class="profile-menu">
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-entry"></span>Войти</a></li>
-        <li class="profile-menu-item"><a class="profile-link hidden" href="#">Выйти</a></li>
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
+      <ul class="account-menu">
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
+        <li class="account-menu-item"><a class="account-menu-link hidden" href="#">Выйти</a></li>
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
       </ul>
+    </div>
+    <nav class="navigation">
       <ul class="main-menu">
         <li class="main-menu-item"><a class="link" href="#">Каталог товаров <span></span></a>
-          <ul class="goods-menu">
-            <li class="goods-menu-item"><a class="catalog-link" href="#">Виртуальная реальность</a></li>
-            <li class="goods-menu-item"><a class="catalog-link">Моноподы для селфи</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="#">Экшн-камеры</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="#">Фитнес-браслеты</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="#">Умные часы</a></li>
-            <li class="goods-menu-item"><a class="catalog-link" href="#">Квадрокоптеры</a></li>
+          <ul class="catalog-menu">
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Виртуальная реальность</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link">Моноподы для селфи</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Экшн-камеры</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Фитнес-браслеты</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Умные часы</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
         <li class="main-menu-item"><a class="link" href="#">Доставка</a></li>
@@ -47,13 +48,13 @@
 
   <main class="main-catalog">
 
-    <!-- Заголовок страницы -->
+    <!-- Заголовок каталога -->
     <header>
       <h1 class="section-title">Моноподы под селфи</h1>
       <ol class="catalog-breadcrumbs">
-        <li><a class="catalog-link breadcrumbs-link" href="#">Главная</a></li>
-        <li><a class="catalog-link breadcrumbs-link" href="#">Каталог товаров</a></li>
-        <li><a class="catalog-link breadcrumbs-link" title="Текущая страница ">Моноподы для селфи</a></li>
+        <li><a class="catalog-menu-link breadcrumbs-link" href="#">Главная</a></li>
+        <li><a class="catalog-menu-link breadcrumbs-link" href="#">Каталог товаров</a></li>
+        <li><a class="catalog-menu-link breadcrumbs-link" title="Текущая страница ">Моноподы для селфи</a></li>
       </ol>
     </header>
 
@@ -77,10 +78,10 @@
           <legend class="filter-subtitle">Цвет</legend>
           <ul class="filter-list">
             <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="black" checked><span class="label-item">Черный</span></label></li>
-            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="white" checked><span class="label-item">Белый</span></label></li>
-            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="blue"><span class="label-item">Синий</span></label></li>
-            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="red"><span class="label-item">Красный</span></label></li>
-            <li><label class="list-label"><input class="visually-hidden" type="checkbox" name="pink"><span class="label-item">Розовый</span></label></li>
+            <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="white" checked><span class="label-item">Белый</span></label></li>
+            <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="blue"><span class="label-item">Синий</span></label></li>
+            <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="red"><span class="label-item">Красный</span></label></li>
+            <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="pink"><span class="label-item">Розовый</span></label></li>
           </ul>
         </fieldset>
         <!-- Фильтр / BLUETOOTH -->

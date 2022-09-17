@@ -42,7 +42,7 @@
   --text-font: "Rubik", "Roboto", sans-serif;
 }
 
-body {
+.body {
   font-family: var(--text-font);
   font-style: normal;
   font-weight: 400;
@@ -78,7 +78,7 @@ body {
   line-height: 30px;
 }
 
-.profile-link {
+.account-menu-link {
   text-decoration: none;
   color: var(--basic-black);
 }
@@ -101,7 +101,7 @@ body {
 }
 
 /* Ссылки в подменю главного меню */
-.catalog-link {
+.catalog-menu-link {
   font-size: 16px;
   line-height: 18px;
   text-decoration: inherit;

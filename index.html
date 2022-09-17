@@ -9,32 +9,33 @@
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
-<body>
+<body class="body">
 
-  <!-- Заголовок -->
+  <!-- Заголовок страницы-->
   <header class="page-header">
-    <img src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE">
-    <!-- Поле поиска -->
-    <nav class="navigation">
+    <div class="box-account-menu">
+      <img src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE">
       <form class="search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
         <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
         <button class="text-small" type="submit">Найти</button>
       </form>
-      <ul class="profile-menu">
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-entry"></span>Войти</a></li>
-        <li class="profile-menu-item"><a class="profile-link hidden" href="#">Выйти</a></li>
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-        <li class="profile-menu-item"><a class="profile-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
+      <ul class="account-menu">
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
+        <li class="account-menu-item"><a class="account-menu-link hidden" href="#">Выйти</a></li>
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
       </ul>
+    </div>
+    <nav class="navigation">
       <ul class="main-menu">
         <li class="main-menu-item"><a class="link" href="#">Каталог товаров <span></span></a>
           <ul class="catalog-menu">
-            <li class="catalog-menu-item"><a class="catalog-link" href="#">Виртуальная реальность</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="catalog.html">Моноподы для селфи</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="#">Экшн-камеры</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="#">Фитнес-браслеты</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="#">Умные часы</a></li>
-            <li class="catalog-menu-item"><a class="catalog-link" href="#">Квадрокоптеры</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Виртуальная реальность</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="catalog.html">Моноподы для селфи</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Экшн-камеры</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Фитнес-браслеты</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Умные часы</a></li>
+            <li class="catalog-menu-item"><a class="catalog-menu-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
         <li class="main-menu-item"><a class="link" href="#">Доставка</a></li>
@@ -46,10 +47,10 @@
 
   <main>
     <h1 class="section-title visually-hidden">Интернет-магазин электронной техники <span lang="en">&laquo;DEVICE&raquo;</span></h1>
+    <!-- Слайдер -->
     <section class="catalog-promo">
       <h2 class="section-title visually-hidden">Популярные товары интернет-магазина</h2>
-
-      <!-- Слайдер. Список с фотографиями -->
+      <!-- Слайдер. Фотографии -->
       <div class="box-promo-images">
         <ol class="promo-images-list">
           <li class="promo-images-item">
@@ -68,8 +69,7 @@
           <button class="button" type="button"><span class="visually-hidden">Следующий слайд</span></button>
         </div>
       </div>
-
-      <!-- Слайдер. Список с описаниями -->
+      <!-- Слайдер. Описание -->
       <ol class="promo-desc-list">
         <li class="promo-desc-item">
           <strong class="section-title">Порхает как бабочка, жалит как пчела!</strong>
