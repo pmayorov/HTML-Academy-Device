@@ -40,9 +40,19 @@
   /* Project fonts */
   --titles-font: "Raleway", sans-serif;
   --text-font: "Rubik", "Roboto", sans-serif;
+  /* Widht of content */
+  --content-width: 1160px;
+}
+
+html {
+  height: 100%;
 }
 
 .body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: var(--text-font);
   font-style: normal;
   font-weight: 400;
@@ -52,6 +62,8 @@
 }
 
 .section-title {
+  margin: 0;
+  padding: 0;
   font-family: var(--titles-font);
   font-weight: 800;
   font-size: 50px;
@@ -64,6 +76,7 @@
   font-size: 24px;
   color: initial;
 }
+
 /* Поиск и меню аккаунта покупателя*/
 
 .search-input::placeholder {
@@ -81,6 +94,67 @@
 .account-menu-link {
   text-decoration: none;
   color: var(--basic-black);
+}
+
+/* Сетка для хедера */
+
+.main-container {
+  flex-grow: 1;
+}
+
+.page-container {
+  width: var(--content-width);
+  margin: 0 auto;
+  outline: 2px solid rgba(255, 0, 0, 0.5);
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 60px;
+  background-color: var(--special-yellow-dark);
+}
+
+.box-account-menu {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.search-input {
+  margin: 0;
+  padding: 0;
+  width: 360px;
+}
+
+.search-button {
+  margin: 0;
+  padding: 0;
+  width: 160px;
+}
+
+.account-menu,
+.main-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.account-menu {
+  width: 472px;
+  justify-content: space-between;
+}
+
+.main-menu-item:not(:last-of-type) {
+  margin-right: 45px;
+}
+
+.main-menu-item:nth-of-type(2) {
+  margin-left: auto;
 }
 
 /* Базовый стиль для ссылок */
@@ -115,16 +189,55 @@
 
 /** СЛАЙДЕР **/
 
+.catalog-promo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.promo-images-list,
+.promo-desc-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.promo-desc-list {
+  width: 560px;
+}
+
+.promo-desc-text {
+  margin: 0;
+}
+
+.features-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.features-list-box {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .features-name {
+  font-size: 16px;
+}
+
+.features-param {
+  margin: 0;
   font-size: 36px;
   color: var(--basic-black);
 }
 
-.features-param {
-  font-size: 16px;
+/** Вертикальный блок с категориями товаров **/
+.category-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
 }
 
-/** Вертикальный блок с категориями товаров **/
 .category-link {
   line-height: 24px;
   letter-spacing: -0.02em;
@@ -160,6 +273,12 @@ address {
 .page-footer {
   color: var(--basic-white);
   background-color: var(--basic-dark);
+}
+
+.footer-container {
+  display: flex;
+  width: var(--content-width);
+  margin: 0 auto;
 }
 
 .page-footer a {

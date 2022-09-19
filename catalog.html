@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <title>HTML Academy &bull; Проект DEVICE</title>
   <link rel="icon" href="images/favicons/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/styles.css">
 </head>
 
@@ -14,20 +13,20 @@
   <!-- Заголовок страницы -->
 
   <header class="page-header">
-    <div class="box-account-menu">
-      <a href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
-      <form class="search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
-        <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
-        <button class="text-small" type="submit">Найти</button>
-      </form>
-      <ul class="account-menu">
-        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
-        <li class="account-menu-item"><a class="account-menu-link hidden" href="#">Выйти</a></li>
-        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-        <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
-      </ul>
-    </div>
     <nav class="navigation">
+      <a href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
+      <div class="box-account-menu">
+        <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
+          <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
+          <button class="text-small" type="submit">Найти</button>
+        </form>
+        <ul class="account-menu">
+          <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-entry"></span>Войти</a></li>
+          <li class="account-menu-item"><a class="account-menu-link hidden" href="#">Выйти</a></li>
+          <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+          <li class="account-menu-item"><a class="account-menu-link" href="#"><span class="icon-counter">12</span><span class="icon-purchases"></span>Корзина</a></li>
+        </ul>
+      </div>
       <ul class="main-menu">
         <li class="main-menu-item"><a class="link" href="#">Каталог товаров <span></span></a>
           <ul class="catalog-menu">
