@@ -40,8 +40,9 @@
   /* Project fonts */
   --titles-font: "Raleway", sans-serif;
   --text-font: "Rubik", "Roboto", sans-serif;
-  /* Widht of content */
+  /* Widht's: full and content */
   --content-width: 1160px;
+  --full-width: 1440px;
 }
 
 html {
@@ -50,9 +51,6 @@ html {
 
 .body {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
   font-family: var(--text-font);
   font-style: normal;
   font-weight: 400;
@@ -83,29 +81,17 @@ html {
   opacity: 0.3;
 }
 
-.subscribe-input::placeholder {
-  opacity: 0.5;
-}
-
-.subscribe-input {
-  line-height: 30px;
-}
-
-.account-menu-link {
+.account-navigation-link {
   text-decoration: none;
   color: var(--basic-black);
 }
 
 /* Сетка для хедера */
 
-.main-container {
-  flex-grow: 1;
-}
-
 .page-container {
   width: var(--content-width);
   margin: 0 auto;
-  outline: 2px solid rgba(255, 0, 0, 0.5);
+  /* outline: 2px solid rgba(255, 0, 0, 0.5); */
 }
 
 .navigation {
@@ -115,10 +101,10 @@ html {
   width: var(--content-width);
   margin: 0 auto;
   padding: 0 60px;
-  background-color: var(--special-yellow-dark);
+  background-color: var(--special-yellow-light);
 }
 
-.box-account-menu {
+.box-account-navigation {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -136,30 +122,30 @@ html {
   width: 160px;
 }
 
-.account-menu,
-.main-menu {
+.account-navigation,
+.main-navigation {
   display: flex;
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-.account-menu {
+.account-navigation {
   width: 472px;
   justify-content: space-between;
 }
 
-.main-menu-item:not(:last-of-type) {
+.main-navigation-item:not(:last-of-type) {
   margin-right: 45px;
 }
 
-.main-menu-item:nth-of-type(2) {
+.main-navigation-item:nth-of-type(2) {
   margin-left: auto;
 }
 
 /* Базовый стиль для ссылок */
-
 .link {
+  font-size: inherit;
   font-family: var(--titles-font);
   font-weight: 800;
   line-height: 21px;
@@ -175,7 +161,7 @@ html {
 }
 
 /* Ссылки в подменю главного меню */
-.catalog-menu-link {
+.catalog-navigation-link {
   font-size: 16px;
   line-height: 18px;
   text-decoration: inherit;
@@ -231,11 +217,17 @@ html {
 }
 
 /** Вертикальный блок с категориями товаров **/
+
 .category-list {
   margin: 0;
   padding: 0;
-  list-style-type: none;
   display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.category-item {
+  width: 160px;
 }
 
 .category-link {
@@ -244,51 +236,230 @@ html {
   text-transform: none;
 }
 
+.category-logo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin-bottom: 33px;
+  background-color: var(--special-yellow-light);
+}
+
 /** Услуги: доставка, гарантия, кредит **/
 
+.services {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services-list-box {
+  width: 290px;
+}
+
+.services-desc-box {
+  width: 760px;
+}
+
+.services-list,
+.services-desc-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
 
 /** Доставим товар под заказ **/
+.order {
+  background-color: var(--basic-light);
+}
+
 .order-link {
+  display: flex;
+}
+
+.order-link-logo {
+  width: 125px;
+  height: 100px;
+  background-color: var(--special-yellow-light);
+}
+
+.order-link-text {
+  margin: auto 0;
+  flex-grow: 1;
   font-size: 20px;
   line-height: 23px;
   text-align: center;
 }
 
-/* Правило для полосочки .divider {} */
+.order-link-text-ico {
+  width: 40px;
+  height: 40px;
+  margin: auto 43px;
+  border-radius: 50px;
+  background-color: var(--basic-gray);
+  opacity: 0.5;
+}
 
-.section-list-item {
+/** О нас. Контакты **/
+
+.section-container {
+  display: flex;
+  padding-right: 23px;
+  justify-content: space-between;
+}
+
+.divider {
+  display: block;
+  width: 84px;
+  height: 7px;
+  background-color: var(--basic-black);
+}
+
+.about {
+  width: 500px;
+}
+
+.contacts {
+  width: 510px;
+}
+
+.about-list,
+.contacts-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.about-item {
   font-family: var(--titles-font);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 20px;
   letter-spacing: -0.02em;
   color: initial;
 }
 
+/** Форма подписки на рассылку **/
+
+.subscribe {
+  background-color: var(--basic-light);
+}
+
+.subscribe > .page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subscribe-title {
+  width: 360px;
+}
+
+.subscribe-text {
+  display: inherit;
+  margin: 0;
+  width: 560px;
+}
+
+.subscribe-input::placeholder {
+  opacity: 0.5;
+}
+
+.subscribe-input {
+  width: 557px;
+  padding: 0;
+  border: 0;
+  line-height: inherit;
+}
+
+.subscribe-button {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 253px;
+}
+
 /** ФУТЕР **/
 
-address {
-  font-style: normal;
-}
 
 .page-footer {
   color: var(--basic-white);
   background-color: var(--basic-dark);
+  padding-bottom: 50px;
 }
 
-.footer-container {
+.page-footer > .page-container {
   display: flex;
-  width: var(--content-width);
-  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .page-footer a {
   color: var(--basic-white);
 }
 
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-container:first-child {
+  width: var(--content-width);
+}
+
+.footer-container:nth-child(2),
+.footer-container:nth-child(4) {
+  width: 240px;
+}
+
+.footer-container:nth-child(3) {
+  align-items: center;
+}
+
+.footer-container:nth-child(4) {
+  align-items: flex-end;
+}
+
+.footer-navigation,
+.footer-social {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.footer-navigation-item + .footer-navigation-item {
+  margin-left: 35px;
+}
+
+.footer-social-item + .footer-social-item {
+  margin-left: 15px;
+}
+
+.page-footer .divider {
+  background-color: var(--special-yellow-dark);
+}
+
+.address {
+  font-style: normal;
+}
+
 .text-small {
   font-size: 16px;
   line-height: 20px;
 }
+
+.footer-social-link {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: var(--basic-white);
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
 
 /** СТИЛИ КАТАЛОГА **/
 
