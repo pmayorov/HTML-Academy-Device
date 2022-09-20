@@ -460,18 +460,40 @@ html {
   border-radius: 50%;
 }
 
-
 /** СТИЛИ КАТАЛОГА **/
 
-.catalog-filter {
+.main-catalog {
   background-color: var(--basic-light);
+}
+
+.catalog-header {
+  background-color: var(--basic-white);
+}
+
+.catalog-header > .page-container {
+  box-sizing: border-box;
+  padding-left: 60px;
+}
+
+.catalog-breadcrumbs {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+}
+
+.catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
+  margin-left: 36px;
 }
 
 .breadcrumbs-link {
   line-height: 19px;
 }
 
+/** Фильтры. Сортировка. Карточки товаров **/
+
 .filter-title {
+  margin: 0;
   font-family: var(--titles-font);
   font-size: 16px;
   font-weight: 800;
@@ -486,6 +508,48 @@ html {
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--basic-black);
+}
+
+.catalog-goods {
+  width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+}
+
+.catalog-left-container {
+  box-sizing: border-box;
+  width: 320px;
+  padding-left: 60px;
+}
+
+.catalog-right-container {
+  background-color: var(--basic-white);
+  width: 840px;
+}
+
+.sorting-container {
+  display: flex;
+  background-color: var(--basic-light);
+}
+
+.form-filter {
+  width: 200px;
+}
+
+.form-filter .filter-fieldset,
+.form-filter .filter-subtitle {
+  margin: 0;
+  padding: 0;
+}
+
+.form-filter .filter-fieldset {
+  border: 0;
+}
+
+.filter-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .label-item {
@@ -503,8 +567,18 @@ html {
   text-decoration: none;
 }
 
-.goods-cards {
-  background-color: var(--basic-white);
+.filter-button {
+  width: 220px;
+}
+
+/* .goods-cards {
+
+} */
+
+.goods-cards-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
 
 .goods-cards-link {
@@ -522,8 +596,21 @@ html {
   line-height: 21px;
 }
 
+.show-more-button {
+  width: 760px;
+}
+
 .box-pagination {
+  width: 760px;
+  display: flex;
   background-color: var(--basic-lightgray);
+}
+
+.pagination-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style-type: none;
 }
 
 .pagination-link {
