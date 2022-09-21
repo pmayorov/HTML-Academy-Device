@@ -45,10 +45,6 @@
   --full-width: 1440px;
 }
 
-html {
-  height: 100%;
-}
-
 .body {
   margin: 0;
   font-family: var(--text-font);
@@ -70,6 +66,7 @@ html {
 }
 
 .contacts-subtitle {
+  margin: 0;
   font-family: var(--titles-font);
   font-size: 24px;
   color: initial;
@@ -104,7 +101,7 @@ html {
   background-color: var(--special-yellow-light);
 }
 
-.box-account-navigation {
+.account-navigation-container {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -144,7 +141,7 @@ html {
 }
 
 /* Базовый стиль для ссылок */
-.link {
+.link-style {
   font-size: inherit;
   font-family: var(--titles-font);
   font-weight: 800;
@@ -175,7 +172,7 @@ html {
 
 /** СЛАЙДЕР **/
 
-.catalog-promo {
+.promo {
   display: flex;
   justify-content: space-between;
 }
@@ -187,11 +184,15 @@ html {
   list-style-type: none;
 }
 
+.promo-image {
+  display: block;
+}
+
 .promo-desc-list {
   width: 560px;
 }
 
-.promo-desc-text {
+.section-text {
   margin: 0;
 }
 
@@ -218,7 +219,7 @@ html {
 
 /** Вертикальный блок с категориями товаров **/
 
-.category-list {
+.category-goods-list {
   margin: 0;
   padding: 0;
   display: flex;
@@ -226,17 +227,17 @@ html {
   list-style-type: none;
 }
 
-.category-item {
+.category-goods-item {
   width: 160px;
 }
 
-.category-link {
+.category-goods-link {
   line-height: 24px;
   letter-spacing: -0.02em;
   text-transform: none;
 }
 
-.category-logo {
+.category-goods-logo {
   display: block;
   width: 160px;
   height: 160px;
@@ -251,15 +252,15 @@ html {
   justify-content: space-between;
 }
 
-.services-list-box {
+.services-nav-container {
   width: 290px;
 }
 
-.services-desc-box {
+.services-desc-container {
   width: 760px;
 }
 
-.services-list,
+.services-nav-list,
 .services-desc-list {
   margin: 0;
   padding: 0;
@@ -275,13 +276,13 @@ html {
   display: flex;
 }
 
-.order-link-logo {
+.order-logo {
   width: 125px;
   height: 100px;
   background-color: var(--special-yellow-light);
 }
 
-.order-link-text {
+.order-info-text {
   margin: auto 0;
   flex-grow: 1;
   font-size: 20px;
@@ -289,7 +290,7 @@ html {
   text-align: center;
 }
 
-.order-link-text-ico {
+.order-info-ico {
   width: 40px;
   height: 40px;
   margin: auto 43px;
@@ -302,23 +303,23 @@ html {
 
 .section-container {
   display: flex;
-  padding-right: 23px;
   justify-content: space-between;
-}
-
-.divider {
-  display: block;
-  width: 84px;
-  height: 7px;
-  background-color: var(--basic-black);
 }
 
 .about {
   width: 500px;
 }
 
+.divider {
+  display: block;
+  width: 85px;
+  height: 7px;
+  background-color: var(--basic-black);
+}
+
 .contacts {
   width: 510px;
+  padding-right: 23px;
 }
 
 .about-list,
@@ -359,7 +360,6 @@ html {
 
 .subscribe-text {
   display: inherit;
-  margin: 0;
   width: 560px;
 }
 
@@ -504,6 +504,7 @@ html {
 }
 
 .filter-subtitle {
+  margin: 0;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -571,10 +572,6 @@ html {
   width: 220px;
 }
 
-/* .goods-cards {
-
-} */
-
 .goods-cards-list {
   margin: 0;
   padding: 0;
@@ -585,7 +582,11 @@ html {
   text-decoration: none;
 }
 
-.price-limit-label {
+.goods-image {
+  display: block;
+}
+
+.price-label {
   font-size: 15px;
   line-height: 18px;
   opacity: 0.3;

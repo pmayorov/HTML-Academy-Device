@@ -11,24 +11,25 @@
 <body class="body">
 
   <!-- * Заголовок страницы * -->
-
   <header class="page-header">
     <nav class="navigation">
-      <a href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
-      <div class="box-account-navigation">
+      <a class="device-logo-link" href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
+      <div class="account-navigation-container">
         <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
           <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-navigation-link" ref="#"><span class="icon-entry"></span>Коля Петухов</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" ref="#"><span class="icon-entry"></span>Войти</a></li>
+          <!-- todo: При скрытии пункта меню сдвигаются остальные пункты -->
           <li class="account-navigation-item"><a class="account-navigation-link hidden" href="#">Выйти</a></li>
+          <!-- todo end-->
           <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-counter">2</span><span class="icon-purchases"></span>Корзина</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-counter"> 2</span><span class="icon-purchases"></span>Корзина</a></li>
         </ul>
       </div>
       <ul class="main-navigation">
-        <li class="main-navigation-item"><a class="link" href="catalog.html">Каталог товаров <span></span></a>
+        <li class="main-navigation-item"><a class="link-style" href="catalog.html">Каталог товаров <span class="submenu-button"></span></a>
           <ul class="catalog-navigation" hidden>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="catalog.html">Моноподы для селфи</a></li>
@@ -38,9 +39,9 @@
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
-        <li class="main-navigation-item"><a class="link" href="#">Доставка</a></li>
-        <li class="main-navigation-item"><a class="link" href="#">Гарантия</a></li>
-        <li class="main-navigation-item"><a class="link" href="#">Контакты</a></li>
+        <li class="main-navigation-item"><a class="link-style" href="#">Доставка</a></li>
+        <li class="main-navigation-item"><a class="link-style" href="#">Гарантия</a></li>
+        <li class="main-navigation-item"><a class="link-style" href="#">Контакты</a></li>
       </ul>
     </nav>
   </header>
@@ -71,10 +72,10 @@
           <!-- Фильтр / СТОИМОСТЬ -->
           <fieldset class="filter-fieldset">
             <legend class="filter-subtitle">Стоимость</legend>
-            <label class="price-limit-label">от <input type="number"></label>
-            <label class="price-limit-label">до <input type="number"></label>
-            <button type="button"><span class="visually-hidden">Минимальная цена</span></button>
-            <button type="button"><span class="visually-hidden">Максимальная цена</span></button>
+            <label class="price-label">от <input class="price-input" type="number"></label>
+            <label class="price-label">до <input class="price-input" type="number"></label>
+            <button class="price-button" type="button"><span class="visually-hidden">Минимальная цена</span></button>
+            <button class="price-button" type="button"><span class="visually-hidden">Максимальная цена</span></button>
           </fieldset>
           <!-- Фильтр / ЦВЕТ -->
           <fieldset class="filter-fieldset">
@@ -91,12 +92,12 @@
           <fieldset class="filter-fieldset">
             <legend class="filter-subtitle">Bluetooth</legend>
             <ul class="filter-list">
-              <li><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked><span class="label-item">Есть</span></label></li>
-              <li><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden"><span class="label-item">Нет</span></label></li>
+              <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked><span class="label-item">Есть</span></label></li>
+              <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden"><span class="label-item">Нет</span></label></li>
             </ul>
           </fieldset>
         </form>
-        <button class="link filter-button" form="form-filter" type="submit">Показать</button>
+        <button class="link-style filter-button" form="form-filter" type="submit">Показать</button>
       </div>
 
       <!-- Сортировка -->
@@ -112,13 +113,13 @@
           <form class="sorting">
             <label class="visually-hidden" for="sorting">Сортировка:</label>
             <select class="sorting-list" id="sorting" name="sorting">
-              <option value="popular">Популярные</option>
-              <option value="cheap">Новинки</option>
-              <option value="expensive">Стоимость</option>
+              <option class="sorting-list-item" value="popular">Популярные</option>
+              <option class="sorting-list-item" value="cheap">Новинки</option>
+              <option class="sorting-list-item" value="expensive">Стоимость</option>
             </select>
             <button class="visually-hidden" type="submit">Выбрать</button>
           </form>
-          <span>
+          <span class="sorting-link-box">
             <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по возрастанию</span></a>
             <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по убыванию</span></a>
           </span>
@@ -129,26 +130,26 @@
           <h3 class="filter-title visually-hidden" hidden>Карточки товаров:</h3>
           <ul class="goods-cards-list">
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
                 <h4 class="filter-subtitle">Любительская селфи-палка</h4>
               </a>
               <!-- Ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие. -->
               <span class="item-price">500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
                 <h4 class="filter-subtitle">Профессиональная селфи-палка</h4>
               </a>
               <span class="item-price">1500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
                 <h4 class="filter-subtitle">Непотопляемая селфи-палка</h4>
               </a>
               <span class="item-price">1500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
                 <h4 class="filter-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
               </a>
               <span class="item-price">1500&nbsp;&#8381;</span>
@@ -158,7 +159,7 @@
           <button class="filter-title show-more-button" type="button">Загрузить ещё</button>
           <!-- Пагинация карточек -->
           <div class="box-pagination">
-            <a class="link" href="#">Назад</a>
+            <a class="link-style" href="#">Назад</a>
             <ul class="pagination-list">
               <li class="pagination-item"><a class="pagination-link" href="#">1</a></li>
               <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
@@ -166,7 +167,7 @@
               <li class="pagination-item"><a class="pagination-link" href="#">…</a></li>
               <li class="pagination-item"><a class="pagination-link" href="#">15</a></li>
             </ul>
-            <a class="link" href="#">Вперёд</a>
+            <a class="link-style" href="#">Вперёд</a>
           </div>
       </div>
     </section>
@@ -179,21 +180,21 @@
 
   <footer class="page-footer">
     <div class="page-container">
-
+      <!-- :first-child / Логотип - на всю ширину футера -->
       <div class="footer-container">
-        <a class="footer-logo" href="#"><img src="images/device-logo-footer.svg" width="145" height="36" alt="Логотип DEVICE"></a>
+        <a class="footer-logo" href="#"><img class="device-logo" src="images/device-logo-footer.svg" width="145" height="36" alt="Логотип DEVICE"></a>
       </div>
-
+      <!-- :nth-child(2) Левая колонка. Адрес -->
       <div class="footer-container">
         <address class="text-small address">Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
         <span class="divider"></span>
       </div>
-
+      <!-- :nth-child(3) Центр. Навигация, ссылки на соцсети -->
       <div class="footer-container">
         <ul class="footer-navigation">
-          <li class="footer-navigation-item"><a class="link" href="#">Доставка</a></li>
-          <li class="footer-navigation-item"><a class="link" href="#">Гарантия</a></li>
-          <li class="footer-navigation-item"><a class="link" href="#">Контакты</a></li>
+          <li class="footer-navigation-item"><a class="link-style" href="#">Доставка</a></li>
+          <li class="footer-navigation-item"><a class="link-style" href="#">Гарантия</a></li>
+          <li class="footer-navigation-item"><a class="link-style" href="#">Контакты</a></li>
         </ul>
         <ul class="footer-social">
           <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden" hidden>Facebook</span></a></li>
@@ -201,12 +202,11 @@
           <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden" hidden>Twitter</span></a></li>
         </ul>
       </div>
-
+      <!-- :nth-child(4) Правая колонка. Телефон и ссылка на академию -->
       <div class="footer-container">
-        <a class="text-small phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
-        <a href="https://htmlacademy.org"><img src="images/logo-htmlacademy-footer.svg" alt="Разработано HTML Academy"></a>
+        <a class="text-small" href="tel:+78128121212">+7 (812) 812-12-12</a>
+        <a class="htmlacademy-link" href="https://htmlacademy.org"><img class="htmlacademy-logo" src="images/logo-htmlacademy-footer.svg" alt="Разработано HTML Academy"></a>
       </div>
-
     </div>
   </footer>
 
