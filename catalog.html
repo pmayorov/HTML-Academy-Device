@@ -20,7 +20,7 @@
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-navigation-link" ref="#"><span class="icon-entry"></span>Войти</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-entry"></span>Войти</a></li>
           <!-- todo: При скрытии пункта меню сдвигаются остальные пункты -->
           <li class="account-navigation-item"><a class="account-navigation-link hidden" href="#">Выйти</a></li>
           <!-- todo end-->
@@ -50,7 +50,7 @@
 
   <main class="main-catalog">
 
-    <!-- Заголовок каталога -->
+    <!-- * Заголовок каталога * -->
     <header class="catalog-header">
       <div class="page-container">
         <h1 class="section-title">Моноподы под селфи</h1>
@@ -101,13 +101,11 @@
       </div>
 
       <!-- Сортировка -->
-
       <!--
           Оформил через form - select > options. Наставник рекомендовал иной вариант, но еще не разобрался как это будет работать.
           * Тут лучше разметить как summary/details со списком ссылок внутри и двумя ссылками соотвественно. Эти элементы находятся вне формы и при использовании ссылок сортировку можно будет реализовать с помощью GET-параметров (пример device.com/catalog/monopods/?sort=popuplar)
         -->
       <div class="catalog-right-container">
-
         <div class="sorting-container">
           <h3 class="filter-title">Сортировка:</h3>
           <form class="sorting">
@@ -124,7 +122,6 @@
             <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по убыванию</span></a>
           </span>
         </div>
-
         <!-- Карточки товаров -->
         <section class="goods-cards">
           <h3 class="filter-title visually-hidden" hidden>Карточки товаров:</h3>
@@ -169,12 +166,11 @@
             </ul>
             <a class="link-style" href="#">Вперёд</a>
           </div>
+        </section>
       </div>
     </section>
-    </section>
-  </main>
 
-  <!-- Подвал -->
+  </main>
 
   <!-- Подвал -->
 
