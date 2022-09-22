@@ -232,9 +232,16 @@
 }
 
 .category-goods-link {
+  text-decoration: none;
+  color: var(--basic-black);
+}
+
+.category-goods-text {
+  display: inline-block;
+  font-family: var(--titles-font);
+  font-weight: 800;
   line-height: 24px;
   letter-spacing: -0.02em;
-  text-transform: none;
 }
 
 .category-goods-logo {
