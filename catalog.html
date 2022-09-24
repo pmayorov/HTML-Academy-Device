@@ -105,6 +105,7 @@
           Оформил через form - select > options. Наставник рекомендовал иной вариант, но еще не разобрался как это будет работать.
           * Тут лучше разметить как summary/details со списком ссылок внутри и двумя ссылками соотвественно. Эти элементы находятся вне формы и при использовании ссылок сортировку можно будет реализовать с помощью GET-параметров (пример device.com/catalog/monopods/?sort=popuplar)
         -->
+
       <div class="catalog-right-container">
         <div class="sorting-container">
           <h3 class="filter-title">Сортировка:</h3>
@@ -172,38 +173,43 @@
 
   </main>
 
-  <!-- Подвал -->
+  <!--* FOOTER *-->
 
   <footer class="page-footer">
+
     <div class="page-container">
-      <!-- :first-child / Логотип - на всю ширину футера -->
+
       <div class="footer-container">
         <a class="footer-logo" href="#"><img class="device-logo" src="images/device-logo-footer.svg" width="145" height="36" alt="Логотип DEVICE"></a>
       </div>
-      <!-- :nth-child(2) Левая колонка. Адрес -->
+
       <div class="footer-container">
-        <address class="text-small address">Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
-        <span class="divider"></span>
-      </div>
-      <!-- :nth-child(3) Центр. Навигация, ссылки на соцсети -->
-      <div class="footer-container">
-        <ul class="footer-navigation">
+        <!-- Добавил оболочки <footer-address-box> <footer-phone-box> чтобы была возможность добавлять еще информацию при необходимости -->
+        <div class="footer-address-box">
+          <address class="text-small address">Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
+        </div>
+        <ul class="footer-navigation-list">
           <li class="footer-navigation-item"><a class="link-style" href="#">Доставка</a></li>
           <li class="footer-navigation-item"><a class="link-style" href="#">Гарантия</a></li>
           <li class="footer-navigation-item"><a class="link-style" href="#">Контакты</a></li>
         </ul>
-        <ul class="footer-social">
-          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden" hidden>Facebook</span></a></li>
-          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden" hidden>Instagram</span></a></li>
-          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden" hidden>Twitter</span></a></li>
-        </ul>
+        <div class="footer-phone-box">
+          <a class="text-small phone" href="tel:+78128121212">+7 (812) 812-12-12</a>
+        </div>
       </div>
-      <!-- :nth-child(4) Правая колонка. Телефон и ссылка на академию -->
+
       <div class="footer-container">
-        <a class="text-small" href="tel:+78128121212">+7 (812) 812-12-12</a>
+        <span class="divider"></span>
+        <ul class="footer-social-list">
+          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden">Facebook</span></a></li>
+          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden">Instagram</span></a></li>
+          <li class="footer-social-item"><a class="footer-social-link" href="#"><span class="visually-hidden">Twitter</span></a></li>
+        </ul>
         <a class="htmlacademy-link" href="https://htmlacademy.org"><img class="htmlacademy-logo" src="images/logo-htmlacademy-footer.svg" alt="Разработано HTML Academy"></a>
       </div>
+
     </div>
+
   </footer>
 
 </body>
