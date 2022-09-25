@@ -99,6 +99,7 @@
 }
 
 .page-header .device-logo {
+  display: block;
   margin-bottom: 30px;
 }
 
