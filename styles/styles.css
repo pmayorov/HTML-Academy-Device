@@ -93,6 +93,7 @@
 /** HEADER **/
 
 /* Поиск и меню аккаунта покупателя*/
+
 .page-header {
   outline: 1px solid #fa8072;
 }
@@ -101,11 +102,36 @@
   margin-bottom: 30px;
 }
 
+.search-input {
+  margin: 0;
+  padding: 10px;
+  padding-left: 48px;
+  width: 360px;
+  color: var(--basic-black);
+  border: none;
+  background-color: transparent;
+  outline: 2px solid var(--basic-black);
+}
+
+.search-button {
+  position: relative;
+  right: 2px;
+  margin: 0;
+  padding: 10px 56px;
+  width: 160px;
+  border: none;
+  outline: 2px solid var(--basic-black);
+  font-family: var(--text-font);
+  background-color: transparent;
+}
+
 .search-input::placeholder {
   opacity: 0.3;
 }
 
 .account-navigation-link {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   color: var(--basic-black);
 }
@@ -132,24 +158,8 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
-}
-
-.search-input {
-  margin: 0;
-  padding: 0;
-  width: 360px;
-}
-
-.search-button {
-  margin: 0;
-  padding: 0;
-  width: 160px;
-}
-
-.account-navigation {
-  width: 472px;
-  justify-content: space-between;
 }
 
 .account-navigation,
@@ -160,9 +170,52 @@
   list-style-type: none;
 }
 
+.account-navigation {
+  width: 472px;
+  justify-content: space-between;
+}
+
 .main-navigation-item {
   display: flex;
   align-items: center;
+}
+
+.icon-box {
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon-entry {
+  width: 13px;
+  height: 12px;
+  margin-right: 12px;
+  outline: 1px solid #fa8072;
+}
+
+.icon-compare {
+  width: 10px;
+  height: 12px;
+  margin-right: 12px;
+  outline: 1px solid #fa8072;
+}
+
+.icon-basket {
+  width: 16px;
+  height: 14px;
+  margin-right: 12px;
+  outline: 1px solid #fa8072;
+}
+
+.icon-counter {
+  display: flex;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  line-height: 17px;
+  background-color: var(--basic-white);
 }
 
 .main-navigation-item:not(:last-of-type) {
@@ -732,7 +785,11 @@
 
 .catalog-header > .page-container {
   box-sizing: border-box;
-  padding-left: 60px;
+  padding: 35px 0 35px 60px;
+}
+
+.catalog-title {
+  margin-bottom: 16px;
 }
 
 .catalog-breadcrumbs {
@@ -752,7 +809,26 @@
 
 /** Фильтры. Сортировка. Карточки товаров **/
 
-.filter-title {
+.catalog-goods {
+  width: var(--content-width);
+  margin: 0 auto;
+  display: flex;
+}
+
+.catalog-left-container {
+  box-sizing: border-box;
+  width: 320px;
+  padding: 25px 0 60px 60px;
+  outline: 1px solid #fa8072;
+}
+
+.catalog-right-container {
+  background-color: var(--basic-white);
+  width: 840px;
+  outline: 1px solid #fa8072;
+}
+
+.catalog-goods-title {
   margin: 0;
   font-family: var(--titles-font);
   font-size: 16px;
@@ -763,48 +839,51 @@
   text-transform: uppercase;
 }
 
-.filter-subtitle {
+.catalog-goods-subtitle {
+  padding: 0;
   margin: 0;
+  padding-right: 10px;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--basic-black);
 }
 
-.catalog-goods {
-  width: var(--content-width);
-  margin: 0 auto;
-  display: flex;
-}
+/* Фильтры */
 
-.catalog-left-container {
-  box-sizing: border-box;
-  width: 320px;
-  padding-left: 60px;
-}
-
-.catalog-right-container {
-  background-color: var(--basic-white);
-  width: 840px;
-}
-
-.sorting-container {
-  display: flex;
-  background-color: var(--basic-light);
-}
-
-.form-filter {
+.catalog-filter {
   width: 200px;
+  /* outline: 1px solid #fa8072; */
 }
 
-.form-filter .filter-fieldset,
-.form-filter .filter-subtitle {
+.filter-title {
+  padding-bottom: 60px;
+}
+
+.filter-subtitle {
+  margin-bottom: 20px;
+}
+
+.filter-subtitle::before {
+  display: block;
+  position: relative;
+  width: 200px;
+  height: 2px;
+  content: "";
+  bottom: 12px;
+  background-color: var(--basic-black);
+}
+
+.catalog-filter .filter-fieldset {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
-.form-filter .filter-fieldset {
-  border: 0;
+/* Отступы между блоками fieldset-ов фильтров 35px, но поскольку нельзя задать расстояние до псевдоэлемента (:before - разделительная линия сверху поля), то устанавливаю нижний margin в 47px до подзаголовка нижнего fieldset-а */
+
+.catalog-filter .filter-fieldset:not(:last-of-type) {
+  margin-bottom: 47px;
 }
 
 .filter-list {
@@ -813,29 +892,65 @@
   list-style-type: none;
 }
 
-.label-item {
+.filter-list-item {
   font-size: 16px;
   line-height: 19px;
-  color: inherit;
-}
-
-.sorting-list {
   color: var(--basic-black);
 }
 
-.sorting-link {
-  color: inherit;
-  text-decoration: none;
+.filter-list-item:not(:last-of-type) {
+  margin-bottom: 17px;
 }
 
 .filter-button {
+  margin-top: 35px;
   width: 220px;
+}
+
+/* Сортировка */
+
+.sorting-container {
+  height: 70px;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--basic-light);
+  outline: 1px solid #fa8072;
+}
+
+.sorting-order {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.sorting-order-item {
+  width: 30px;
+  height: 30px;
+  outline: 1px solid #fa8072;
+}
+
+/*  Карточки товаров */
+.goods-cards {
+  padding: 70px 40px 78px 40px;
+}
+
+.good-cards-desc-box {
+  display: flex;
+  justify-content: space-between;
 }
 
 .goods-cards-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  padding-bottom: 44px;
+}
+
+.goods-cards-item {
+  width: 360px;
 }
 
 .goods-cards-link {
@@ -844,6 +959,7 @@
 
 .goods-image {
   display: block;
+  margin-bottom: 32px;
 }
 
 .price-label {
@@ -855,15 +971,23 @@
 
 .item-price {
   line-height: 21px;
+  text-decoration: none;
+  color: var(--basic-dark);
 }
 
 .show-more-button {
-  width: 760px;
+  width: 100%;
+  padding: 18px 40px;
+  margin-bottom: 44px;
+  border: 3px solid #e5e5e5;
+  background-color: transparent;
 }
 
 .box-pagination {
-  width: 760px;
+  width: 100%;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: var(--basic-lightgray);
 }
 
@@ -875,11 +999,21 @@
 }
 
 .pagination-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   font-size: 16px;
   line-height: 20px;
   color: var(--basic-dark);
   opacity: 0.3;
   text-decoration: none;
+}
+
+.pagination-link-back,
+.pagination-link-forward {
+  padding: 25px;
 }
 
 .visually-hidden:not(:focus):not(:active) {

@@ -25,7 +25,7 @@
           <li class="account-navigation-item"><a class="account-navigation-link hidden" href="#">Выйти</a></li>
           <!-- todo end-->
           <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-counter"> 2</span><span class="icon-purchases"></span>Корзина</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-counter">2</span><span class="icon-basket"></span>Корзина</a></li>
         </ul>
       </div>
       <ul class="main-navigation">
@@ -53,7 +53,7 @@
     <!-- * Заголовок каталога * -->
     <header class="catalog-header">
       <div class="page-container">
-        <h1 class="section-title">Моноподы под селфи</h1>
+        <h1 class="section-title catalog-title">Моноподы под селфи</h1>
         <ol class="catalog-breadcrumbs">
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="#">Главная</a></li>
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="#">Каталог товаров</a></li>
@@ -67,11 +67,11 @@
       <h2 class="section-title visually-hidden" hidden>Карточки товаров с фильтрами и сортировкой</h2>
       <!-- Левая колонка с фильтрами -->
       <div class="catalog-left-container">
-        <h3 class="filter-title">Фильтр:</h3>
-        <form class="form-filter" name="form-filter" id="form-filter" action="https://echo.htmlacademy.ru/courses" method="get">
+        <h3 class="catalog-goods-title filter-title">Фильтр:</h3>
+        <form class="catalog-filter" name="form-filter" id="form-filter" action="https://echo.htmlacademy.ru/courses" method="get">
           <!-- Фильтр / СТОИМОСТЬ -->
           <fieldset class="filter-fieldset">
-            <legend class="filter-subtitle">Стоимость</legend>
+            <legend class="catalog-goods-subtitle filter-subtitle">Стоимость</legend>
             <label class="price-label">от <input class="price-input" type="number"></label>
             <label class="price-label">до <input class="price-input" type="number"></label>
             <button class="price-button" type="button"><span class="visually-hidden">Минимальная цена</span></button>
@@ -79,7 +79,7 @@
           </fieldset>
           <!-- Фильтр / ЦВЕТ -->
           <fieldset class="filter-fieldset">
-            <legend class="filter-subtitle">Цвет</legend>
+            <legend class="catalog-goods-subtitle filter-subtitle">Цвет</legend>
             <ul class="filter-list">
               <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="black" checked><span class="label-item">Черный</span></label></li>
               <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="white" checked><span class="label-item">Белый</span></label></li>
@@ -90,7 +90,7 @@
           </fieldset>
           <!-- Фильтр / BLUETOOTH -->
           <fieldset class="filter-fieldset">
-            <legend class="filter-subtitle">Bluetooth</legend>
+            <legend class="catalog-goods-subtitle filter-subtitle">Bluetooth</legend>
             <ul class="filter-list">
               <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked><span class="label-item">Есть</span></label></li>
               <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden"><span class="label-item">Нет</span></label></li>
@@ -107,57 +107,70 @@
         -->
 
       <div class="catalog-right-container">
+
         <div class="sorting-container">
-          <h3 class="filter-title">Сортировка:</h3>
-          <form class="sorting">
-            <label class="visually-hidden" for="sorting">Сортировка:</label>
-            <select class="sorting-list" id="sorting" name="sorting">
-              <option class="sorting-list-item" value="popular">Популярные</option>
-              <option class="sorting-list-item" value="cheap">Новинки</option>
-              <option class="sorting-list-item" value="expensive">Стоимость</option>
-            </select>
-            <button class="visually-hidden" type="submit">Выбрать</button>
-          </form>
-          <span class="sorting-link-box">
-            <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по возрастанию</span></a>
-            <a class="sorting-link" href="#"><span class="visually-hidden">Сортировать по убыванию</span></a>
-          </span>
+          <h3 class="catalog-goods-title">Сортировка:</h3>
+          <details class="sorting-summary">
+            <summary class="sorting-button">Популярные</summary>
+            <ul class="sorting-list">
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Популярные</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Новинки</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Стоимость</a></li>
+            </ul>
+          </details>
+          <ul class="sorting-order">
+            <li class="sorting-order-item"><a class="sorting-order-link" href="#"><span class="sorting-order-ico visually-hidden">По возрастанию</span></a></li>
+            <li class="sorting-order-item"><a class="sorting-order-link" href="#"><span class="sorting-order-ico visually-hidden">По убыванию</span></a></li>
+          </ul>
         </div>
+
         <!-- Карточки товаров -->
         <section class="goods-cards">
-          <h3 class="filter-title visually-hidden" hidden>Карточки товаров:</h3>
+          <h3 class="catalog-goods-title visually-hidden" hidden>Карточки товаров:</h3>
           <ul class="goods-cards-list">
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
-                <h4 class="filter-subtitle">Любительская селфи-палка</h4>
+              <!-- Совет: ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие -->
+              <a class="goods-cards-link" href="#">
+                <img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
+                <div class="good-cards-desc-box">
+                  <h4 class="catalog-goods-subtitle">Любительская селфи-палка</h4>
+                  <span class="item-price">500&nbsp;&#8381;</span>
+                </div>
               </a>
-              <!-- Ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие. -->
-              <span class="item-price">500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
-                <h4 class="filter-subtitle">Профессиональная селфи-палка</h4>
+              <a class="goods-cards-link" href="#">
+                <img class="goods-image" src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
+                <div class="good-cards-desc-box">
+                  <h4 class="catalog-goods-subtitle">Профессиональная селфи-палка</h4>
+                  <span class="item-price">1500&nbsp;&#8381;</span>
+                </div>
               </a>
-              <span class="item-price">1500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
-                <h4 class="filter-subtitle">Непотопляемая селфи-палка</h4>
+              <a class="goods-cards-link" href="#">
+                <img class="goods-image" src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
+                <div class="good-cards-desc-box">
+                  <h4 class="catalog-goods-subtitle">Непотопляемая селфи-палка</h4>
+                  <span class="item-price">1500&nbsp;&#8381;</span>
+                </div>
               </a>
-              <span class="item-price">1500&nbsp;&#8381;</span>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
-                <h4 class="filter-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
+              <a class="goods-cards-link" href="#"
+              ><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+                <div class="good-cards-desc-box">
+                  <h4 class="catalog-goods-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
+                  <span class="item-price">1500&nbsp;&#8381;</span>
+                </div>
               </a>
-              <span class="item-price">1500&nbsp;&#8381;</span>
             </li>
           </ul>
           <!-- Кнопка "Загрузить ещё" -->
-          <button class="filter-title show-more-button" type="button">Загрузить ещё</button>
+          <button class="catalog-goods-title show-more-button" type="button">Загрузить ещё</button>
           <!-- Пагинация карточек -->
           <div class="box-pagination">
-            <a class="link-style" href="#">Назад</a>
+            <a class="link-style pagination-link-back" href="#">Назад</a>
             <ul class="pagination-list">
               <li class="pagination-item"><a class="pagination-link" href="#">1</a></li>
               <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
@@ -165,7 +178,7 @@
               <li class="pagination-item"><a class="pagination-link" href="#">…</a></li>
               <li class="pagination-item"><a class="pagination-link" href="#">15</a></li>
             </ul>
-            <a class="link-style" href="#">Вперёд</a>
+            <a class="link-style pagination-link-forward" href="#">Вперёд</a>
           </div>
         </section>
       </div>
@@ -184,7 +197,7 @@
       </div>
 
       <div class="footer-container">
-        <!-- Добавил оболочки <footer-address-box> <footer-phone-box> чтобы была возможность добавлять еще информацию при необходимости -->
+        <!-- Добавил оболочки <footer-address-box> и <footer-phone-box> чтобы была возможность добавлять, при необходимости, информацию: адреса и телефоны. -->
         <div class="footer-address-box">
           <address class="text-small address">Санкт-Петербург, набережная реки Карповки, 5, литера П.</address>
         </div>
