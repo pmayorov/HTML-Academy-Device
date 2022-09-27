@@ -14,31 +14,43 @@
   <header class="page-header">
     <nav class="navigation">
       <img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE">
+
       <div class="account-navigation-container">
+
         <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
           <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
+
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-entry"></span>Войти</a></li>
-          <!-- todo: При скрытии пункта меню сдвигаются остальные пункты -->
+          <li class="account-navigation-item"><a class="account-navigation-link" href="catalog.html"><span class="icon-entry"></span>Войти</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link hidden" href="#">Выйти</a></li>
-          <!-- todo end-->
           <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link" href="#">
-            <div class="icon-box"><span class="icon-counter">2</span><span class="icon-basket"></span></div>Корзина</a></li>
+              <div class="icon-box"><span class="icon-basket"></span></div>Корзина
+            </a></li>
         </ul>
+
       </div>
+
       <ul class="main-navigation">
-        <li class="main-navigation-item"><a class="link-style main-navigation-link submenu-open-ico" href="catalog.html">Каталог товаров</a>
-          <ul class="catalog-navigation hidden">
+
+        <!-- todo Кнопка активации dropdown-меню. Идет поверх слайдера! -->
+
+        <li class="main-navigation-item"><a class="link-style main-navigation-link catalog-link">Каталог товаров<span class="submenu-button"></span></a>
+
+          <!-- todo Наполнение dropdown-меню. Грид-области! Чтобы можно было добавлять информацию в ту колонку в какую пожелаю.
+          * Возможно: Ширину колонок сделать изменяемой, в зависимости от ширины контента + margin-right: const; -->
+
+          <ul class="catalog-navigation">
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="catalog.html">Моноподы для селфи</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Экшн-камеры</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Фитнес-браслеты</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Умные часы</a></li>
-            <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
+            <li class="catalog-navigation-item catalog-areas-column-3"><a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
           </ul>
+
         </li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Доставка</a></li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Гарантия</a></li>
@@ -165,7 +177,7 @@
       <section class="category-goods">
         <h2 class="section-title visually-hidden">Список категорий товаров</h2>
         <ul class="category-goods-list">
-          <li class="category-goods-item"><a class="category-goods-link" href="#"><span class="category-goods-logo"></span><span class="category-goods-text">Моноподы для селфи</span></a></li>
+          <li class="category-goods-item"><a class="category-goods-link" href="catalog.html"><span class="category-goods-logo"></span><span class="category-goods-text">Моноподы для селфи</span></a></li>
           <li class="category-goods-item"><a class="category-goods-link" href="#"><span class="category-goods-logo"></span><span class="category-goods-text">Виртуальная реальность</span></a></li>
           <li class="category-goods-item"><a class="category-goods-link" href="#"><span class="category-goods-logo"></span><span class="category-goods-text">Экшн-камеры</span></a></li>
           <li class="category-goods-item"><a class="category-goods-link" href="#"><span class="category-goods-logo"></span><span class="category-goods-text">Фитнес-браслеты</span></a></li>

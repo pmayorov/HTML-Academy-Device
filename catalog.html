@@ -14,34 +14,37 @@
   <header class="page-header">
     <nav class="navigation">
       <a class="device-logo-link" href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
+
       <div class="account-navigation-container">
+
         <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
           <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
+
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-entry"></span>Войти</a></li>
-          <!-- todo: При скрытии пункта меню сдвигаются остальные пункты -->
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-entry"></span>Коля Петухов</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link" href="#">Выйти</a></li>
-          <!-- todo end-->
           <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-counter">2</span><span class="icon-basket"></span>Корзина</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
         </ul>
+
       </div>
+
       <ul class="main-navigation">
-        <li class="main-navigation-item"><a class="link-style" href="catalog.html">Каталог товаров <span class="submenu-button"></span></a>
-          <ul class="catalog-navigation" hidden>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link catalog-link">Каталог товаров <span class="submenu-button"></span></a>
+          <ul class="catalog-navigation">
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="catalog.html">Моноподы для селфи</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Экшн-камеры</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Фитнес-браслеты</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Умные часы</a></li>
-            <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
+            <li class="catalog-navigation-item catalog-areas-column-3"><a class="catalog-navigation-link" href="#">Квадрокоптеры</a></li>
           </ul>
         </li>
-        <li class="main-navigation-item"><a class="link-style" href="#">Доставка</a></li>
-        <li class="main-navigation-item"><a class="link-style" href="#">Гарантия</a></li>
-        <li class="main-navigation-item"><a class="link-style" href="#">Контакты</a></li>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link " href="#">Доставка</a></li>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Гарантия</a></li>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Контакты</a></li>
       </ul>
     </nav>
   </header>
@@ -55,7 +58,7 @@
       <div class="page-container">
         <h1 class="section-title catalog-title">Моноподы под селфи</h1>
         <ol class="catalog-breadcrumbs">
-          <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="#">Главная</a></li>
+          <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="index.html">Главная</a></li>
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="#">Каталог товаров</a></li>
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" title="Текущая страница">Моноподы для селфи</a></li>
         </ol>
@@ -157,8 +160,7 @@
               </a>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"
-              ><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
                 <div class="good-cards-desc-box">
                   <h4 class="catalog-goods-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
                   <span class="item-price">1500&nbsp;&#8381;</span>
