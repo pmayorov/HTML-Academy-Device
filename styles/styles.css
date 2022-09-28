@@ -39,7 +39,7 @@
   --special-brown: #64534a;
   /* Project fonts */
   --titles-font: "Raleway", sans-serif;
-  --text-font: "Rubik", "Roboto", sans-serif;
+  --text-font: "Rubik", sans-serif;
   /* Widht's: full and content */
   --content-width: 1160px;
   --full-width: 1440px;
@@ -49,7 +49,6 @@
 
 .body {
   margin: 0;
-  padding-top: 17px;
   font-family: var(--text-font);
   font-style: normal;
   font-weight: 400;
@@ -112,8 +111,8 @@
   box-sizing: border-box;
   width: var(--content-width);
   margin: 0 auto;
-  padding: 0 60px;
-  background-color: var(--special-yellow-light);
+  padding: 17px 60px 0 60px;
+  background: linear-gradient(var(--basic-white) 40px, var(--special-yellow-light) 40px);
   outline: 1px solid #fa8072;
 }
 
@@ -126,7 +125,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 45px;
 }
 
 .account-navigation,
@@ -143,14 +142,14 @@
 }
 
 .search-input {
-  margin: 0;
   width: 360px;
-  padding: 10px;
+  height: 40px;
+  outline: 0;
   padding-left: 48px;
   color: var(--basic-black);
-  border-radius: 50px 0 0 50px;
   background-color: transparent;
   border: 2px solid var(--basic-black);
+  border-radius: 50px 0 0 50px;
 }
 
 .search-input::placeholder {
@@ -159,11 +158,13 @@
 
 .search-button {
   margin: 0;
-  padding: 10px 55px;
+  width: 158px;
+  height: 40px;
   border: 2px solid var(--basic-black);
   border-radius: 0 50px 50px 0;
   border-left: 0;
   font-family: var(--text-font);
+  text-align: center;
   background-color: transparent;
 }
 
@@ -185,7 +186,7 @@
 }
 
 .account-navigation-item:nth-child(4) {
-  width: 100px;
+  width: 97px;
 }
 
 .account-navigation-link {
@@ -468,6 +469,7 @@
   font-family: var(--titles-font);
   font-weight: 800;
   line-height: 24px;
+  min-height: 60px;
   letter-spacing: -0.02em;
 }
 
@@ -482,17 +484,26 @@
 /** Услуги: доставка, гарантия, кредит **/
 
 .services {
-  display: flex;
   margin-bottom: var(--section-bottom-margin);
+  padding-bottom: 72px;
+  outline: 1px solid #fa8072;
+  background: linear-gradient(var(--basic-white) 102px, var(--basic-light) 102px);
+}
+
+.services .page-container {
+  display: flex;
   outline: 1px solid #fa8072;
 }
 
 .services-link {
   width: 150px;
+  /* Уменьшил межстрочное на 1px, чтобы выйти на высоту ссылки 40px. Потому, что никак нельзя выйти на 40px макетной высоты при макетных line-height: 21px + маргины 10px + 10px, что в сумме дает 41px */
+  line-height: 20px;
 }
 
 .services-nav-container {
-  padding: 65px 0;
+  padding-top: 64px;
+  padding-bottom: 65px;
   margin-right: 116px;
   border-right: 7px solid var(--basic-black);
 }
@@ -505,12 +516,18 @@
   list-style-type: none;
 }
 
+.services-nav-item {
+  line-height: 0;
+}
+
 .services-nav-list {
   width: 280px;
 }
 
 .services-desc-list {
-  padding-top: 65px;
+  padding-top: 73px;
+  flex-grow: 1;
+  padding-right: 63px;
 }
 
 .services-nav-item:not(:last-of-type) {
@@ -519,7 +536,6 @@
 
 .services-desc-item {
   display: flex;
-  width: 729px;
 }
 
 .services-desc-inner-box {
@@ -535,7 +551,6 @@
 }
 
 .services-logo {
-  display: block;
   max-width: 180px;
   height: auto;
   margin-left: auto;
@@ -558,7 +573,7 @@
 .order {
   background-color: var(--basic-light);
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .order-link {
@@ -577,7 +592,7 @@
 
 .order-title {
   margin: auto 0;
-  padding: 12px 0;
+  padding: 24px 0;
   width: 910px;
   font-size: 20px;
   line-height: 23px;
@@ -661,11 +676,6 @@
 
 .about-item:not(:last-of-type) {
   margin-bottom: 19px;
-  font-family: var(--titles-font);
-  font-weight: 700;
-  line-height: 20px;
-  letter-spacing: -0.02em;
-  color: initial;
 }
 
 .about-link {
@@ -701,6 +711,7 @@
 
 .subscribe-title {
   width: 500px;
+  padding-left: 7px; 
 }
 
 .subscribe-text {
@@ -778,15 +789,12 @@
   margin-bottom: 35px;
 }
 
-
 .footer-container:nth-of-type(2) {
-  display: flex;
   justify-content: space-between;
   margin-bottom: 47px;
 }
 
 .footer-container:nth-of-type(3) {
-  display: flex;
   justify-content: space-between;
 }
 
@@ -834,7 +842,8 @@
   align-self: center;
   background-color: var(--special-yellow-dark);
   margin-right: 35px;
-  /* ! Костылище!
+
+  /* ! Костыль
   Установил правый паддинг, что бы выровнять кнопки соцсетей по центру страницы. Расчитывал: правый логотип width: 115px – левый divider width: 80px = 35px. В футере .divider уже по макету */
 }
 
@@ -951,7 +960,7 @@
 
 .catalog-filter {
   width: 200px;
-  /* outline: 1px solid #fa8072; */
+  /* outline: 1px solid #fa8072;  */
 }
 
 .filter-title {
@@ -1038,9 +1047,13 @@
 .good-cards-desc-box {
   display: flex;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .goods-cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 44px 40px;
   margin: 0;
   padding: 0;
   list-style-type: none;
