@@ -48,6 +48,9 @@
 }
 
 .body {
+  /* Это правило min-width: не дает сужаться контейнерам контентной части на малых экранах (смартфоны, планшеты). Это заметно если фон на всю ширину экрана */
+  
+  min-width: var(--content-width);
   margin: 0;
   font-family: var(--text-font);
   font-style: normal;
@@ -101,7 +104,7 @@
 /** HEADER **/
 
 .page-header {
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .navigation {
@@ -113,7 +116,11 @@
   margin: 0 auto;
   padding: 17px 60px 0 60px;
   background: linear-gradient(var(--basic-white) 40px, var(--special-yellow-light) 40px);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
+}
+
+.navigation-catalog-page {
+  padding-bottom: 23px;
 }
 
 .page-header .device-logo {
@@ -125,7 +132,7 @@
   display: flex;
   width: 100%;
   align-items: center;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
 }
 
 .account-navigation,
@@ -205,21 +212,21 @@
   width: 13px;
   height: 12px;
   margin-right: 12px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .icon-compare {
   width: 10px;
   height: 12px;
   margin-right: 12px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .icon-basket {
   width: 16px;
   height: 14px;
   margin-right: 12px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .icon-basket[data-amount]::before {
@@ -252,16 +259,20 @@
   margin-left: auto;
 }
 
-/* .submenu-open-ico::after {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
+.catalog-link {
+  display: flex;
+  align-items: center;
+}
+
+.catalog-link-button {
+  box-sizing: border-box;
+   margin-left: 18px;
   width: 50px;
   height: 50px;
   border: 2px solid var(--basic-black);
   border-radius: 50%;
   opacity: 0.3;
-} */
+}
 
 /* Ссылки в подменю главного меню */
 
@@ -315,6 +326,11 @@
   color: var(--basic-black);
 }
 
+.catalog-link {
+  /* display: flex;
+  align-items: center; */
+}
+
 .catalog-link:hover {
   cursor: pointer;
 }
@@ -337,7 +353,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  background: linear-gradient(var(--special-yellow-light) 137px, var(--basic-white) 137px);
 }
 
 .promo-title {
@@ -346,11 +362,22 @@
 }
 
 .promo-text {
+  margin-bottom: 20px;
+}
+
+.promo-text:last-of-type {
   margin-bottom: 50px;
 }
 
+/* .promo-images-item {
+} */
+
 .promo-image {
   display: block;
+  width: 560px;
+  height: 547px;
+  object-fit: cover;
+  object-position: bottom;
 }
 
 .promo-link {
@@ -402,7 +429,7 @@
 }
 
 .promo-desc-item {
-  padding-top: 121px;
+  padding-top: 108px;
 }
 
 .features-list {
@@ -433,52 +460,43 @@
 }
 
 /** Горизонтальный блок с категориями товаров **/
+/* GRID Layot */
+
 .category-goods {
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .category-goods-list {
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(6, 160px);
+  column-gap: 40px;
+  row-gap: 20px;
   list-style-type: none;
 }
 
-.category-goods-item {
-  width: 160px;
-}
-
-.category-goods-item:not(:nth-of-type(6n)) {
-  margin-right: 40px;
-}
-
-.category-goods-item:nth-of-type(n+7) {
-  margin-top: 20px;
-}
-
 .category-goods-link {
+  display: grid;
+  grid-template-rows: 160px 33px auto;
   text-decoration: none;
   color: var(--basic-black);
 }
 
+.category-goods-logo {
+  grid-row: 1 / 2;
+  background-color: var(--special-yellow-light);
+}
+
 .category-goods-text {
-  display: inline-block;
+  grid-row: 3 / 4;
   font-family: var(--titles-font);
   font-weight: 800;
   line-height: 24px;
   min-height: 60px;
   letter-spacing: -0.02em;
-}
-
-.category-goods-logo {
-  display: block;
-  width: 160px;
-  height: 160px;
-  margin-bottom: 33px;
-  background-color: var(--special-yellow-light);
+  overflow-wrap: anywhere;
 }
 
 /** Услуги: доставка, гарантия, кредит **/
@@ -486,17 +504,18 @@
 .services {
   margin-bottom: var(--section-bottom-margin);
   padding-bottom: 72px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
   background: linear-gradient(var(--basic-white) 102px, var(--basic-light) 102px);
 }
 
 .services .page-container {
   display: flex;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .services-link {
   width: 150px;
+  /*!
   /* Уменьшил межстрочное на 1px, чтобы выйти на высоту ссылки 40px. Потому, что никак нельзя выйти на 40px макетной высоты при макетных line-height: 21px + маргины 10px + 10px, что в сумме дает 41px */
   line-height: 20px;
 }
@@ -573,7 +592,6 @@
 .order {
   background-color: var(--basic-light);
   margin-bottom: var(--section-bottom-margin);
-  /* outline: 1px solid #fa8072; */
 }
 
 .order-link {
@@ -614,18 +632,18 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .about {
   width: 500px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .contacts {
   width: 510px;
   padding-right: 23px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .divider {
@@ -697,7 +715,7 @@
 .subscribe > .page-container {
   display: flex;
   flex-direction: column;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .subscribe-container {
@@ -711,7 +729,7 @@
 
 .subscribe-title {
   width: 500px;
-  padding-left: 7px; 
+  padding-left: 7px;
 }
 
 .subscribe-text {
@@ -743,7 +761,7 @@
 .subscribe-button {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 0 10px;
   width: 253px;
   height: 57px;
   border: 3px solid #cecece;
@@ -760,7 +778,7 @@
   margin-right: 16px;
   vertical-align: middle;
   content: "";
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 /** FOOTER **/
@@ -774,6 +792,7 @@
 .page-footer > .page-container {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .page-footer .device-logo,
@@ -803,6 +822,11 @@
   display: flex;
   flex-direction: column;
   width: 240px;
+}
+
+/* ! Костыль для ПП */
+.footer-phone-box {
+  margin-top: 7px;
 }
 
 .footer-container .phone {
@@ -903,7 +927,7 @@
   margin-right: 16px;
   content: "";
   vertical-align: middle;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
@@ -926,13 +950,13 @@
   box-sizing: border-box;
   width: 320px;
   padding: 25px 0 60px 60px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-right-container {
   background-color: var(--basic-white);
   width: 840px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-goods-title {
@@ -949,7 +973,8 @@
 .catalog-goods-subtitle {
   padding: 0;
   margin: 0;
-  padding-right: 10px;
+  width: 230px;
+  /* padding-right: 10px; */
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -960,11 +985,11 @@
 
 .catalog-filter {
   width: 200px;
-  /* outline: 1px solid #fa8072;  */
+  /* /* outline: 1px solid #fa8072; */  */
 }
 
 .filter-title {
-  padding-bottom: 60px;
+  padding-bottom: 72px;
 }
 
 .filter-subtitle {
@@ -1023,7 +1048,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--basic-light);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .sorting-order {
@@ -1036,7 +1061,7 @@
 .sorting-order-item {
   width: 30px;
   height: 30px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 /*  Карточки товаров */
@@ -1090,8 +1115,11 @@
   width: 100%;
   padding: 18px 40px;
   margin-bottom: 44px;
-  border: 3px solid #e5e5e5;
+  /* border: 3px solid #e5e5e5; */
+  border: 0;
   background-color: transparent;
+  outline: 3px solid #e5e5e5;
+  outline-offset: -3px;
 }
 
 .box-pagination {
