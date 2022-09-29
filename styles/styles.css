@@ -49,7 +49,7 @@
 
 .body {
   /* Это правило min-width: не дает сужаться контейнерам контентной части на малых экранах (смартфоны, планшеты). Это заметно если фон на всю ширину экрана */
-  
+
   min-width: var(--content-width);
   margin: 0;
   font-family: var(--text-font);
@@ -266,7 +266,7 @@
 
 .catalog-link-button {
   box-sizing: border-box;
-   margin-left: 18px;
+  margin-left: 18px;
   width: 50px;
   height: 50px;
   border: 2px solid var(--basic-black);
@@ -324,11 +324,6 @@
   line-height: 18px;
   text-decoration: inherit;
   color: var(--basic-black);
-}
-
-.catalog-link {
-  /* display: flex;
-  align-items: center; */
 }
 
 .catalog-link:hover {
@@ -985,7 +980,6 @@
 
 .catalog-filter {
   width: 200px;
-  /* /* outline: 1px solid #fa8072; */  */
 }
 
 .filter-title {
