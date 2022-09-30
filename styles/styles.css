@@ -47,11 +47,21 @@
   --section-bottom-margin: 70px;
 }
 
+html {
+  /* Sticky Footer -- start */
+  height: 100%;
+  /* Sticky Footer -- end */
+}
+
 .body {
   /* Это правило min-width: не дает сужаться контейнерам контентной части на малых экранах (смартфоны, планшеты). Это заметно если фон на всю ширину экрана */
-
   min-width: var(--content-width);
   margin: 0;
+  /* Sticky Footer -- start */
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  /* Sticky Footer -- end */
   font-family: var(--text-font);
   font-style: normal;
   font-weight: 400;
@@ -59,6 +69,12 @@
   line-height: 30px;
   color: var(--basic-dark);
   overflow-wrap: break-word;
+}
+
+.main-container {
+  /* Sticky Footer -- start */
+  flex-grow: 1;
+  /* Sticky Footer -- end */
 }
 
 .section-title {
@@ -109,6 +125,7 @@
 .navigation {
   /* display: flex;
   flex-direction: column; */
+  position: relative;
   box-sizing: border-box;
   width: var(--content-width);
   margin: 0 auto;
@@ -288,6 +305,8 @@
   padding: 33px 60px 27px 60px;
   margin: 0;
   position: absolute;
+  /* z-index: 1 – у заголовка промоблока */
+  z-index: 2;
   left: 0;
   top: 100%;
   list-style-type: none;
@@ -431,7 +450,7 @@
   position: absolute;
   top: 65px;
   right: 49px;
-  content: "01";
+  content: attr(data-promo-number);
   color: var(--basic-white);
   font-size: 180px;
   font-weight: 700;
@@ -582,15 +601,15 @@
 }
 
 .delivery-logo {
-  content: url("/images/services-delivery.svg");
+  content: url ("/images/services-delivery.svg");
 }
 
 .warranty-logo {
-  content: url("/images/services-warranty.svg");
+  content: url ("/images/services-warranty.svg");
 }
 
 .credit-logo {
-  content: url("/images/services-credit.svg");
+  content: url ("/images/services-credit.svg");
 }
 
 /** Доставим товар под заказ **/
