@@ -104,7 +104,7 @@
 /** HEADER **/
 
 .page-header {
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .navigation {
@@ -116,7 +116,7 @@
   margin: 0 auto;
   padding: 17px 60px 0 60px;
   background: linear-gradient(var(--basic-white) 40px, var(--special-yellow-light) 40px);
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .navigation-catalog-page {
@@ -153,10 +153,11 @@
   height: 40px;
   outline: 0;
   padding-left: 48px;
-  color: var(--basic-black);
-  background-color: transparent;
   border: 2px solid var(--basic-black);
   border-radius: 50px 0 0 50px;
+  font-family: var(--text-font);
+  color: var(--basic-black);
+  background-color: transparent;
 }
 
 .search-input::placeholder {
@@ -212,21 +213,21 @@
   width: 13px;
   height: 12px;
   margin-right: 12px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .icon-compare {
   width: 10px;
   height: 12px;
   margin-right: 12px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .icon-basket {
   width: 16px;
   height: 14px;
   margin-right: 12px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .icon-basket[data-amount]::before {
@@ -459,7 +460,7 @@
 
 .category-goods {
   margin-bottom: var(--section-bottom-margin);
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .category-goods-list {
@@ -499,13 +500,13 @@
 .services {
   margin-bottom: var(--section-bottom-margin);
   padding-bottom: 72px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
   background: linear-gradient(var(--basic-white) 102px, var(--basic-light) 102px);
 }
 
 .services .page-container {
   display: flex;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .services-link {
@@ -627,18 +628,18 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--section-bottom-margin);
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .about {
   width: 500px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .contacts {
   width: 510px;
   padding-right: 23px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .divider {
@@ -710,7 +711,7 @@
 .subscribe > .page-container {
   display: flex;
   flex-direction: column;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .subscribe-container {
@@ -773,7 +774,7 @@
   margin-right: 16px;
   vertical-align: middle;
   content: "";
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 /** FOOTER **/
@@ -922,7 +923,7 @@
   margin-right: 16px;
   content: "";
   vertical-align: middle;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
@@ -945,13 +946,13 @@
   box-sizing: border-box;
   width: 320px;
   padding: 25px 0 60px 60px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .catalog-right-container {
   background-color: var(--basic-white);
   width: 840px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
 
 .catalog-goods-title {
@@ -1038,11 +1039,45 @@
 .sorting-container {
   height: 70px;
   padding: 0 40px;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--basic-light);
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
+}
+
+.sorting-details {
+}
+
+.sorting-summary {
+  list-style-type: none;
+}
+
+.sorting-list {
+  margin: 0;
+  padding: 0 30px 15px 30px;
+  width: max-content;
+  position: absolute;
+  top: 100%;
+  list-style-type: none;
+  background-color: var(--basic-light);
+  outline: 1px solid #fa8072;
+}
+
+.sorting-list-option {
+  color: inherit;
+  text-decoration: none;
+}
+
+.sorting-summary-ico {
+  display: inline-block;
+  content: "";
+  margin-left: 30px;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  outline: 1px solid #fa8072;
 }
 
 .sorting-order {
@@ -1055,8 +1090,9 @@
 .sorting-order-item {
   width: 30px;
   height: 30px;
-  /* outline: 1px solid #fa8072; */
+  outline: 1px solid #fa8072;
 }
+
 
 /*  Карточки товаров */
 .goods-cards {
