@@ -123,7 +123,8 @@ html {
 }
 
 .navigation {
-  /* display: flex;
+  /* Не знаю зачем прописывал, но пока оставил.
+  display: flex;
   flex-direction: column; */
   position: relative;
   box-sizing: border-box;
@@ -132,10 +133,6 @@ html {
   padding: 17px 60px 0 60px;
   background: linear-gradient(var(--basic-white) 40px, var(--special-yellow-light) 40px);
   outline: 1px solid #fa8072;
-}
-
-.navigation-catalog-page {
-  padding-bottom: 23px;
 }
 
 .page-header .device-logo {
@@ -155,6 +152,10 @@ html {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+.header-menu-padding {
+  padding-bottom: 23px;
 }
 
 .form-search {
@@ -288,9 +289,12 @@ html {
   opacity: 0.3;
 }
 
-/* Ссылки в подменю главного меню */
+/*  Подменю главного меню с категориями товаров */
+/* .index-catalog-navigation - читай ниже */
 
+.index-catalog-navigation,
 .catalog-navigation {
+  /* display: grid; */
   display: none;
   grid-auto-flow: column;
   grid-template-columns: repeat(4, 1fr);
@@ -302,7 +306,7 @@ html {
   box-sizing: border-box;
   width: 100%;
   height: 180px;
-  padding: 33px 60px 27px 60px;
+  padding: 14px 60px 27px 60px;
   margin: 0;
   position: absolute;
   /* z-index: 1 – у заголовка промоблока */
@@ -313,6 +317,7 @@ html {
   line-height: 0;
   background: var(--special-yellow-light);
   opacity: 0.95;
+  outline: 1px solid #fa8072;
 }
 
 .catalog-areas-column-1 {
@@ -331,10 +336,6 @@ html {
   grid-area: column-4;
 }
 
-.catalog-navigation-item {
-  /* margin-bottom: 20px; */
-}
-
 .catalog-navigation-link {
   font-size: 16px;
   line-height: 18px;
@@ -346,10 +347,21 @@ html {
   cursor: pointer;
 }
 
+/* !Костыль */
+/* -- start --*/
+/* Оформил два правила. На главной странице dropdown-меню появляется сразу под навигацией. На странице каталога, под этой же навигацией есть нижний паддинг в 23px. А поскольку dropdown-меню абсолютно позиционировано к верхней секции навигации, этот паддинг над ней и висит. Чтобы его компенсировать на этих страницах оформил доп. правило со сдвигом dropdown-menu вверх */
+
+.catalog-link:hover + .index-catalog-navigation,
+.index-catalog-navigation:hover {
+  display: grid;
+}
+
 .catalog-link:hover + .catalog-navigation,
 .catalog-navigation:hover {
   display: grid;
+  top: calc(100% - 23px);
 }
+/* -- end -- */
 
 /** Главная **/
 
@@ -381,9 +393,6 @@ html {
 .promo-text:last-of-type {
   margin-bottom: 50px;
 }
-
-/* .promo-images-item {
-} */
 
 .promo-image {
   display: block;
@@ -484,7 +493,6 @@ html {
 }
 
 /** Горизонтальный блок с категориями товаров **/
-/* GRID Layot */
 
 .category-goods {
   margin-bottom: var(--section-bottom-margin);
@@ -540,7 +548,7 @@ html {
 .services-link {
   width: 150px;
   /*!
-  /* Уменьшил межстрочное на 1px, чтобы выйти на высоту ссылки 40px. Потому, что никак нельзя выйти на 40px макетной высоты при макетных line-height: 21px + маргины 10px + 10px, что в сумме дает 41px */
+  /* Уменьшил межстрочное на 1px, чтобы выйти на высоту ссылки 40px. Потому, что никак не получается выйти на 40px макетной высоты при макетных же line-height: 21px + маргины 10px + 10px, что в сумме дает 41px */
   line-height: 20px;
 }
 
@@ -736,12 +744,6 @@ html {
   padding-bottom: 56px;
 }
 
-/* .subscribe > .page-container {
-  display: flex;
-  flex-direction: column;
-  outline: 1px solid #fa8072;
-} */
-
 .subscribe-container {
   display: flex;
   justify-content: space-between;
@@ -843,7 +845,7 @@ html {
   width: 240px;
 }
 
-/* ! Костыль для ПП */
+/** Костыльный отступ для PixelPefect */
 .footer-phone-box {
   margin-top: 7px;
 }
@@ -880,14 +882,14 @@ html {
   margin-right: 15px;
 }
 
+/* ! Костыль */
+/* Установил правый паддинг, что бы выровнять кнопки соцсетей по центру страницы. Расчитывал: правый логотип width: 115px – левый divider width: 80px = 35px. В футере .divider уже по макету */
+
 .page-footer .divider {
   width: 80px;
   align-self: center;
   background-color: var(--special-yellow-dark);
   margin-right: 35px;
-
-  /* ! Костыль
-  Установил правый паддинг, что бы выровнять кнопки соцсетей по центру страницы. Расчитывал: правый логотип width: 115px – левый divider width: 80px = 35px. В футере .divider уже по макету */
 }
 
 .address {
@@ -993,7 +995,6 @@ html {
   padding: 0;
   margin: 0;
   width: 230px;
-  /* padding-right: 10px; */
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1030,7 +1031,7 @@ html {
   border: 0;
 }
 
-/* Отступы между блоками fieldset-ов фильтров 35px, но поскольку нельзя задать расстояние до псевдоэлемента (:before - разделительная линия сверху поля), то устанавливаю нижний margin в 47px до подзаголовка нижнего fieldset-а */
+/* Отступы между блоками fieldset-ов фильтров 35px, но поскольку нельзя задать расстояние до псевдоэлемента :before (декоративная разделительная линия сверху), то устанавливаю нижний margin в 47px до подзаголовка нижнего fieldset-а */
 
 .catalog-filter .filter-fieldset:not(:last-of-type) {
   margin-bottom: 47px;
@@ -1164,7 +1165,6 @@ html {
   width: 100%;
   padding: 18px 40px;
   margin-bottom: 44px;
-  /* border: 3px solid #e5e5e5; */
   border: 0;
   background-color: transparent;
   outline: 3px solid #e5e5e5;
@@ -1220,4 +1220,3 @@ html {
 .hidden {
   display: none;
 }
-
