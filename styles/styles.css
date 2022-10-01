@@ -609,15 +609,15 @@ html {
 }
 
 .delivery-logo {
-  content: url ("/images/services-delivery.svg");
+  content: url("/images/services-delivery.svg");
 }
 
 .warranty-logo {
-  content: url ("/images/services-warranty.svg");
+  content: url("/images/services-warranty.svg");
 }
 
 .credit-logo {
-  content: url ("/images/services-credit.svg");
+  content: url("/images/services-credit.svg");
 }
 
 /** Доставим товар под заказ **/
