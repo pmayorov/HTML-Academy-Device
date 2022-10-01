@@ -1,11 +1,12 @@
 ## 4. Сетки страниц на флексах
 
-**Построим крупные сетки страниц с помощью флексов.**
+*Построим крупные сетки страниц с помощью флексов.*
 
-**Предыдущий раздел:**  
-[3. Графика и базовая стилизация](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/3)
+Предыдущий раздел: [**3. Графика и базовая стилизация**](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/3)
 
-Чтобы понять, как работает блочная модель документа, **пройдите тренажёры**
+Cледующий раздел: [**5. Сетки компонентов на флексах**](m1-p5-flex-component.md)
+
+### Тренажёры
 
 [4.1. Сетки](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/1)
 
@@ -23,37 +24,39 @@
 
 [4.7. Сетки и «микросетки»](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/7)
 
-### Посмотрите скринкаст
+### Cкринкаст
 
 *Запись лайва с профессии «Фронтенд-разработчик»*
 
 [4.8. Сетки, часть 1](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/8)
 
-### Посмотрите демонстрации
+### Демонстрации
 
 [4.9. Барбершоп. Сетка для главной страницы](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/demos/6805)
 
 [4.10. Барбершоп. Сетка для страницы каталога](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/demos/7493)
 
+***
+
 ### Домашнее задание
 
-*Продолжаем знакомиться с инструментами разработчика в браузере. В этой главе рассмотрим панель, которая поможет визуально проинспектировать сетку страницы.*
+*Инструмент разработчика в браузере, который поможет визуально проинспектировать сетку страницы.*
 
 [4.11. Вкладка Layout](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/11)
 
-### Выполните практические задания
+### Практические задания
 
 [4.12. Сетка страницы и крупных блоков на флексах для главной страницы](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/tasks/7)
 
 [4.13. Сетка страницы и крупных блоков на флексах для страницы каталога](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/tasks/8)
+
+***
 
 ### Дополнительные материалы
 
 [4.15. Интерактивная диаграмма блочной модели документа](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/15)
 
 [4.16. Организация отступов в верстке (margin/padding)](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/16)
-
-### Изучите материалы
 
 [4.17. Всё, что вам нужно знать про CSS Margin](https://up.htmlacademy.ru/profession/frontender-lite/2/lite-htmlcss/2/module/4/item/17)
 
