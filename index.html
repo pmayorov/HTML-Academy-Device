@@ -13,7 +13,7 @@
   <!-- * Заголовок страницы * -->
   <header class="page-header">
     <nav class="navigation">
-      <img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE">
+      <a class="header-logo-link"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
 
       <div class="account-navigation-container">
 
@@ -23,12 +23,10 @@
         </form>
 
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-navigation-link" href="catalog.html"><span class="icon-entry"></span>Войти</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link hidden" href="#">Выйти</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link" href="#">
-              <div class="icon-box"><span class="icon-basket"></span></div>Корзина
-            </a></li>
+          <li class="account-navigation-item"><a class="account-link entry-link" href="catalog.html">Войти</a></li>
+          <li class="account-navigation-item"><a class="account-link exit-link no-active">Выйти</a></li>
+          <li class="account-navigation-item"><a class="account-link compare-link" href="#">Сравнить</a></li>
+          <li class="account-navigation-item"><a class="account-link basket-link" href="#">Корзина</a></li>
         </ul>
 
       </div>
@@ -38,12 +36,12 @@
         <!-- todo Кнопка активации dropdown-меню. Идет поверх слайдера  -->
         <!-- * Сделал - обрезанием верхней части иллюстрации слайдера на величину наложения. Отказался от идеи позиционирования меню. -->
 
-        <li class="main-navigation-item"><a class="link-style main-navigation-link catalog-link"><span class="catalog-link-item">Каталог товаров</span><span class="catalog-link-button"></span></a>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link catalog-link">Каталог товаров</a>
 
           <!-- todo Наполнение dropdown-меню. Грид-области! Чтобы можно было добавлять информацию в ту колонку в какую пожелаю.
           * Возможно: Ширину колонок сделать изменяемой, в зависимости от ширины контента + margin-right: const; -->
 
-          <ul class="index-catalog-navigation">
+          <ul class="catalog-navigation">
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="catalog.html">Моноподы для селфи</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Экшн-камеры</a></li>
