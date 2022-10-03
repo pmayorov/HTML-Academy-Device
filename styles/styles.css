@@ -132,25 +132,27 @@ html {
 /** HEADER **/
 
 .page-header {
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .navigation {
-  /* Не знаю зачем прописывал, но пока оставил.
-  display: flex;
-  flex-direction: column; */
   position: relative;
   box-sizing: border-box;
   width: var(--content-width);
   margin: 0 auto;
   padding: 17px 60px 0 60px;
   background: linear-gradient(var(--basic-white) 40px, var(--special-yellow-light) 40px);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
+}
+
+.header-logo-link {
+  display: block;
+  width: fit-content;
+  margin-bottom: 30px;
 }
 
 .device-logo {
   display: block;
-  margin-bottom: 30px;
 }
 
 .account-navigation-container {
@@ -165,10 +167,6 @@ html {
   margin: 0;
   padding: 0;
   list-style-type: none;
-}
-
-.header-menu-padding {
-  padding-bottom: 23px;
 }
 
 .form-search {
@@ -208,20 +206,16 @@ html {
 }
 
 .account-navigation {
-  justify-content: space-between;
   flex-grow: 1;
 }
 
-.account-navigation-item:nth-child(1) {
-  width: 150px;
-}
-
 .account-navigation-item:nth-child(2) {
-  width: 57px;
+  margin-left: auto;
+  margin-right: 27px;
 }
 
 .account-navigation-item:nth-child(3) {
-  width: 107px;
+  margin-right: 36px;
 }
 
 .account-navigation-link {
@@ -240,18 +234,12 @@ html {
   padding-left: 27px;
 }
 
-.icon-entry {
-  width: 13px;
-  height: 12px;
-  margin-right: 12px;
-  outline: 1px solid #fa8072;
+.compare-link {
+  padding-left: 22px;
 }
 
-.icon-compare {
-  width: 10px;
-  height: 12px;
-  margin-right: 12px;
-  outline: 1px solid #fa8072;
+.basket-link {
+  padding-left: 25px;
 }
 
 .entry-link::before {
@@ -272,7 +260,6 @@ html {
 
 
 /* .icon-basket[data-amount]::before {
->>>>>>> temp
   position: relative;
   right: 15px;
   display: flex;
@@ -285,7 +272,7 @@ html {
   line-height: 17px;
   background-color: var(--basic-white);
   content: attr(data-amount);
-}
+} */
 
 /* Навигационное меню */
 
@@ -298,6 +285,10 @@ html {
   margin-left: auto;
 }
 
+.main-navigation-item:not(:last-of-type) {
+  margin-right: 45px;
+}
+
 .catalog-link {
   display: flex;
   align-items: center;
@@ -305,7 +296,6 @@ html {
 
 /* .catalog-link::after {
   box-sizing: border-box;
->>>>>>> temp
   width: 50px;
   height: 50px;
   margin-left: 18px;
@@ -326,10 +316,6 @@ html {
   opacity: 0.3;
 }
 
-/*  Подменю главного меню с категориями товаров */
-/* .index-catalog-navigation - читай ниже */
-
-.index-catalog-navigation,
 .catalog-navigation {
   /* display: grid; */
   display: none;
@@ -384,21 +370,10 @@ html {
   cursor: pointer;
 }
 
-/* !Костыль */
-/* -- start --*/
-/* Оформил два правила. На главной странице dropdown-меню появляется сразу под навигацией. На странице каталога, под этой же навигацией есть нижний паддинг в 23px. А поскольку dropdown-меню абсолютно позиционировано к верхней секции навигации, этот паддинг над ней и висит. Чтобы его компенсировать на этих страницах оформил доп. правило со сдвигом dropdown-menu вверх */
-
-.catalog-link:hover + .index-catalog-navigation,
-.index-catalog-navigation:hover {
-  display: grid;
-}
-
 .catalog-link:hover + .catalog-navigation,
 .catalog-navigation:hover {
   display: grid;
-  top: calc(100% - 23px);
 }
-/* -- end -- */
 
 /** Главная **/
 
@@ -496,6 +471,7 @@ html {
   position: absolute;
   top: 68px;
   right: 49px;
+  pointer-events: none;
   content: attr(data-promo-number);
   color: var(--basic-white);
   font-size: 180px;
@@ -533,7 +509,7 @@ html {
 
 .category-goods {
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .category-goods-list {
@@ -573,13 +549,13 @@ html {
 .services {
   margin-bottom: var(--section-bottom-margin);
   padding-bottom: 72px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
   background: linear-gradient(var(--basic-white) 102px, var(--basic-light) 102px);
 }
 
 .services .page-container {
   display: flex;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .services-link {
@@ -665,11 +641,11 @@ html {
 
 .order-link {
   display: flex;
+  min-height: 100px;
 }
 
 .order-logo {
-  width: 125px;
-  min-height: 100px;
+  min-width: 125px;
   background-color: var(--special-yellow-light);
   background-image: url("/images/auto.svg");
   background-position: center;
@@ -678,16 +654,15 @@ html {
 }
 
 .order-title {
+  flex-grow: 1;
   margin: auto 0;
-  padding: 24px 0;
-  width: 910px;
   font-size: 20px;
   line-height: 23px;
   text-align: center;
 }
 
 .order-title-ico {
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   margin: auto 43px;
   border-radius: 50px;
@@ -701,18 +676,18 @@ html {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--section-bottom-margin);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .about {
   width: 500px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .contacts {
   width: 510px;
   padding-right: 23px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .divider {
@@ -842,7 +817,7 @@ html {
   margin-right: 16px;
   vertical-align: middle;
   content: "";
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 /** FOOTER **/
@@ -892,7 +867,6 @@ html {
   padding: 0;
   list-style-type: none;
   display: flex;
-  text-align: center;
 }
 
 .footer-address-box .address + .address,
@@ -1022,13 +996,13 @@ html {
   box-sizing: border-box;
   width: 320px;
   padding: 25px 0 60px 60px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-right-container {
   background-color: var(--basic-white);
   width: 840px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-goods-title {
@@ -1082,7 +1056,7 @@ html {
   border: 0;
 }
 
-/* Отступы между блоками fieldset-ов фильтров 35px, но поскольку нельзя задать расстояние до псевдоэлемента :before (декоративная разделительная линия сверху), то устанавливаю нижний margin в 47px до подзаголовка нижнего fieldset-а */
+/* Отступы между блоками fieldset-ов фильтров 35px, но поскольку нельзя задать расстояние до псевдоэлемента ::before (декоративная разделительная линия сверху), то устанавливаю нижний margin в 47px до подзаголовка нижнего fieldset-а */
 
 .catalog-filter .filter-fieldset:not(:last-of-type) {
   margin-bottom: 47px;
@@ -1119,7 +1093,7 @@ html {
   justify-content: space-between;
   align-items: center;
   background-color: var(--basic-light);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .sorting-summary {
@@ -1139,7 +1113,7 @@ html {
   top: 100%;
   list-style-type: none;
   background-color: var(--basic-light);
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .sorting-list-option {
@@ -1160,7 +1134,7 @@ html {
   justify-content: center;
   width: 30px;
   height: 30px;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .sorting-order-link {
