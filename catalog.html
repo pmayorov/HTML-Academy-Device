@@ -12,8 +12,8 @@
 
   <!-- * Заголовок страницы * -->
   <header class="page-header">
-    <nav class="navigation">
-      <a class="header-logo-link" href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
+    <nav class="navigation header-menu-padding">
+      <a class="device-logo-link" href="index.html"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
 
       <div class="account-navigation-container">
 
@@ -23,11 +23,10 @@
         </form>
 
         <ul class="account-navigation">
-          <li class="account-navigation-item"><a class="account-link entry-link " href="#">Коля Петухов</a></li>
-          <li class="account-navigation-item"><a class="account-link exit-link" href="index.html">Выйти</a></li>
-          <li class="account-navigation-item"><a class="account-link compare-link" href="#">Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-link basket-link" href="#">Корзина</a></li>
-          <!-- <span data-amount="99" class="icon-basket"></span> -->
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-entry"></span>Коля Петухов</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="index.html">Выйти</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span class="icon-compare"></span>Сравнить</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
         </ul>
 
       </div>
@@ -115,14 +114,14 @@
         <div class="sorting-container">
           <h3 class="catalog-goods-title">Сортировка:</h3>
           <div class="sorting-details-box">
-            <details class="sorting-details">
-              <summary class="sorting-summary">Популярные</summary>
-              <ul class="sorting-list">
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Популярные</a></li>
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Новинки</a></li>
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Стоимость</a></li>
-              </ul>
-            </details>
+          <details class="sorting-details">
+            <summary class="sorting-summary">Популярные</summary>
+            <ul class="sorting-list">
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Популярные</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Новинки</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Стоимость</a></li>
+            </ul>
+          </details>
           </div>
           <ul class="sorting-order">
             <li class="sorting-order-item"><a class="sorting-order-link" href="#"><span class="sorting-order-ico visually-hidden">По возрастанию</span></a></li>
