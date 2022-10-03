@@ -184,7 +184,7 @@ html {
   font-family: var(--text-font);
   color: var(--basic-black);
   background-color: transparent;
-  background-image: url("/images/magnifier.svg");
+  background-image: url("../images/magnifier.svg");
   background-repeat: no-repeat;
   background-position: 15px center;
 }
@@ -243,7 +243,7 @@ html {
 }
 
 .entry-link::before {
-  content: url("/images/account-entry.svg");
+  content: url("../images/account-entry.svg");
 }
 
 .account-navigation-link:hover {
@@ -251,11 +251,11 @@ html {
 }
 
 .compare-link::before {
-  content: url("/images/account-compare.svg");
+  content: url("../images/account-compare.svg");
 }
 
 .basket-link::before {
-  content: url("/images/account-basket.svg");
+  content: url("../images/account-basket.svg");
 }
 
 
@@ -312,7 +312,7 @@ html {
   margin-left: 18px;
   border: 2px solid var(--basic-black);
   border-radius: 50%;
-  background: url("/images/cross-mark.svg") no-repeat center;
+  background: url("../images/cross-mark.svg") no-repeat center;
   opacity: 0.3;
 }
 
@@ -622,15 +622,15 @@ html {
 }
 
 .delivery-logo {
-  content: url("/images/services-delivery.svg");
+  content: url("../images/services-delivery.svg");
 }
 
 .warranty-logo {
-  content: url("/images/services-warranty.svg");
+  content: url("../images/services-warranty.svg");
 }
 
 .credit-logo {
-  content: url("/images/services-credit.svg");
+  content: url("../images/services-credit.svg");
 }
 
 /** Доставим товар под заказ **/
@@ -647,7 +647,7 @@ html {
 .order-logo {
   min-width: 125px;
   background-color: var(--special-yellow-light);
-  background-image: url("/images/auto.svg");
+  background-image: url("../images/auto.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 47px auto;
@@ -923,15 +923,15 @@ html {
 }
 
 .link-facebook {
-  background-image: url("/images/facebook.svg");
+  background-image: url("../images/facebook.svg");
 }
 
 .link-instagram {
-  background-image: url("/images/instagram.svg");
+  background-image: url("../images/instagram.svg");
 }
 
 .link-twitter {
-  background-image: url("/images/twitter.svg");
+  background-image: url("../images/twitter.svg");
 }
 
 .htmlacademy-link svg {
@@ -974,7 +974,7 @@ html {
 
 .catalog-breadcrumbs-item:not(:first-of-type)::before {
   position: absolute;
-  content: url("/images/breadcrumbs-arrow.svg");
+  content: url("../images/breadcrumbs-arrow.svg");
   left: -20px;
   top: 7px;
   opacity: 0.3;
@@ -1101,7 +1101,7 @@ html {
 }
 
 .sorting-summary::after {
-  content: url("/images/sorting-ico.svg");
+  content: url("../images/sorting-ico.svg");
   margin-left: 30px;
 }
 
@@ -1147,20 +1147,20 @@ html {
 }
 
 .sorting-order-up {
-  background-image: url("/images/sorting-order.svg");
+  background-image: url("../images/sorting-order.svg");
 }
 
 .sorting-order-dn {
-  background-image: url("/images/sorting-order.svg");
+  background-image: url("../images/sorting-order.svg");
   transform: rotate(180deg);
 }
 
 /* .sorting-order-up {
-  background-image: url("/images/sorting-order.svg");
+  background-image: url("../images/sorting-order.svg");
   background-position: center;
 }
 .sorting-order-dn {
-  background-image: url("/images/sorting-order.svg");
+  background-image: url("../images/sorting-order.svg");
 } */
 
 /*  Карточки товаров */
