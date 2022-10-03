@@ -102,9 +102,22 @@ html {
 .page-link {
   display: inline-block;
   padding: 10px 5px;
-  background-color: #ffe17f;
   text-align: center;
+  position: relative;
 }
+
+.page-link::before {
+  position: absolute;
+  display: block;
+  content: "";
+  left: 0;
+  top: 15px;
+  z-index: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--special-yellow-light);
+}
+
 
 /* Ссылка в параграфе текста */
 .text-link {
@@ -135,7 +148,7 @@ html {
   outline: 1px solid #fa8072;
 }
 
-.page-header .device-logo {
+.device-logo {
   display: block;
   margin-bottom: 30px;
 }
@@ -164,6 +177,7 @@ html {
 }
 
 .search-input {
+  position: relative;
   width: 360px;
   outline: 0;
   padding-left: 48px;
@@ -172,6 +186,9 @@ html {
   font-family: var(--text-font);
   color: var(--basic-black);
   background-color: transparent;
+  background-image: url("/images/magnifier.svg");
+  background-repeat: no-repeat;
+  background-position: 15px center;
 }
 
 .search-input::placeholder {
@@ -207,20 +224,20 @@ html {
   width: 107px;
 }
 
-.account-navigation-item:nth-child(4) {
-  width: 97px;
-}
-
 .account-navigation-link {
-  display: inline-flex;
-  align-items: center;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   color: var(--basic-black);
 }
 
-.icon-box {
-  display: inline-flex;
-  align-items: center;
+.account-navigation-link::before {
+  position: absolute;
+  left: 0;
+}
+
+.entry-link {
+  padding-left: 27px;
 }
 
 .icon-entry {
@@ -237,14 +254,25 @@ html {
   outline: 1px solid #fa8072;
 }
 
-.icon-basket {
-  width: 16px;
-  height: 14px;
-  margin-right: 12px;
-  outline: 1px solid #fa8072;
+.entry-link::before {
+  content: url("/images/account-entry.svg");
 }
 
-.icon-basket[data-amount]::before {
+.account-navigation-link:hover {
+  opacity: 0.3;
+}
+
+.compare-link::before {
+  content: url("/images/account-compare.svg");
+}
+
+.basket-link::before {
+  content: url("/images/account-basket.svg");
+}
+
+
+/* .icon-basket[data-amount]::before {
+>>>>>>> temp
   position: relative;
   right: 15px;
   display: flex;
@@ -266,10 +294,6 @@ html {
   align-items: center;
 }
 
-.main-navigation-item:not(:last-of-type) {
-  margin-right: 45px;
-}
-
 .main-navigation-item:nth-of-type(2) {
   margin-left: auto;
 }
@@ -279,13 +303,26 @@ html {
   align-items: center;
 }
 
-.catalog-link-button {
+/* .catalog-link::after {
   box-sizing: border-box;
-  margin-left: 18px;
+>>>>>>> temp
   width: 50px;
   height: 50px;
+  margin-left: 18px;
+  content: "";
   border: 2px solid var(--basic-black);
   border-radius: 50%;
+  opacity: 0.3;
+} */
+
+.catalog-link-button {
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  margin-left: 18px;
+  border: 2px solid var(--basic-black);
+  border-radius: 50%;
+  background: url("/images/cross-mark.svg") no-repeat center;
   opacity: 0.3;
 }
 
@@ -317,7 +354,7 @@ html {
   line-height: 0;
   background: var(--special-yellow-light);
   opacity: 0.95;
-  outline: 1px solid #fa8072;
+  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-areas-column-1 {
@@ -457,7 +494,7 @@ html {
 
 .promo-desc-item::before {
   position: absolute;
-  top: 65px;
+  top: 68px;
   right: 49px;
   content: attr(data-promo-number);
   color: var(--basic-white);
@@ -816,11 +853,6 @@ html {
   padding: 62px 0 61px 0;
 }
 
-.page-footer .device-logo,
-.page-footer .htmlacademy-logo {
-  display: block;
-}
-
 .footer-container {
   display: flex;
 }
@@ -912,7 +944,26 @@ html {
   background-color: var(--basic-white);
   opacity: 0.3;
   border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+.link-facebook {
+  background-image: url("/images/facebook.svg");
+}
+
+.link-instagram {
+  background-image: url("/images/instagram.svg");
+}
+
+.link-twitter {
+  background-image: url("/images/twitter.svg");
+}
+
+.htmlacademy-link svg {
+  fill: #ffc700;
+}
+
 
 /** СТИЛИ КАТАЛОГА ТОВАРОВ **/
 
@@ -926,7 +977,8 @@ html {
 
 .catalog-header > .page-container {
   box-sizing: border-box;
-  padding: 35px 0 35px 60px;
+  padding: 58px 0 35px 60px;
+  background: linear-gradient(var(--special-yellow-light) 23px, var(--basic-white) 23px);
 }
 
 .catalog-title {
@@ -941,18 +993,17 @@ html {
   line-height: 0;
 }
 
-.catalog-breadcrumbs-item:not(:first-of-type)::before {
-  display: inline-block;
-  width: 4px;
-  height: 7px;
-  margin-right: 16px;
-  content: "";
-  vertical-align: middle;
-  outline: 1px solid #fa8072;
+.catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
+  position: relative;
+  margin-left: 36px;
 }
 
-.catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
-  margin-left: 16px;
+.catalog-breadcrumbs-item:not(:first-of-type)::before {
+  position: absolute;
+  content: url("/images/breadcrumbs-arrow.svg");
+  left: -20px;
+  top: 7px;
+  opacity: 0.3;
 }
 
 .breadcrumbs-link {
@@ -1076,13 +1127,8 @@ html {
 }
 
 .sorting-summary::after {
-  display: inline-block;
-  content: "";
+  content: url("/images/sorting-ico.svg");
   margin-left: 30px;
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  outline: 1px solid #fa8072;
 }
 
 .sorting-list {
@@ -1109,10 +1155,39 @@ html {
 }
 
 .sorting-order-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
   outline: 1px solid #fa8072;
 }
+
+.sorting-order-link {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* outline: 1px solid #fa8072; */
+  opacity: 0.3;
+}
+
+.sorting-order-up {
+  background-image: url("/images/sorting-order.svg");
+}
+
+.sorting-order-dn {
+  background-image: url("/images/sorting-order.svg");
+  transform: rotate(180deg);
+}
+
+/* .sorting-order-up {
+  background-image: url("/images/sorting-order.svg");
+  background-position: center;
+}
+.sorting-order-dn {
+  background-image: url("/images/sorting-order.svg");
+} */
 
 /*  Карточки товаров */
 .goods-cards {
@@ -1216,6 +1291,17 @@ html {
   border: 0;
   white-space: nowrap;
   clip-path: inset(100%);
+}
+
+/* Стили для элементов меню */
+
+.hidden-no-active {
+  opacity: 0;
+  cursor: default;
+}
+
+.link-no-active {
+  cursor: default;
 }
 
 .hidden {
