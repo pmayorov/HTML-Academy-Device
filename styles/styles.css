@@ -118,6 +118,22 @@ html {
   background-color: var(--special-yellow-light);
 }
 
+.page-link:hover::before {
+  display: none;
+}
+
+.page-link:hover {
+  background-color: var(--special-yellow-light);
+}
+
+.page-link:active {
+  background-color: #ffcc33;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 /* Ссылка в параграфе текста */
 .text-link {
   color: inherit;
@@ -152,6 +168,16 @@ html {
 
 .device-logo {
   display: block;
+}
+
+.header-logo-link[href]:hover .device-logo,
+.footer-logo-link:hover .device-logo {
+  opacity: 0.6;
+}
+
+.header-logo-link[href]:active .device-logo,
+.footer-logo-link:active .device-logo {
+  opacity: 0.3;
 }
 
 .account-navigation-container {
@@ -238,6 +264,7 @@ html {
 }
 
 .basket-link {
+  position: relative;
   padding-left: 25px;
 }
 
@@ -246,6 +273,10 @@ html {
 }
 
 .account-navigation-link:hover {
+  opacity: 0.6;
+}
+
+.account-navigation-link:active {
   opacity: 0.3;
 }
 
@@ -257,10 +288,10 @@ html {
   content: url("../images/account-basket.svg");
 }
 
-
-/* .icon-basket[data-amount]::before {
-  position: relative;
-  right: 15px;
+.icon-basket[data-amount]::before {
+  position: absolute;
+  left: -15px;
+  top: 5px;
   display: flex;
   width: 21px;
   height: 21px;
@@ -271,7 +302,7 @@ html {
   line-height: 17px;
   background-color: var(--basic-white);
   content: attr(data-amount);
-} */
+}
 
 /* Навигационное меню */
 
@@ -288,21 +319,32 @@ html {
   margin-right: 45px;
 }
 
+.main-navigation-link:not(.catalog-link):hover {
+  opacity: 0.6;
+}
+
+.main-navigation-link:not(.catalog-link):active {
+  opacity: 0.3;
+}
+
 .catalog-link {
   display: flex;
   align-items: center;
 }
 
-/* .catalog-link::after {
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  margin-left: 18px;
-  content: "";
-  border: 2px solid var(--basic-black);
-  border-radius: 50%;
-  opacity: 0.3;
-} */
+.catalog-link:hover {
+  cursor: pointer;
+}
+
+.catalog-link:hover + .catalog-navigation,
+.catalog-navigation:hover {
+  display: grid;
+}
+
+.catalog-link:hover .catalog-link-button,
+.catalog-link:active .catalog-link-button {
+  opacity: 1;
+}
 
 .catalog-link-button {
   box-sizing: border-box;
@@ -365,14 +407,6 @@ html {
   color: var(--basic-black);
 }
 
-.catalog-link:hover {
-  cursor: pointer;
-}
-
-.catalog-link:hover + .catalog-navigation,
-.catalog-navigation:hover {
-  display: grid;
-}
 
 /** Главная **/
 
@@ -528,9 +562,44 @@ html {
   color: var(--basic-black);
 }
 
+.category-goods-link:hover .category-goods-logo {
+  background-color: var(--special-yellow-dark);
+}
+
+.category-goods-link:active {
+  opacity: 0.3;
+}
+
 .category-goods-logo {
   grid-row: 1 / 2;
   background-color: var(--special-yellow-light);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.goods-virtual .category-goods-logo {
+  background-image: url("../images/goods-virtual.svg");
+}
+
+.goods-monopod .category-goods-logo {
+  background-image: url("../images/goods-monopod.svg");
+  background-position: center bottom;
+}
+
+.goods-action .category-goods-logo {
+  background-image: url("../images/goods-action.svg");
+}
+
+.goods-bracelet .category-goods-logo {
+  background-image: url("../images/goods-bracelet.svg");
+}
+
+.goods-watch .category-goods-logo {
+  background-image: url("../images/goods-watch.svg");
+}
+
+.goods-quadrocopter .category-goods-logo {
+  background-image: url("../images/goods-quadrocopter.svg");
 }
 
 .category-goods-text {
@@ -661,12 +730,34 @@ html {
 }
 
 .order-title-ico {
+  position: relative;
   min-width: 40px;
   height: 40px;
   margin: auto 43px;
   border-radius: 50px;
   background-color: var(--basic-gray);
   opacity: 0.5;
+}
+
+.order-title-ico::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: url("../images/i-ico.svg");
+  opacity: 0.5;
+}
+
+.order-link:hover .order-logo {
+  background-color: var(--special-yellow-dark);
+}
+
+.order-link:hover .order-title-ico::before {
+  opacity: 1;
+}
+
+.order-link:active {
+  opacity: 0.3;
 }
 
 /** О нас. Контакты **/
@@ -711,7 +802,6 @@ html {
   margin-bottom: 15px;
   font-family: var(--titles-font);
   font-size: 24px;
-  color: initial;
 }
 
 .about-text,
@@ -728,6 +818,8 @@ html {
 }
 
 .about-item {
+  position: relative;
+  padding-left: 36px;
   font-family: var(--titles-font);
   font-weight: 700;
   line-height: 20px;
@@ -737,6 +829,18 @@ html {
 
 .about-item:not(:last-of-type) {
   margin-bottom: 19px;
+}
+
+.about-item::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--special-yellow-dark);
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .about-link {
@@ -806,17 +910,17 @@ html {
 }
 
 .subscribe-notice {
+  position: relative;
+  padding-left: 32px;
   align-self: center;
 }
 
 .subscribe-notice::before {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-right: 16px;
-  vertical-align: middle;
-  content: "";
-  /* outline: 1px solid #fa8072; */
+  position: absolute;
+  content: url("../images/status-sucess.svg");
+  left: 2px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /** FOOTER **/
@@ -860,6 +964,14 @@ html {
   text-align: right;
 }
 
+.footer-container .phone:hover {
+  color: var(--special-yellow-dark);
+}
+
+.footer-container .phone:active {
+  opacity: 0.3;
+}
+
 .footer-navigation-list,
 .footer-social-list {
   margin: 0;
@@ -877,6 +989,16 @@ html {
   flex-wrap: wrap;
   max-width: 600px;
   justify-content: center;
+}
+
+.footer-navigation-list .link-style:hover {
+  color: var(--special-yellow-dark);
+  border-bottom: 2px solid var(--special-yellow-dark);
+  padding: 0 0 4px;
+}
+
+.footer-navigation-list .link-style:active {
+  opacity: 0.3;
 }
 
 .footer-navigation-item:not(:last-of-type) {
@@ -910,31 +1032,62 @@ html {
   line-height: 20px;
 }
 
+
+/* Если не обнулить line-height иконки соцсетей растягиваются на высоту установленного в body line-height: 30px и соотв. не центрируются. Может можно как-то иначе, но пока не знаю. */
+
+.footer-social-item {
+  line-height: 0;
+}
+
 .footer-social-link {
   display: block;
+  position: relative;
+
   width: 40px;
   height: 40px;
   background-color: var(--basic-white);
   opacity: 0.3;
   border-radius: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-.link-facebook {
-  background-image: url("../images/facebook.svg");
+.footer-social-link::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.link-instagram {
-  background-image: url("../images/instagram.svg");
+.link-facebook::before {
+  content: url("../images/facebook.svg");
 }
 
-.link-twitter {
-  background-image: url("../images/twitter.svg");
+.link-instagram::before {
+  content: url("../images/instagram.svg");
+}
+
+.link-twitter::before {
+  content: url("../images/twitter.svg");
+}
+
+.footer-social-link:hover {
+  background-color: var(--special-yellow-dark);
+  opacity: 1;
+}
+
+.footer-social-link:active::before {
+  opacity: 0.3;
 }
 
 .htmlacademy-link svg {
-  fill: #ffc700;
+  fill: var(--special-yellow-dark);
+}
+
+.htmlacademy-link:hover svg {
+  fill: var(--basic-white);
+}
+
+.htmlacademy-link:active svg {
+  opacity: 0.3;
 }
 
 
