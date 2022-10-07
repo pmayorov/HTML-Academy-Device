@@ -37,7 +37,7 @@
         <li class="main-navigation-item"><a class="link-style main-navigation-link catalog-link">Каталог товаров<span class="catalog-link-button"></span></a>
           <ul class="catalog-navigation">
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Виртуальная реальность</a></li>
-            <li class="catalog-navigation-item"><a class="catalog-navigation-link link-no-active">Моноподы для селфи</a></li>
+            <li class="catalog-navigation-item"><a class="catalog-navigation-link link-current">Моноподы для селфи</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Экшн-камеры</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Фитнес-браслеты</a></li>
             <li class="catalog-navigation-item"><a class="catalog-navigation-link" href="#">Умные часы</a></li>
@@ -62,7 +62,7 @@
         <ol class="catalog-breadcrumbs">
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="index.html">Главная</a></li>
           <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" href="#">Каталог товаров</a></li>
-          <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link" title="Текущая страница">Моноподы для селфи</a></li>
+          <li class="catalog-breadcrumbs-item"><a class="catalog-navigation-link breadcrumbs-link link-current" title="Текущая страница">Моноподы для селфи</a></li>
         </ol>
       </div>
     </header>
@@ -136,9 +136,16 @@
           <h3 class="catalog-goods-title visually-hidden" hidden>Карточки товаров:</h3>
           <ul class="goods-cards-list">
             <li class="goods-cards-item">
-              <!-- Совет: ссылка под изображением, но псевдоклассом на весь блок распространяем ее действие -->
               <a class="goods-cards-link" href="#">
-                <img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
+                <!-- Добавил класс goods-image-box для изображения товара, т.к. псевдоэлемент нельзя навесить на img-элемент -->
+                <div class="goods-image-box">
+                  <img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
+
+                  <!-- todo Сделать рефакторинг этой части кода. Не нравится мне наложение правил в карточке касательно кнопки ПОДРОБНЕЕ (см. __temp__link - локальная копия класса .page-link ) -->
+
+                  <span class="link-style __temp__link goods-image-link" href="#">Подробнее</span>
+
+                </div>
                 <div class="good-cards-desc-box">
                   <h4 class="catalog-goods-subtitle">Любительская селфи-палка</h4>
                   <span class="item-price">500&nbsp;&#8381;</span>
@@ -147,7 +154,10 @@
             </li>
             <li class="goods-cards-item">
               <a class="goods-cards-link" href="#">
-                <img class="goods-image" src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
+                <div class="goods-image-box">
+                  <img class="goods-image" src="images/content/product-02.jpg" width="360" height="380" alt="Фото товара">
+                  <span class="link-style __temp__link goods-image-link" href="#">Подробнее</span>
+                </div>
                 <div class="good-cards-desc-box">
                   <h4 class="catalog-goods-subtitle">Профессиональная селфи-палка</h4>
                   <span class="item-price">1&nbsp;500&nbsp;&#8381;</span>
@@ -156,7 +166,10 @@
             </li>
             <li class="goods-cards-item">
               <a class="goods-cards-link" href="#">
+                <div class="goods-image-box">
                 <img class="goods-image" src="images/content/product-03.jpg" width="360" height="380" alt="Фото товара">
+                <span class="link-style __temp__link goods-image-link" href="#">Подробнее</span>
+                </div>
                 <div class="good-cards-desc-box">
                   <h4 class="catalog-goods-subtitle">Непотопляемая <br> селфи-палка</h4>
                   <span class="item-price">2&nbsp;500&nbsp;&#8381;</span>
@@ -164,7 +177,11 @@
               </a>
             </li>
             <li class="goods-cards-item">
-              <a class="goods-cards-link" href="#"><img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+              <a class="goods-cards-link" href="#">
+                <div class="goods-image-box">
+                <img class="goods-image" src="images/content/product-04.jpg" width="360" height="380" alt="Фото товара">
+                <span class="link-style __temp__link goods-image-link" href="#">Подробнее</span>
+                </div>
                 <div class="good-cards-desc-box">
                   <h4 class="catalog-goods-subtitle">Селфи-палка &laquo;Следуй за мной&raquo;</h4>
                   <span class="item-price">1&nbsp;500&nbsp;&#8381;</span>
@@ -178,11 +195,11 @@
           <div class="box-pagination">
             <a class="link-style pagination-link-back" href="#">Назад</a>
             <ul class="pagination-list">
-              <li class="pagination-item"><a class="pagination-link" href="#">1</a></li>
-              <li class="pagination-item"><a class="pagination-link" href="#">2</a></li>
-              <li class="pagination-item"><a class="pagination-link" href="#">3</a></li>
-              <li class="pagination-item"><a class="pagination-link" href="#">…</a></li>
-              <li class="pagination-item"><a class="pagination-link" href="#">15</a></li>
+              <li class="pagination-item"><a class="pagination-item-link pagination-item-link-current" href="#">1</a></li>
+              <li class="pagination-item"><a class="pagination-item-link" href="#">2</a></li>
+              <li class="pagination-item"><a class="pagination-item-link" href="#">3</a></li>
+              <li class="pagination-item"><a class="pagination-item-link" href="#">…</a></li>
+              <li class="pagination-item"><a class="pagination-item-link" href="#">15</a></li>
             </ul>
             <a class="link-style pagination-link-forward" href="#">Вперёд</a>
           </div>
