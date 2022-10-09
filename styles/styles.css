@@ -148,10 +148,6 @@ button:hover {
 
 /** HEADER **/
 
-.page-header {
-  /* outline: 1px solid #fa8072; */
-}
-
 .navigation {
   position: relative;
   box-sizing: border-box;
@@ -353,18 +349,20 @@ button:hover {
 
 .catalog-link:hover + .catalog-navigation,
 .catalog-link:focus + .catalog-navigation,
-.catalog-navigation:hover {
+.catalog-navigation:hover,
+.main-navigation-item:focus-within .catalog-navigation {
   display: grid;
 }
 
 .catalog-link:hover .catalog-link-button,
+.catalog-link:focus .catalog-link-button,
 .catalog-link:active .catalog-link-button {
   opacity: 1;
 }
 
+.main-navigation-item:focus-within .catalog-link-button,
 .catalog-link:hover .catalog-link-button,
-.catalog-navigation:hover .catalog-link-button,
-.catalog-link-button:focus-within {
+.catalog-link:focus .catalog-link-button {
   background: url("../images/minus-mark.svg") no-repeat center;
 }
 
@@ -393,6 +391,10 @@ button:hover {
   background: var(--special-yellow-light);
   opacity: 0.95;
   /* outline: 1px solid #fa8072; */
+}
+
+.catalog-navigation .catalog-navigation-link:focus-within {
+  display: grid;
 }
 
 .catalog-areas-column-1 {
