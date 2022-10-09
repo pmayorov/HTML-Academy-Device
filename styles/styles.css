@@ -352,6 +352,7 @@ button:hover {
 }
 
 .catalog-link:hover + .catalog-navigation,
+.catalog-link:focus + .catalog-navigation,
 .catalog-navigation:hover {
   display: grid;
 }
@@ -362,7 +363,8 @@ button:hover {
 }
 
 .catalog-link:hover .catalog-link-button,
-.catalog-navigation:hover .catalog-link-button {
+.catalog-navigation:hover .catalog-link-button,
+.catalog-link-button:focus-within {
   background: url("../images/minus-mark.svg") no-repeat center;
 }
 
