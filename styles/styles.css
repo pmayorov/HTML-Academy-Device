@@ -192,6 +192,8 @@ button:hover {
   list-style-type: none;
 }
 
+/** Форма поиска *  */
+
 .form-search {
   display: flex;
   margin-right: 25px;
@@ -217,16 +219,32 @@ button:hover {
 }
 
 .search-button {
-  margin: 0;
+  margin: 0 0 0 -2px;
   width: 158px;
   height: 40px;
   border: 2px solid var(--basic-black);
   border-radius: 0 50px 50px 0;
-  border-left: 0;
   font-family: var(--text-font);
   text-align: center;
   background-color: transparent;
 }
+
+.search-button:hover {
+  background-color: var(--basic-black);
+  color: var(--basic-white);
+}
+
+.search-button:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Стилизация неактивного состояния элементов формы поиска  */
+
+.search-input.action-disabled {
+  border-right: none;
+}
+
+/** Меню пользователя **/
 
 .account-navigation {
   flex-grow: 1;
@@ -360,9 +378,9 @@ button:hover {
   opacity: 1;
 }
 
-.main-navigation-item:focus-within .catalog-link-button,
 .catalog-link:hover .catalog-link-button,
-.catalog-link:focus .catalog-link-button {
+.catalog-link:focus .catalog-link-button,
+.main-navigation-item:focus-within .catalog-link-button {
   background: url("../images/minus-mark.svg") no-repeat center;
 }
 
@@ -390,7 +408,6 @@ button:hover {
   line-height: 0;
   background: var(--special-yellow-light);
   opacity: 0.95;
-  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-navigation .catalog-navigation-link:focus-within {
@@ -934,6 +951,7 @@ button:hover {
 
 .subscribe-text {
   display: inherit;
+  margin-top: 9px;
   width: 560px;
 }
 
@@ -959,6 +977,10 @@ button:hover {
   opacity: 0.5;
 }
 
+.subscribe-input:invalid {
+  border-bottom: 3px solid var(--status-error);
+}
+
 .subscribe-button {
   box-sizing: border-box;
   margin: 0;
@@ -967,6 +989,16 @@ button:hover {
   height: 57px;
   border: 3px solid #cecece;
   font-size: inherit;
+}
+
+.subscribe-button:hover {
+  background-color: var(--basic-black);
+  border: 3px solid var(--basic-black);
+  color: var(--basic-white);
+}
+
+.subscribe-button:active {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .subscribe-notice {
@@ -1610,14 +1642,16 @@ button:hover {
 }
 
 /* Оформляю неактивным и прозрачным пункт меню "Выйти", пока пользователь незарегистрировался на сайте. Если этот элемент скрывать через display: none; то сдвигаются соседние пункты пользовательского меню находящиеся в потоке. */
+
 .hidden-no-active {
-  opacity: 0;
+  pointer-events: none;
   cursor: default;
+  opacity: 0;
 }
 
 /* Для ссылок в состоянии "текущая страница" */
 .link-current {
+  pointer-events: n one;
   cursor: default;
-  pointer-events: none;
   opacity: 0.6;
 }
