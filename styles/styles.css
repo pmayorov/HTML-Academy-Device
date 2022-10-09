@@ -1593,7 +1593,7 @@ button:hover {
   text-decoration: none;
 }
 
-.pagination-item-link-current {
+.pagination-item-current {
   opacity: 0.6;
 }
 
