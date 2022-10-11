@@ -1462,7 +1462,7 @@ button:hover {
 
 .goods-new .goods-image-box::before {
   position: absolute;
-  top: 26px;
+  top: 27px;
   right: 27px;
   z-index: 1;
   display: flex;
