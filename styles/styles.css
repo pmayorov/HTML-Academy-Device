@@ -132,6 +132,11 @@ html {
   background-color: #ffcc33;
 }
 
+.page-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: -1px;
+}
+
 button:hover {
   cursor: pointer;
 }
@@ -147,6 +152,10 @@ button:hover {
 
 .text-link:active {
   opacity: 0.3;
+}
+
+.text-link:focus-visible {
+  outline: 2px solid var(--special-purple);
 }
 
 /* Параграфы в секциях */
@@ -185,6 +194,12 @@ button:hover {
   opacity: 0.3;
 }
 
+.header-logo-link:focus-visible,
+.footer-logo-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
 .account-navigation-container {
   display: flex;
   align-items: center;
@@ -206,6 +221,10 @@ button:hover {
   margin-right: 25px;
 }
 
+.form-search-label {
+  display: flex;
+}
+
 .search-input {
   position: relative;
   width: 360px;
@@ -225,7 +244,13 @@ button:hover {
   opacity: 0.3;
 }
 
+.form-search-label:focus-within {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
 .search-button {
+  position: relative;
   margin: 0 0 0 -2px;
   width: 158px;
   height: 40px;
@@ -245,11 +270,32 @@ button:hover {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.search-button:focus {
+  outline: none;
+}
+
+.search-button:focus-visible::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
+}
+
+.search-button:disabled,
+.search-input:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 /* Стилизация неактивного состояния элементов формы поиска  */
 
-.search-input.action-disabled {
+/* .search-input.action-disabled {
   border-right: none;
-}
+} */
 
 /** Меню пользователя **/
 
@@ -263,12 +309,16 @@ button:hover {
 }
 
 .account-navigation-item:nth-child(3) {
-  margin-right: 36px;
+  margin-right: 18px;
 }
+
+/* В .account-navigation-link{} добавил vertical-align: middle; т.к. после добавления свойства overflow: hidden; в правило .entry-link{} все строки меню вертикально сдвигались от центра вверх
+Лонгрид по теме - https://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward */
 
 .account-navigation-link {
   position: relative;
   display: inline-block;
+  vertical-align: middle;
   text-decoration: none;
   color: var(--basic-black);
 }
@@ -279,7 +329,11 @@ button:hover {
 }
 
 .entry-link {
+  max-width: 150px;
   padding-left: 27px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .compare-link {
@@ -289,6 +343,13 @@ button:hover {
 .basket-link {
   position: relative;
   padding-left: 25px;
+}
+
+/* Добавил в ссылку корзины правило .basket-link-data, которое срабатывает в состоянии показа количества покупок "99". Оно для иконки корзины. В правилах меняется padding-left для того, чтобы расширять поле ссылки под иконку "99" для тогоб чтобы ее оборачивала :focus рамка. */
+
+.basket-link-data {
+  position: relative;
+  padding-left: 40px;
 }
 
 .entry-link::before {
@@ -305,6 +366,12 @@ button:hover {
   opacity: 0.3;
 }
 
+.account-navigation-link:focus-visible,
+.catalog-navigation-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
+}
+
 .compare-link::before {
   content: url("../images/account-compare.svg");
 }
@@ -313,9 +380,17 @@ button:hover {
   content: url("../images/account-basket.svg");
 }
 
-.icon-basket[data-amount]::before {
+.basket-link-data::before {
+  content: url("../images/account-basket.svg");
+  margin-left: 15px;
+  opacity: 0.3;
+}
+
+/* Индикатор количества покупок над корзиной появляется только тогда, когда правило .basket-link меняется на .basket-link-data  */
+
+.basket-link-data .icon-basket[data-amount]::before {
   position: absolute;
-  left: -15px;
+  left: 0;
   top: 5px;
   display: flex;
   width: 21px;
@@ -344,12 +419,31 @@ button:hover {
   margin-right: 45px;
 }
 
+.page-link-current::after {
+  position: relative;
+  content: "";
+  display: block;
+  top: 4px;
+  height: 2px;
+  background-color: var(--basic-black);
+}
+
 .main-navigation-link:not(.catalog-link):hover {
   opacity: 0.6;
 }
 
 .main-navigation-link:not(.catalog-link):active {
   opacity: 0.3;
+}
+
+.main-navigation-link:not(.page-link-current):focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.page-link-current:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 6px;
 }
 
 .catalog-link {
@@ -492,6 +586,14 @@ button:hover {
   list-style-type: none;
 }
 
+.promo-images-item {
+  display: none;
+}
+
+.promo-images-item-current {
+  display: block;
+}
+
 .promo-pagination-container {
   margin-bottom: 50px;
   display: flex;
@@ -511,6 +613,7 @@ button:hover {
 }
 
 .promo-pagination-button {
+  position: relative;
   margin: 0;
   padding: 0;
   width: 12px;
@@ -521,18 +624,29 @@ button:hover {
   border-radius: 50px;
 }
 
-.promo-pagination-button-selected {
+.promo-pagination-button-current {
   background-color: var(--basic-black);
 }
 
 .promo-pagination-button:hover,
-.promo-pagination-button-selected:hover {
+.promo-pagination-button-current:hover {
   opacity: 0.6;
 }
 
 .promo-pagination-button:active,
-.promo-pagination-button-selected:active {
+.promo-pagination-button-current:active {
   opacity: 0.3;
+}
+
+.promo-pagination-button:focus-visible::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
 }
 
 .promo-desc-list {
@@ -541,7 +655,12 @@ button:hover {
 }
 
 .promo-desc-item {
+  display: none;
   padding-top: 108px;
+}
+
+.promo-desc-item-current {
+  display: block;
 }
 
 .promo-desc-item::before {
@@ -613,6 +732,11 @@ button:hover {
 .category-goods-link:active {
   opacity: 0.3;
 }
+
+.category-goods-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
+
 
 .category-goods-logo {
   grid-row: 1 / 2;
@@ -738,6 +862,10 @@ button:hover {
   color: rgb(255, 225, 128, 0.3);
 }
 
+.services-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
+
 /* Описание услуг */
 
 .services-desc-list {
@@ -747,6 +875,10 @@ button:hover {
 }
 
 .services-desc-item {
+  display: none;
+}
+
+.services-desc-item-current {
   display: flex;
 }
 
@@ -838,6 +970,10 @@ button:hover {
 
 .order-link:active {
   opacity: 0.3;
+}
+
+.order-link:focus-visible {
+  outline: 2px solid var(--special-purple);
 }
 
 /** О нас. Контакты **/
@@ -1009,6 +1145,17 @@ button:hover {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.subscribe-button:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.subscribe-input:disabled,
+.subscribe-button:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .subscribe-notice {
   position: relative;
   padding-left: 32px;
@@ -1061,7 +1208,7 @@ button:hover {
 }
 
 .footer-container .phone {
-  text-align: right;
+  align-self: flex-end;
 }
 
 .footer-container .phone:hover {
@@ -1070,6 +1217,11 @@ button:hover {
 
 .footer-container .phone:active {
   opacity: 0.3;
+}
+
+.footer-container .phone:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
 }
 
 .footer-navigation-list,
@@ -1093,8 +1245,14 @@ button:hover {
 
 .footer-navigation-list .link-style:hover {
   color: var(--special-yellow-dark);
-  border-bottom: 2px solid var(--special-yellow-dark);
-  padding: 0 0 4px;
+}
+
+.footer-navigation-list .link-style:hover::after {
+  position: relative;
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--special-yellow-dark);
 }
 
 .footer-navigation-list .link-style:active {
@@ -1107,6 +1265,11 @@ button:hover {
 
 .footer-social-item:not(:last-of-type) {
   margin-right: 15px;
+}
+
+.footer-navigation-list .link-style:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
 }
 
 /* ! Костыль */
@@ -1135,13 +1298,13 @@ button:hover {
 /* Если не обнулить line-height иконки соцсетей растягиваются на высоту установленного в body line-height: 30px и соотв. не центрируются. Может можно как-то иначе, но пока не знаю. */
 
 .footer-social-item {
+  position: relative;
   line-height: 0;
 }
 
 .footer-social-link {
   display: block;
   position: relative;
-
   width: 40px;
   height: 40px;
   background-color: var(--basic-white);
@@ -1189,6 +1352,27 @@ button:hover {
   opacity: 0.3;
 }
 
+.htmlacademy-link:focus {
+  outline: none;
+}
+
+.htmlacademy-link:focus-visible svg {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.footer-social-item:focus-within::before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  outline: 2px solid rgb(175, 79, 255, 1);
+  outline-offset: 2px;
+}
+
+.footer-social-link:focus {
+  outline: none;
+}
 
 /** СТИЛИ КАТАЛОГА ТОВАРОВ **/
 
@@ -1336,43 +1520,86 @@ button:hover {
   font-size: inherit;
 }
 
+.filter-button:disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 /* Сортировка */
 
 .sorting-container {
   height: 70px;
   padding: 0 40px;
-  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--basic-light);
-  /* outline: 1px solid #fa8072; */
+}
+
+.sorting-details {
+  position: relative;
+  height: 100%;
 }
 
 .sorting-summary {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-right: 50px;
+  /* Если задать ниже указанный padding-left то фокусная обводка будет равномерной со всех сторон пункта, но тогда не будет совпадения с макетом по PP */
+  /* padding-left: 12px; */
   list-style-type: none;
+  color: var(--basic-black);
 }
 
 .sorting-summary::after {
-  content: url("../images/sorting-ico.svg");
+  position: absolute;
   margin-left: 30px;
+  right: 12px;
+  content: url("../images/sorting-ico.svg");
 }
 
+.sorting-summary:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.sorting-summary:active {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.sorting-summary:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
+
+/*  Стилизация сортировки - start. Попытка стилизовать список сортировки, но на лайве сказали этого не делать, поскольку это задача JS-разработчика */
+
 .sorting-list {
+  position: absolute;
+  z-index: 3;
+  top: 100%;
   margin: 0;
   padding: 0 30px 15px 30px;
   width: max-content;
-  position: absolute;
-  top: 100%;
   list-style-type: none;
   background-color: var(--basic-light);
-  /* outline: 1px solid #fa8072; */
 }
 
 .sorting-list-option {
   color: inherit;
   text-decoration: none;
 }
+
+.sorting-list-option:hover {
+  opacity: 0.6;
+}
+
+.sorting-list-option:active {
+  opacity: 0.3;
+}
+
+/* Стилизация сортировки - end */
 
 .sorting-order {
   display: flex;
@@ -1390,21 +1617,34 @@ button:hover {
   /* outline: 1px solid #fa8072; */
 }
 
-.sorting-order-link {
+.sorting-order-button {
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  /* outline: 1px solid #fa8072; */
+  border: none;
   opacity: 0.3;
 }
 
-.sorting-order-link:hover {
+.sorting-order-button:hover {
   opacity: 0.6;
 }
 
-.sorting-order-link:active {
+.sorting-order-button:active {
   opacity: 1;
+}
+
+.sorting-order-button:focus {
+  outline: none;
+}
+
+.sorting-order-item:focus-within {
+  outline: 2px solid rgb(175, 79, 255);
+}
+
+.sorting-order-button:disabled {
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .sorting-order-up {
@@ -1530,6 +1770,15 @@ button:hover {
   opacity: 0.3;
 }
 
+.goods-cards-item:focus-within {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.goods-cards-link:focus {
+  outline: none;
+}
+
 /* Состояния карточки товара -- end */
 
 .price-label {
@@ -1551,17 +1800,26 @@ button:hover {
   width: 100%;
   padding: 18px 40px;
   margin-bottom: 44px;
-  border: 0;
   background-color: transparent;
-  outline: 3px solid #e5e5e5;
+  border: 3px solid #e5e5e5;
   outline-offset: -3px;
 }
 
 .show-more-button:hover {
-  outline: 3px solid var(--basic-black);
+  border: 3px solid var(--basic-black);
 }
 
 .show-more-button:active {
+  opacity: 0.3;
+}
+
+.show-more-button:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.show-more-button:disabled {
+  pointer-events: none;
   opacity: 0.3;
 }
 
@@ -1593,16 +1851,9 @@ button:hover {
   text-decoration: none;
 }
 
-.pagination-item-current {
-  opacity: 0.6;
-}
-
-.pagination-item-link:hover {
-  opacity: 1;
-}
-
-.pagination-item-link:active {
-  opacity: 0.1;
+.pagination-link-back,
+.pagination-link-forward {
+  padding: 25px;
 }
 
 .pagination-link-back:hover,
@@ -1615,10 +1866,29 @@ button:hover {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.pagination-link-back:focus-visible,
+.pagination-link-forward:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
 
-.pagination-link-back,
-.pagination-link-forward {
-  padding: 25px;
+.pagination-item-current {
+  opacity: 0.6;
+}
+
+.pagination-item-link:hover {
+  opacity: 1;
+}
+
+.pagination-item-link:active {
+  opacity: 0.1;
+}
+
+.pagination-item:focus-within {
+  outline: 2px solid var(--special-purple);
+}
+
+.pagination-item-link:focus-visible {
+  outline: none;
 }
 
 /** VISUALLY-HIDDEN **/
@@ -1638,7 +1908,7 @@ button:hover {
 
 /** Варианты скрытия элементов **/
 
-/* Использую для кнопок-ссылок находящихся в состоянии "отключено" */
+/* Использую для ссылок находящихся в состоянии "отключено" */
 .action-disabled {
   pointer-events: none;
   cursor: default;
@@ -1660,7 +1930,7 @@ button:hover {
 
 /* Для ссылок в состоянии "текущая страница" */
 .link-current {
-  pointer-events: n one;
+  pointer-events: none;
   cursor: default;
   opacity: 0.6;
 }

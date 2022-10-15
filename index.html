@@ -17,9 +17,11 @@
       <a class="header-logo-link"><img class="device-logo" src="images/device-logo.svg" width="145" height="36" alt="Логотип DEVICE"></a>
 
       <div class="account-navigation-container">
-
         <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
-          <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
+          <label class="form-search-label">
+            <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
+            <span class="visually-hidden">Поиск по сайту</span>
+          </label>
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
 
@@ -27,7 +29,7 @@
           <li class="account-navigation-item"><a class="account-navigation-link entry-link" href="catalog.html">Войти</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link exit-link hidden-no-active">Выйти</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link compare-link" href="#">Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link basket-link" href="#">Корзина</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link basket-link" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
         </ul>
 
       </div>
@@ -51,7 +53,7 @@
           </ul>
 
         </li>
-        <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Доставка</a></li>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link page-link-current" href="#">Доставка</a></li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Гарантия</a></li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Контакты</a></li>
       </ul>
@@ -68,13 +70,13 @@
         <h2 class="section-title visually-hidden">Популярные товары интернет-магазина</h2>
         <!-- * Слайдер. Фотографии * -->
         <ol class="promo-images-list">
-          <li class="promo-images-item">
+          <li class="promo-images-item promo-images-item-current">
             <img class="promo-image" src="images/content/slider-1.png" width="560" height="560" alt="Белый квадрокоптер оснащенный лазером">
           </li>
-          <li class="promo-images-item hidden">
+          <li class="promo-images-item">
             <img class="promo-image" src="images/content/slider-2.png" width="560" height="560" alt="Чёрный фитнес-браслет с текстом на дисплее &laquo;Я вижу, что ты снова ешь!&raquo;">
           </li>
-          <li class="promo-images-item hidden">
+          <li class="promo-images-item">
             <img class="promo-image" src="images/content/slider-3.png" width="560" height="560" alt="Три черных селфи палки">
           </li>
         </ol>
@@ -87,7 +89,7 @@
         <!-- * Слайдер. Описания * -->
         <ol class="promo-desc-list">
           <!-- 1-е описание -->
-          <li data-promo-number="01" class="promo-desc-item">
+          <li data-promo-number="01" class="promo-desc-item promo-desc-item-current">
             <strong class="section-title promo-title">Порхает как бабочка, жалит как пчела!</strong>
             <p class="section-text promo-text">Этот обычный, на первый взгляд, квадрокоптер оснащен мощным лазером, замаскированным под стандартную камеру.</p>
             <!-- Контейнер для кнопки <Подробнее> и буллетов пагинации -->
@@ -100,7 +102,7 @@
 
               <!--  Пагинация. Индикация текущего слайда -->
               <ol class="promo-pagination">
-                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-selected" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
+                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-current" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
                 <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 2</span></button></li>
                 <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 3</span></button></li>
               </ol>
@@ -119,7 +121,7 @@
           </li>
 
           <!-- 2-е описание -->
-          <li data-promo-number="02" class="promo-desc-item hidden">
+          <li data-promo-number="02" class="promo-desc-item">
             <strong class="section-title promo-title">Худеем правильно!</strong>
             <p class="section-text promo-text">Мотивирующие фитнес-браслеты помогут найти в себе силы не пропускать занятия и соблюдать диету.</p>
             <!-- Контейнер для кнопки <Подробнее> и буллетов пагинации -->
@@ -128,8 +130,8 @@
               <a class="link-style page-link promo-link" href="#">Подробнее</a>
               <!--  Пагинация. Индикация текущего слайда -->
               <ol class="promo-pagination">
-                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-selected" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
-                <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 2</span></button></li>
+                <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
+                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-current" type="button"><span class="visually-hidden">Слайд 2</span></button></li>
                 <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 3</span></button></li>
               </ol>
             </div>
@@ -143,7 +145,7 @@
           </li>
 
           <!-- 3-е описание -->
-          <li data-promo-number="03" class="promo-desc-item hidden">
+          <li data-promo-number="03" class="promo-desc-item">
             <strong class="section-title promo-title">Делай селфи, <br>как Бен Стиллер!</strong>
             <p class="section-text promo-text">Самая длинная палка для селфи доступна в нашем магазине. Восемь (Восемь, Карл!) метров длиной и весом всего 5 кг.</p>
             <!-- Контейнер для кнопки <Подробнее> и буллетов пагинации -->
@@ -152,9 +154,9 @@
               <a class="link-style page-link promo-link" href="#">Подробнее</a>
               <!--  Пагинация. Индикация текущего слайда -->
               <ol class="promo-pagination">
-                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-selected" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
+                <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
                 <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 2</span></button></li>
-                <li class="promo-pagination-item"><button class="promo-pagination-button" type="button"><span class="visually-hidden">Слайд 3</span></button></li>
+                <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-current" type="button"><span class="visually-hidden">Слайд 3</span></button></li>
               </ol>
             </div>
             <!-- Параметры оборудования -->
@@ -208,21 +210,21 @@
 
         <!-- Описание услуг -->
         <ul class="services-desc-list">
-          <li class="services-desc-item">
+          <li class="services-desc-item services-desc-item-current">
             <div class="services-desc-inner-box">
               <h2 class="section-title services-title">Доставка</h2>
               <p class="section-text services-text">Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж.</p>
             </div>
             <span class="services-logo delivery-logo"></span>
           </li>
-          <li class="services-desc-item hidden">
+          <li class="services-desc-item">
             <div class="services-desc-inner-box">
               <h2 class="section-title services-title">Гарантия</h2>
               <p class="section-text services-text">Если из-за возгорания купленного у нас товара у вас сгорит дом — не переживайте, мы выдадим вам новый. Товар, не дом, конечно же.</p>
             </div>
             <span class="services-logo warranty-logo"></span>
           </li>
-          <li class="services-desc-item hidden">
+          <li class="services-desc-item">
             <div class="services-desc-inner-box">
               <h2 class="section-title services-title">Кредит</h2>
               <p class="section-text services-text">Залезть в долговую яму стало проще! Кредитные консультанты подберут для вас наиболее выгодные условия кредита. Выгодные для банка, разумеется.</p>
@@ -278,7 +280,8 @@
             <li class="contacts-item">пн-пт: с 10:00 до 22:00</li>
             <li class="contacts-item">сб-вс: с 10:00 до 19:00</li>
           </ol>
-          <a class="link-style page-link contacts-link action-disabled" href="#">Напишите нам</a>
+          <!-- <a class="link-style page-link contacts-link action-disabled" href="#">Напишите нам</a> -->
+          <a class="link-style page-link contacts-link" href="#">Напишите нам</a>
         </section>
       </div>
     </div>

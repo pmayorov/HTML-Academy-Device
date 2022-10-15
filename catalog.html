@@ -19,7 +19,9 @@
       <div class="account-navigation-container">
 
         <form class="form-search" name="form-search" action="https://echo.htmlacademy.ru/courses" method="GET">
-          <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
+          <label class="form-search-label">
+            <input class="text-small search-input" type="search" name="field-search" placeholder="Поиск по сайту">
+          </label>
           <button class="text-small search-button" type="submit">Найти</button>
         </form>
 
@@ -27,8 +29,7 @@
           <li class="account-navigation-item"><a class="account-navigation-link entry-link " href="#">Коля Петухов</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link exit-link" href="index.html">Выйти</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link compare-link" href="#">Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link basket-link" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
-
+          <li class="account-navigation-item"><a class="account-navigation-link basket-link-data" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
         </ul>
 
       </div>
@@ -45,7 +46,7 @@
           </ul>
         </li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link " href="#">Доставка</a></li>
-        <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Гарантия</a></li>
+        <li class="main-navigation-item"><a class="link-style main-navigation-link page-link-current" href="#">Гарантия</a></li>
         <li class="main-navigation-item"><a class="link-style main-navigation-link" href="#">Контакты</a></li>
       </ul>
     </nav>
@@ -115,19 +116,18 @@
 
         <div class="sorting-container">
           <h3 class="catalog-goods-title">Сортировка:</h3>
-          <div class="sorting-details-box">
-            <details class="sorting-details">
-              <summary class="sorting-summary">Популярные</summary>
-              <ul class="sorting-list">
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Популярные</a></li>
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Новинки</a></li>
-                <li class="sorting-list-item"><a class="sorting-list-option" href="#">Стоимость</a></li>
-              </ul>
-            </details>
-          </div>
+          <details class="sorting-details">
+            <summary class="sorting-summary">Популярные</summary>
+            <ul class="sorting-list">
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Популярное</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">Новинки</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">По-дороже</a></li>
+              <li class="sorting-list-item"><a class="sorting-list-option" href="#">По-дешевле</a></li>
+            </ul>
+          </details>
           <ul class="sorting-order">
-            <li class="sorting-order-item"><a class="sorting-order-link sorting-order-up" href="#"><span class="visually-hidden">По возрастанию</span></a></li>
-            <li class="sorting-order-item"><a class="sorting-order-link sorting-order-dn" href="#"><span class="visually-hidden">По возрастанию</span></a></li>
+            <li class="sorting-order-item"><button type="button" class="sorting-order-button sorting-order-up" ><span class="visually-hidden">По возрастанию</span></button></li>
+            <li class="sorting-order-item"><button type="button" class="sorting-order-button sorting-order-dn"><span class="visually-hidden">По возрастанию</span></button></li>
           </ul>
         </div>
 
@@ -140,9 +140,6 @@
                 <!-- Добавил класс goods-image-box для изображения товара, т.к. псевдоэлемент нельзя навесить на img-элемент -->
                 <div class="goods-image-box">
                   <img class="goods-image" src="images/content/product-01.jpg" width="360" height="380" alt="Фото товара">
-
-                  <!-- todo Сделать рефакторинг этой части кода. Не нравится мне наложение правил в карточке касательно кнопки ПОДРОБНЕЕ (см. __temp__link - локальная копия класса .page-link ) -->
-
                   <span class="link-style page-link goods-more-link" href="#">Подробнее</span>
 
                 </div>
