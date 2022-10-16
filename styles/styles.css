@@ -582,11 +582,11 @@ button:hover {
 
 .slider-button-prev {
   margin-left: 30px;
-  background: url("/images/promo-arrow.svg") no-repeat center;
+  background: url("../images/promo-arrow.svg") no-repeat center;
 }
 
 .slider-button-next {
-  background: url("/images/promo-arrow.svg") no-repeat center;
+  background: url("../images/promo-arrow.svg") no-repeat center;
   transform: rotate(180deg);
 }
 
