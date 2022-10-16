@@ -1849,10 +1849,6 @@ button:hover {
   opacity: 1;
 }
 
-.sorting-order-button:focus {
-  outline: none;
-}
-
 .sorting-order-button:disabled {
   pointer-events: none;
   opacity: 0.3;
