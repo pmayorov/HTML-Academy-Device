@@ -75,31 +75,76 @@
       <div class="catalog-left-container">
         <h3 class="catalog-goods-title filter-title">Фильтр:</h3>
         <form class="catalog-filter" name="form-filter" id="form-filter" action="https://echo.htmlacademy.ru/courses" method="get">
+
           <!-- Фильтр / СТОИМОСТЬ -->
           <fieldset class="filter-fieldset">
+
             <legend class="catalog-goods-subtitle filter-subtitle">Стоимость</legend>
-            <label class="price-label">от <input class="price-input" type="number"></label>
-            <label class="price-label">до <input class="price-input" type="number"></label>
-            <button class="price-button" type="button"><span class="visually-hidden">Минимальная цена</span></button>
-            <button class="price-button" type="button"><span class="visually-hidden">Максимальная цена</span></button>
+            <div class="range-container">
+              <div class="range-scale-container">
+                <div class="range-bar" style="left: 0px; width: 119px">
+                  <button class="price-button price-button-min" type="button"><span class="visually-hidden">Минимальная цена</span></button>
+                  <button class="price-button price-button-max" type="button"><span class="visually-hidden">Максимальная цена</span></button>
+                </div>
+              </div>
+
+              <!-- Центрирование цены под range-кнопкой. label style="margin-right: 40px" и input style="width: 15px;" (ширину input-ов устанавливать по контенту) и пусть далее JS-разработчик ломает голову над формулой центрирования цены под range-кнопкой. Хотя, вполне возможно, что скоро этим JS-ом стану я :) -->
+
+              <div class="range-price-container">
+                <label class="range-price-label" style="margin-right: 63px">от<input class="price-input" type="number" name="price-min" value="0" style="width: 13px;"></label>
+                <label class="range-price-label">до<input class="price-input" type="number" name="price-max" value="5000" style="width: 40px;"></label>
+              </div>
+            </div>
+
           </fieldset>
+
           <!-- Фильтр / ЦВЕТ -->
           <fieldset class="filter-fieldset">
             <legend class="catalog-goods-subtitle filter-subtitle">Цвет</legend>
             <ul class="filter-list">
-              <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="black" checked><span class="label-item">Черный</span></label></li>
-              <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="white" checked><span class="label-item">Белый</span></label></li>
-              <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="blue"><span class="label-item">Синий</span></label></li>
-              <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="red"><span class="label-item">Красный</span></label></li>
-              <li class="filter-list-item"><label class="list-label"><input class="visually-hidden" type="checkbox" name="pink"><span class="label-item">Розовый</span></label></li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input class="visually-hidden filter-list-input" type="checkbox" name="black" checked>
+                  <span class="checked-mark"></span><span class="label-item">Черный</span>
+                </label>
+              </li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input class="visually-hidden filter-list-input" type="checkbox" name="white" checked>
+                  <span class="checked-mark"></span><span class="label-item">Белый</span>
+                </label>
+              </li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input class="visually-hidden filter-list-input" type="checkbox" name="blue">
+                  <span class="checked-mark"></span><span class="label-item">Синий</span>
+                </label>
+              </li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input class="visually-hidden filter-list-input" type="checkbox" name="red">
+                  <span class="checked-mark"></span><span class="label-item">Красный</span>
+                </label>
+              </li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input class="visually-hidden filter-list-input" type="checkbox" name="pink">
+                  <span class="checked-mark"></span><span class="label-item">Розовый</span>
+                </label>
+              </li>
             </ul>
           </fieldset>
+
           <!-- Фильтр / BLUETOOTH -->
           <fieldset class="filter-fieldset">
             <legend class="catalog-goods-subtitle filter-subtitle">Bluetooth</legend>
             <ul class="filter-list">
-              <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden" checked><span class="label-item">Есть</span></label></li>
-              <li class="filter-list-item"><label class="list-label"><input type="radio" name="bluetooth" class="visually-hidden"><span class="label-item">Нет</span></label></li>
+              <li class="filter-list-item">
+                <label class="filter-list-label"><input type="radio" name="bluetooth" class="visually-hidden filter-list-input" checked>
+                  <span class="checked-mark"></span><span class="label-item">Есть</span>
+                </label>
+              </li>
+              <li class="filter-list-item">
+                <label class="filter-list-label">
+                  <input type="radio" name="bluetooth" class="visually-hidden filter-list-input">
+                  <span class="checked-mark"></span><span class="label-item">Нет</span>
+                </label>
+              </li>
             </ul>
           </fieldset>
         </form>
@@ -126,7 +171,7 @@
             </ul>
           </details>
           <ul class="sorting-order">
-            <li class="sorting-order-item"><button type="button" class="sorting-order-button sorting-order-up" ><span class="visually-hidden">По возрастанию</span></button></li>
+            <li class="sorting-order-item"><button type="button" class="sorting-order-button sorting-order-up"><span class="visually-hidden">По возрастанию</span></button></li>
             <li class="sorting-order-item"><button type="button" class="sorting-order-button sorting-order-dn"><span class="visually-hidden">По возрастанию</span></button></li>
           </ul>
         </div>
@@ -196,7 +241,8 @@
               <li class="pagination-item"><a class="pagination-item-link" href="#">1</a></li>
               <li class="pagination-item"><a class="pagination-item-link pagination-item-current" href="#">2</a></li>
               <li class="pagination-item"><a class="pagination-item-link" href="#">3</a></li>
-              <li class="pagination-item"><a class="pagination-item-link" href="#">…</a></li>
+              <!-- <li class="pagination-item"><a class="pagination-item-link" href="#">…</a></li> -->
+              <li class="pagination-item"><a class="pagination-item-link action-disabled">…</a></li>
               <li class="pagination-item"><a class="pagination-item-link" href="#">15</a></li>
             </ul>
             <a class="link-style pagination-link-forward" href="#">Вперёд</a>

@@ -212,6 +212,7 @@ button:hover {
   margin: 0;
   padding: 0;
   list-style-type: none;
+  flex-wrap: wrap;
 }
 
 /** Форма поиска *  */
@@ -291,12 +292,6 @@ button:hover {
   opacity: 0.3;
 }
 
-/* Стилизация неактивного состояния элементов формы поиска  */
-
-/* .search-input.action-disabled {
-  border-right: none;
-} */
-
 /** Меню пользователя **/
 
 .account-navigation {
@@ -312,8 +307,7 @@ button:hover {
   margin-right: 18px;
 }
 
-/* В .account-navigation-link{} добавил vertical-align: middle; т.к. после добавления свойства overflow: hidden; в правило .entry-link{} все строки меню вертикально сдвигались от центра вверх
-Лонгрид по теме - https://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward */
+/* В .account-navigation-link{} добавил vertical-align: middle; т.к. после добавления свойства overflow: hidden; в правило .entry-link{} все строки меню вертикально сдвигались от центра вверх. Лонгрид по теме - https://stackoverflow.com/questions/9273016/why-is-this-inline-block-element-pushed-downward */
 
 .account-navigation-link {
   position: relative;
@@ -441,6 +435,13 @@ button:hover {
   outline-offset: 2px;
 }
 
+.catalog-link:focus-visible {
+  position: relative;
+  z-index: 3;
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
 .page-link-current:focus-visible {
   outline: 2px solid var(--special-purple);
   outline-offset: 6px;
@@ -448,6 +449,7 @@ button:hover {
 
 .catalog-link {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
 }
 
@@ -462,9 +464,9 @@ button:hover {
   opacity: 0.3;
 }
 
-/* .catalog-link:hover + .catalog-navigation, */
-.catalog-link:focus + .catalog-navigation,
+.catalog-link:hover + .catalog-navigation,
 .catalog-navigation:hover,
+.catalog-link:focus + .catalog-navigation,
 .main-navigation-item:focus-within .catalog-navigation {
   display: grid;
 }
@@ -476,7 +478,7 @@ button:hover {
 }
 
 
-/* .catalog-link:hover .catalog-link-button, */
+.catalog-link:hover .catalog-link-button,
 .catalog-link:focus .catalog-link-button,
 .main-navigation-item:focus-within .catalog-link-button {
   background: url("../images/minus-mark.svg") no-repeat center;
@@ -486,15 +488,16 @@ button:hover {
   /* display: grid; */
   display: none;
   grid-auto-flow: column;
-  grid-template-columns: repeat(4, 1fr);
+  justify-content: start;
+  grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(3, 36px);
-  grid-template-areas: "column-1 column-2 column-3 column-4"
-    "column-1 column-2 column-3 column-4"
-    "column-1 column-2 column-3 column-4";
+  /* grid-template-areas: "column-1 column-2 column-3 column-4 column-5"
+    "column-1 column-2 column-3 column-4 column-5"
+    "column-1 column-2 column-3 column-4 column-5"; */
   column-gap: 30px;
   box-sizing: border-box;
   width: 100%;
-  height: 180px;
+  min-height: 180px;
   padding: 14px 60px 27px 60px;
   margin: 0;
   position: absolute;
@@ -505,14 +508,14 @@ button:hover {
   list-style-type: none;
   line-height: 0;
   background: var(--special-yellow-light);
-  /* opacity: 0.95; */
+  opacity: 0.97;
 }
 
 .catalog-navigation .catalog-navigation-link:focus-within {
   display: grid;
 }
 
-.catalog-areas-column-1 {
+/* .catalog-areas-column-1 {
   grid-area: column-1;
 }
 
@@ -528,7 +531,12 @@ button:hover {
   grid-area: column-4;
 }
 
+.catalog-areas-column-5 {
+  grid-area: column-5;
+} */
+
 .catalog-navigation-link {
+  width: fit-content;
   font-size: 16px;
   line-height: 18px;
   text-decoration: inherit;
@@ -1431,13 +1439,11 @@ button:hover {
   box-sizing: border-box;
   width: 320px;
   padding: 25px 0 60px 60px;
-  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-right-container {
   background-color: var(--basic-white);
   width: 840px;
-  /* outline: 1px solid #fa8072; */
 }
 
 .catalog-goods-title {
@@ -1461,7 +1467,7 @@ button:hover {
   color: var(--basic-black);
 }
 
-/* Фильтры */
+/** ФИЛЬТРЫ **/
 
 .catalog-filter {
   width: 200px;
@@ -1497,6 +1503,115 @@ button:hover {
   margin-bottom: 47px;
 }
 
+/* Фильтр / СТОИМОСТЬ */
+
+.range-scale-container {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  background-color: var(--basic-gray);
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+.range-bar {
+  position: absolute;
+  height: 2px;
+  background-color: var(--basic-black);
+}
+
+.price-button {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: var(--basic-lightgray);
+  border: 2px solid var(--basic-black);
+}
+
+.price-button:hover {
+  border: 2px solid rgb(50% 50% 50%);
+}
+
+.price-button:active {
+  background-color: var(--basic-black);
+  border: 2px solid var(--basic-black);
+}
+
+.price-button-min {
+  top: -8px;
+  left: -9px;
+}
+
+.price-button-max {
+  top: -8px;
+  right: -9px;
+}
+
+.price-button:focus-visible::before {
+  position: absolute;
+  z-index: 1;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
+}
+
+.price-button:focus {
+  outline: none;
+}
+
+.range-price-container {
+  position: relative;
+  display: flex;
+  margin-left: -16px;
+}
+
+.range-price-label {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.price-input {
+  box-sizing: border-box;
+  width: 48px;
+  margin: 0;
+  padding: 0;
+  margin-left: 4px;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  appearance: textfiled;
+}
+
+.range-price-label:focus-within {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.price-input:focus {
+  outline: none;
+}
+
+/* Отключаем нативную кнопочную индикацию в inpute */
+.price-input::-webkit-outer-spin-button,
+.price-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Фильтр / ЦВЕТ */
+
 .filter-list {
   margin: 0;
   padding: 0;
@@ -1513,6 +1628,21 @@ button:hover {
   margin-bottom: 17px;
 }
 
+.checked-mark {
+  position: absolute;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  top: -2px;
+  left: 0;
+  border: 2px solid #cccccc;
+  border-radius: 3px;
+}
+
+.filter-list-label:hover {
+  cursor: pointer;
+}
+
 .filter-button {
   margin-top: 35px;
   width: 220px;
@@ -1523,6 +1653,12 @@ button:hover {
 .filter-button:disabled {
   pointer-events: none;
   opacity: 0.3;
+}
+
+.filter-list-label {
+  position: relative;
+  display: block;
+  padding-left: 36px;
 }
 
 /* Сортировка */
@@ -1614,7 +1750,14 @@ button:hover {
   justify-content: center;
   width: 30px;
   height: 30px;
-  /* outline: 1px solid #fa8072; */
+}
+
+/* Установил z-index: 1 поскольку в кнопках внутренняя часть :focus-обводки попадает под фоновый opacity: 0.3. Вероятно кнопки пересекаются. */
+
+.sorting-order-item:focus-within {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid rgb(175, 79, 255);
 }
 
 .sorting-order-button {
@@ -1636,10 +1779,6 @@ button:hover {
 
 .sorting-order-button:focus {
   outline: none;
-}
-
-.sorting-order-item:focus-within {
-  outline: 2px solid rgb(175, 79, 255);
 }
 
 .sorting-order-button:disabled {
@@ -1779,14 +1918,7 @@ button:hover {
   outline: none;
 }
 
-/* Состояния карточки товара -- end */
-
-.price-label {
-  font-size: 15px;
-  line-height: 18px;
-  opacity: 0.3;
-  text-align: center;
-}
+/* Стилизация состояний карточки товара -- end */
 
 .item-price {
   line-height: 21px;
@@ -1893,7 +2025,7 @@ button:hover {
 
 /** VISUALLY-HIDDEN **/
 
-.visually-hidden:not(:focus):not(:active) {
+.visually-hidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
