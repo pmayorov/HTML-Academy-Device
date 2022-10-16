@@ -71,22 +71,26 @@
       <!-- * Слайдер * -->
       <section class="promo">
         <h2 class="section-title visually-hidden">Популярные товары интернет-магазина</h2>
+
         <!-- * Слайдер. Фотографии * -->
-        <ol class="promo-images-list">
-          <li class="promo-images-item promo-images-item-current">
-            <img class="promo-image" src="images/content/slider-1.png" width="560" height="560" alt="Белый квадрокоптер оснащенный лазером">
-          </li>
-          <li class="promo-images-item">
-            <img class="promo-image" src="images/content/slider-2.png" width="560" height="560" alt="Чёрный фитнес-браслет с текстом на дисплее &laquo;Я вижу, что ты снова ешь!&raquo;">
-          </li>
-          <li class="promo-images-item">
-            <img class="promo-image" src="images/content/slider-3.png" width="560" height="560" alt="Три черных селфи палки">
-          </li>
-        </ol>
-        <!-- Кнопки листания фотографий слайдов -->
-        <div class="slider-button-container hidden">
-          <button class="slider-button-prev" type="button"><span class="visually-hidden">Предыдущий слайд</span></button>
-          <button class="slider-button-next" type="button"><span class="visually-hidden">Следующий слайд</span></button>
+        <div class="promo-images-container">
+          <!-- Кнопки листания фото -->
+          <div class="slider-button-container">
+            <button class="slider-button slider-button-prev" type="button" ><span class="visually-hidden">Предыдущий слайд</span></button>
+            <button class="slider-button slider-button-next" type="button"><span class="visually-hidden">Следующий слайд</span></button>
+          </div>
+          <!-- Список с фотографиями -->
+          <ol class="promo-images-list">
+            <li class="promo-images-item promo-images-item-current">
+              <img class="promo-image" src="images/content/slider-1.png" width="560" height="560" alt="Белый квадрокоптер оснащенный лазером">
+            </li>
+            <li class="promo-images-item">
+              <img class="promo-image" src="images/content/slider-2.png" width="560" height="560" alt="Чёрный фитнес-браслет с текстом на дисплее &laquo;Я вижу, что ты снова ешь!&raquo;">
+            </li>
+            <li class="promo-images-item">
+              <img class="promo-image" src="images/content/slider-3.png" width="560" height="560" alt="Три черных селфи палки">
+            </li>
+          </ol>
         </div>
 
         <!-- * Слайдер. Описания * -->
@@ -99,10 +103,6 @@
             <div class="promo-pagination-container">
               <!-- Кнопка/ссылка слайдера -->
               <a class="link-style page-link promo-link" href="#">Подробнее</a>
-
-              <!-- * action-disabled варинат отключенной кнопки * -->
-              <!-- <a class="link-style page-link promo-link action-disabled" href="#">Подробнее</a> -->
-
               <!--  Пагинация. Индикация текущего слайда -->
               <ol class="promo-pagination">
                 <li class="promo-pagination-item"><button class="promo-pagination-button promo-pagination-button-current" type="button"><span class="visually-hidden">Слайд 1</span></button></li>
