@@ -1234,21 +1234,24 @@ button:hover {
   padding: 62px 0 61px 0;
 }
 
+.page-footer .page-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 240px 1fr 240px;
+  grid-template-rows: repeat(3, auto);
+}
+
+.footer-logo-link {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+}
+
 .footer-container {
+  grid-area: 2 / 2 / 4 / 3;
   display: flex;
-}
-
-.footer-container:first-of-type {
-  margin-bottom: 35px;
-}
-
-.footer-container:nth-of-type(2) {
+  flex-direction: column;
   justify-content: space-between;
-  margin-bottom: 47px;
-}
-
-.footer-container:nth-of-type(3) {
-  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-address-box,
@@ -1258,39 +1261,34 @@ button:hover {
   width: 240px;
 }
 
-/** Костыльный отступ для PixelPefect */
-.footer-phone-box {
-  margin-top: 7px;
-}
-
-.footer-container .phone {
+.page-footer .phone {
   align-self: flex-end;
 }
 
-.footer-container .phone:hover {
+.page-footer .phone:hover {
   color: var(--special-yellow-dark);
 }
 
-.footer-container .phone:active {
+.page-footer .phone:active {
   opacity: 0.3;
 }
 
-.footer-container .phone:focus-visible {
+.page-footer .phone:focus-visible {
   outline: 2px solid var(--special-purple);
   outline-offset: 2px;
 }
 
 .footer-navigation-list,
 .footer-social-list {
+  display: flex;
   margin: 0;
   padding: 0;
   list-style-type: none;
-  display: flex;
 }
 
 .footer-address-box .address + .address,
 .footer-phone-box .phone + .phone {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 .footer-navigation-list {
@@ -1328,14 +1326,10 @@ button:hover {
   outline-offset: 2px;
 }
 
-/* ! Костыль */
-/* Установил правый паддинг, что бы выровнять кнопки соцсетей по центру страницы. Расчитывал: правый логотип width: 115px – левый divider width: 80px = 35px. В футере .divider уже по макету */
-
 .page-footer .divider {
   width: 80px;
   align-self: center;
   background-color: var(--special-yellow-dark);
-  margin-right: 35px;
 }
 
 .address {
@@ -1345,6 +1339,8 @@ button:hover {
 .page-footer a {
   color: var(--basic-white);
 }
+
+.
 
 .text-small {
   font-size: 16px;
@@ -1396,6 +1392,10 @@ button:hover {
   opacity: 0.3;
 }
 
+.htmlacademy-link {
+  justify-self: end;
+}
+
 .htmlacademy-link svg {
   fill: var(--special-yellow-dark);
 }
@@ -1429,6 +1429,8 @@ button:hover {
 .footer-social-link:focus {
   outline: none;
 }
+
+/** FOOTER - END **/
 
 /** СТИЛИ КАТАЛОГА ТОВАРОВ **/
 
