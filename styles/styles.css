@@ -25,11 +25,14 @@
 :root {
   /* Project colors */
   --basic-black: #000000;
+  --basic-black-rgb: 0, 0, 0;
   --basic-dark: #444444;
+  --basic-dark-rgb: 68, 68, 68;
   --basic-gray: #dcdcdc;
   --basic-lightgray: #ebebeb;
   --basic-light: #f0f0f0;
   --basic-white: #ffffff;
+  --basic-white-rgb: 255, 255, 255;
   --status-success: #08af00;
   --status-error: #ff3d3d;
   --status-warning: #fd912e;
@@ -163,6 +166,12 @@ button:hover {
   margin: 0;
 }
 
+/* Текста в поле input-а и button-а в хедере и адреса с телефоном в футере */
+.text-small {
+  font-size: 16px;
+  line-height: 20px;
+}
+
 /** HEADER **/
 
 .navigation {
@@ -242,7 +251,7 @@ button:hover {
 }
 
 .search-input::placeholder {
-  opacity: 0.3;
+  color: rgba(var(--basic-black-rgb), 0.3);
 }
 
 .form-search-label:focus-within {
@@ -268,7 +277,7 @@ button:hover {
 }
 
 .search-button:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(var(--basic-white-rgb), 0.3);
 }
 
 .search-button:focus {
@@ -1198,7 +1207,7 @@ button:hover {
 }
 
 .subscribe-button:active {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(var(--basic-white-rgb), 0.3);
 }
 
 .subscribe-button:focus-visible {
@@ -1269,7 +1278,7 @@ button:hover {
   width: 240px;
 }
 
-/* Данным правилом выравниваю по вертикали размещенные в левой и правой колонках элементы по отношению к кнопкам соцсетей центральной колонки. Привязываюсь к высоте логотипов соц.сетей в 40px  */
+/* footer-align-bottom-box. Выравниваю по вертикали размещенные в левой и правой колонках элементы по отношению к кнопкам соцсетей центральной колонки. Привязываюсь к высоте логотипов соц.сетей в 40px  */
 
 .footer-align-bottom-box {
   display: flex;
@@ -1277,6 +1286,27 @@ button:hover {
   margin-top: auto;
   align-items: center;
 }
+
+.footer-address-box .address + .address,
+.footer-phone-box .phone + .phone {
+  margin-top: 10px;
+}
+
+.address {
+  font-style: normal;
+}
+
+.page-footer a {
+  color: var(--basic-white);
+}
+
+
+.page-footer .divider {
+  width: 80px;
+  background-color: var(--special-yellow-dark);
+}
+
+/* Средняя колонка */
 
 .footer-navigation-list,
 .footer-social-list {
@@ -1289,59 +1319,16 @@ button:hover {
 }
 
 /* todo На будущее! Разобраться с принципами установки line-height!
-/* В данном проекте установил для body line-height: 30px принимая во внимание, что такая высота строки у основного текста, но не учел что этот же параметр будет влиять и на списки с их элементами. Что в свою очередь потом влияет на вертикальные марджины. И если потом марджины устанавливать по макетным цифрам, то в итоге получаем несовпадения. Приходится потом в списках возращать нативный line-height! :(( */
+/* В данном проекте установил для body line-height: 30px принимая во внимание, что такая высота строки у основного текста, но не учел что этот же параметр будет влиять и на списки с их элементами. Что в свою очередь потом влияет на вертикальные марджины. И если потом марджины устанавливать по макетным цифрам, то в итоге получаем несовпадения. Приходится потом в списках возращать нативный line-height или компенсировать разницу перерасчитывая отступ :(( */
 
 .footer-navigation-list {
   column-gap: 35px;
+  /* line-height: normal; */
   margin-bottom: 57px;
 }
 
 .footer-social-list {
   gap: 15px;
-}
-
-/** Читай выше! Если не обнулить line-height иконки соцсетей растягиваются на высоту установленного в body line-height: 30px и соотв. не центрируются. Может можно как-то иначе, но пока не знаю. */
-
-.footer-social-item {
-  position: relative;
-  line-height: 0;
-}
-
-.footer-social-link {
-  display: block;
-  position: relative;
-  width: 40px;
-  height: 40px;
-  background-color: var(--basic-white);
-  opacity: 0.3;
-  border-radius: 50%;
-}
-
-.footer-address-box .address + .address,
-.footer-phone-box .phone + .phone {
-  margin-top: 10px;
-}
-
-.page-footer .divider {
-  width: 80px;
-  background-color: var(--special-yellow-dark);
-}
-
-.page-footer .phone {
-  align-self: flex-end;
-}
-
-.page-footer .phone:hover {
-  color: var(--special-yellow-dark);
-}
-
-.page-footer .phone:active {
-  opacity: 0.3;
-}
-
-.page-footer .phone:focus-visible {
-  outline: 2px solid var(--special-purple);
-  outline-offset: 2px;
 }
 
 .footer-navigation-link {
@@ -1371,45 +1358,67 @@ button:hover {
   outline-offset: 2px;
 }
 
-.address {
-  font-style: normal;
+/* Соцсети */
+
+.footer-social-link {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(255, 255, 255, 0.3);
+  border-radius: 50%;
 }
 
-.page-footer a {
-  color: var(--basic-white);
-}
-
-.text-small {
-  font-size: 16px;
-  line-height: 20px;
-}
-
-.footer-social-link::before {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+.footer-social-link svg {
+  margin-top: 50%;
+  margin-left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.link-facebook::before {
-  content: url("../images/facebook.svg");
-}
-
-.link-instagram::before {
-  content: url("../images/instagram.svg");
-}
-
-.link-twitter::before {
-  content: url("../images/twitter.svg");
 }
 
 .footer-social-link:hover {
   background-color: var(--special-yellow-dark);
-  opacity: 1;
 }
 
-.footer-social-link:active::before {
+.footer-social-link:active svg {
   opacity: 0.3;
+}
+
+.footer-social-link:focus-visible::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.footer-social-link:focus {
+  outline: none;
+}
+
+/* Номер телефона */
+
+.page-footer .phone {
+  align-self: flex-end;
+}
+
+.page-footer .phone:hover {
+  color: var(--special-yellow-dark);
+}
+
+.page-footer .phone:active {
+  opacity: 0.3;
+}
+
+.page-footer .phone:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+/* Лого академии */
+
+.htmlacademy-link {
+  position: relative;
 }
 
 .htmlacademy-link svg {
@@ -1429,22 +1438,13 @@ button:hover {
   outline: none;
 }
 
-.htmlacademy-link:focus-visible svg {
-  outline: 2px solid var(--special-purple);
-  outline-offset: 2px;
-}
-
-.footer-social-item:focus-within::before {
+.htmlacademy-link:focus-visible::before {
   position: absolute;
   content: "";
-  width: 40px;
-  height: 40px;
-  outline: 2px solid rgb(175, 79, 255, 1);
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
   outline-offset: 2px;
-}
-
-.footer-social-link:focus {
-  outline: none;
 }
 
 /** FOOTER - END **/
@@ -1644,7 +1644,7 @@ button:hover {
   align-items: center;
   font-size: 15px;
   line-height: 18px;
-  color: rgba(0, 0, 0, 0.3);
+  color: rgba(var(--basic-black-rgb), 0.3);
 }
 
 .price-input {
@@ -1836,50 +1836,55 @@ button:hover {
 }
 
 .sorting-order-item {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 30px;
   height: 30px;
+  z-index: 1;
 }
 
 /* Установил z-index: 1 поскольку в кнопках внутренняя часть :focus-обводки попадает под фоновый opacity: 0.3. Вероятно кнопки пересекаются. */
 
-.sorting-order-item:focus-within {
-  position: relative;
-  z-index: 1;
-  outline: 2px solid rgb(175, 79, 255);
+.sorting-order-button {
+  border: none;
 }
 
-.sorting-order-button {
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
+.sorting-order-button svg {
   opacity: 0.3;
 }
 
-.sorting-order-button:hover {
+.sorting-order-dn svg {
+  transform: scaleY(-1);
+}
+
+.sorting-order-button:hover svg {
+  cursor: pointer;
   opacity: 0.6;
 }
 
-.sorting-order-button:active {
+.sorting-order-button:active svg {
   opacity: 1;
 }
 
-.sorting-order-button:disabled {
+.sorting-order-button:disabled svg {
   pointer-events: none;
   opacity: 0.3;
 }
 
-.sorting-order-up {
-  background-image: url("../images/sorting-order.svg");
+.sorting-order-button:focus {
+  outline: none;
 }
 
-.sorting-order-dn {
-  background-image: url("../images/sorting-order.svg");
-  transform: rotate(180deg);
+.sorting-order-button:focus-visible::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
 }
 
 /**  Карточки товаров - start **/
@@ -2065,8 +2070,7 @@ button:hover {
   height: 40px;
   font-size: 16px;
   line-height: 20px;
-  color: var(--basic-dark);
-  opacity: 0.3;
+  color: rgba(var(--basic-dark-rgb), 0.3);
   text-decoration: none;
 }
 
@@ -2082,32 +2086,25 @@ button:hover {
 
 .pagination-link-back:active,
 .pagination-link-forward:active {
-  color: rgba(0, 0, 0, 0.2);
+  color: rgba(var(--basic-black-rgb), 0.3);
 }
 
-.pagination-link-back:focus-visible,
-.pagination-link-forward:focus-visible {
-  outline: 2px solid var(--special-purple);
-}
-
-.pagination-item-current {
-  opacity: 0.6;
+.pagination-item-link-current {
+  color: rgba(var(--basic-dark-rgb), 0.6);
 }
 
 .pagination-item-link:hover {
-  opacity: 1;
+  color: var(--basic-dark);
 }
 
 .pagination-item-link:active {
-  opacity: 0.1;
+  color: rgba(var(--basic-dark-rgb), 0.1);
 }
 
-.pagination-item:focus-within {
-  outline: 2px solid var(--special-purple);
-}
-
+.pagination-link-back:focus-visible,
+.pagination-link-forward:focus-visible,
 .pagination-item-link:focus-visible {
-  outline: none;
+  outline: 2px solid var(--special-purple);
 }
 
 /** VISUALLY-HIDDEN **/
