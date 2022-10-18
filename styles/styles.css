@@ -110,7 +110,8 @@ html {
   text-align: center;
 }
 
-.page-link::before {
+.page-link::before,
+.goods-more-link::before {
   position: absolute;
   z-index: -1;
   content: "";
@@ -1887,7 +1888,7 @@ button:hover {
   outline: 2px solid var(--special-purple);
 }
 
-/**  Карточки товаров - start **/
+/**  КАРТОЧКА ТОВАРОВ **/
 
 .goods-cards {
   padding: 70px 40px 78px 40px;
@@ -1907,7 +1908,9 @@ button:hover {
   width: 360px;
 }
 
+/* Классу .goods-cards-link установлен position:relative для позиционирования focus-обводки */
 .goods-cards-link {
+  position: relative;
   text-decoration: none;
 }
 
@@ -1917,20 +1920,26 @@ button:hover {
   object-fit: cover;
 }
 
+/* Добавил .goods-image-box для изображения товара, т.к. псевдоэлемент нельзя навесить на img-элемент */
+.goods-image-box {
+  position: relative;
+}
+
 .good-cards-desc-box {
   display: flex;
   justify-content: space-between;
   margin-top: auto;
 }
 
-/* Стилизация состояний карточки товара -- start*/
-
-/* Добавил .goods-image-box для изображения товара, т.к. псевдоэлемент нельзя навесить на img-элемент */
-
-.goods-image-box {
-  position: relative;
+.item-price {
+  line-height: 21px;
+  text-decoration: none;
+  color: var(--basic-dark);
 }
 
+/* Стилизация состояний карточки товара -- start*/
+
+/* Лого нового товара. Позиционируем относительно goods-image-box */
 .goods-new .goods-image-box::before {
   position: absolute;
   top: 27px;
@@ -1955,6 +1964,8 @@ button:hover {
   opacity: 0.6;
 }
 
+/* Полупрозрачный фон. Позиционируем относительно .goods-image-box */
+
 .goods-cards-link:hover .goods-image-box::after {
   position: absolute;
   /* z-index: 1 - присвоен логотипу (NEW) */
@@ -1964,12 +1975,11 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  color: #000000;
   background-color: var(--basic-light);
   opacity: 0.8;
 }
 
-/* "ПОДРОБНЕЕ" на карточке товара – скрываем */
+/* Строка "ПОДРОБНЕЕ". По умолчанию – скрываем. Позиционируем относительно .goods-image-box */
 
 .goods-more-link {
   display: none;
@@ -1978,30 +1988,37 @@ button:hover {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 220px;
-  padding: 10px 0;
   text-align: center;
 }
 
-/* При hover над карточкой z-index: 3 – показываем, т.к. z-index: 1 - присвоен логотипу (NEW); z-index: 2 – полупрозрачному фону над фотографией */
+/* Строка "ПОДРОБНЕЕ" – показываем при hover над карточкой (z-index: 3), т.к. z-index: 1 - присвоен логотипу (NEW); z-index: 2 – полупрозрачному фону над фотографией */
 
 .goods-cards-link:hover .goods-more-link {
   display: block;
   z-index: 3;
 }
 
+/* Осветляем название товара при hover над карточкой */
 .goods-cards-link:hover .catalog-goods-subtitle {
   opacity: 0.6;
 }
 
-.goods-cards-link:active .page-link::before {
+/* Затемняем полоску под строкой "ПОДРОБНЕЕ" при нажатии на карточку */
+.goods-cards-link:active .goods-more-link::before {
   background-color: var(--special-yellow-dark);
 }
 
+/* Осветляем всю информацию под фото при нажатии на карточку */
 .goods-cards-link:active .good-cards-desc-box {
   opacity: 0.3;
 }
 
-.goods-cards-item:focus-within {
+/* Вывод focus-обводки. Позиционирование по ссылке */
+.goods-cards-link:focus-visible::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
   outline: 2px solid var(--special-purple);
   outline-offset: 2px;
 }
@@ -2010,15 +2027,7 @@ button:hover {
   outline: none;
 }
 
-/* Стилизация состояний карточки товара -- end */
-
-.item-price {
-  line-height: 21px;
-  text-decoration: none;
-  color: var(--basic-dark);
-}
-
-/**  Карточки товаров - end **/
+/** Загрузить ещё + Пагинация карточек **/
 
 .show-more-button {
   width: 100%;
