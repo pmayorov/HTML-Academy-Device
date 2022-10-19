@@ -893,7 +893,7 @@ button:hover {
   text-align: center;
 }
 
-.services-nav-item-current .services-link {
+.services-link-current {
   background-color: var(--basic-black);
   color: var(--special-yellow-light);
 }
@@ -918,26 +918,26 @@ button:hover {
   background-color: var(--special-yellow-light);
 }
 
-.services-nav-item-current .services-link-item::before,
+.services-link-current .services-link-item::before,
 .services-link:hover .services-link-item::before,
 .services-link:active .services-link-item::before {
   display: none;
 }
 
-.services-link:hover .services-link-item {
+.services-link:not(.services-link-current):hover .services-link-item {
   background-color: var(--special-yellow-light);
 }
 
-.services-link:active .services-link-item {
+.services-link:not(.services-link-current):active .services-link-item {
   background-color: var(--special-yellow-dark);
 }
 
-.services-nav-item-current .services-link:hover {
+.services-link-current:hover {
   background-color: var(--basic-black);
   color: rgb(255, 225, 128, 0.5);
 }
 
-.services-nav-item-current .services-link:active {
+.services-link-current:active {
   background-color: var(--basic-black);
   color: rgb(255, 225, 128, 0.3);
 }
