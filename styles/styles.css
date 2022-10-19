@@ -872,18 +872,24 @@ button:hover {
   list-style-type: none;
 }
 
+.services-nav-item:not(:last-of-type) {
+  margin-bottom: 35px;
+}
+
 /* Меню услуг */
 
 .services-nav-list {
   width: 280px;
 }
 
-.services-nav-item:not(:last-of-type) {
-  margin-bottom: 35px;
-}
-
 .services-link {
   display: flex;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
   text-align: center;
 }
 
@@ -900,12 +906,6 @@ button:hover {
   line-height: 20px;
 }
 
-.services-link-current .services-link-item::before,
-.services-link:hover .services-link-item::before,
-.services-link:active .services-link-item::before {
-  display: none;
-}
-
 .services-link-item::before {
   position: absolute;
   z-index: -1;
@@ -918,18 +918,28 @@ button:hover {
   background-color: var(--special-yellow-light);
 }
 
-.services-link:hover {
+.services-link-current .services-link-item::before,
+.services-link:hover .services-link-item::before,
+.services-link:active .services-link-item::before {
+  display: none;
+}
+
+.services-link:not(.services-link-current):hover .services-link-item {
+  background-color: var(--special-yellow-light);
+}
+
+.services-link:not(.services-link-current):active .services-link-item {
+  background-color: var(--special-yellow-dark);
+}
+
+.services-link-current:hover {
   background-color: var(--basic-black);
   color: rgb(255, 225, 128, 0.5);
 }
 
-.services-link:active {
+.services-link-current:active {
   background-color: var(--basic-black);
   color: rgb(255, 225, 128, 0.3);
-}
-
-.services-link:focus-visible {
-  outline: 2px solid var(--special-purple);
 }
 
 /* Описание услуг */
