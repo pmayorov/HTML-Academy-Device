@@ -942,6 +942,20 @@ button:hover {
   color: rgb(255, 225, 128, 0.3);
 }
 
+.services-link:focus {
+  outline: none;
+}
+
+.services-link-current:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
+}
+
+.services-link:not(.services-link-current):focus-visible .services-link-item {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 4px;
+}
+
 /* Описание услуг */
 
 .services-desc-list {
@@ -989,7 +1003,7 @@ button:hover {
   content: url("../images/services-credit.svg");
 }
 
-/** Доставим товар под заказ **/
+/** Товар под заказ **/
 .order {
   background-color: var(--basic-light);
   margin-bottom: var(--section-bottom-margin);
@@ -1058,18 +1072,15 @@ button:hover {
   display: flex;
   justify-content: space-between;
   margin-bottom: var(--section-bottom-margin);
-  /* outline: 1px solid #fa8072; */
 }
 
 .about {
   width: 500px;
-  /* outline: 1px solid #fa8072; */
 }
 
 .contacts {
   width: 510px;
   padding-right: 23px;
-  /* outline: 1px solid #fa8072; */
 }
 
 .divider {
