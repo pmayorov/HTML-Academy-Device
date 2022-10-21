@@ -308,6 +308,10 @@ button:hover {
   flex-grow: 1;
 }
 
+.account-navigation-item {
+  position: relative;
+}
+
 .account-navigation-item:nth-child(2) {
   margin-left: auto;
   margin-right: 27px;
@@ -352,7 +356,6 @@ button:hover {
 /* Добавил в ссылку корзины правило .basket-link-data, которое срабатывает в состоянии показа количества покупок "99". Оно для иконки корзины. В правилах меняется padding-left для того, чтобы расширять поле ссылки под иконку "99" для тогоб чтобы ее оборачивала :focus рамка. */
 
 .basket-link-data {
-  position: relative;
   padding-left: 40px;
 }
 
@@ -408,10 +411,18 @@ button:hover {
   content: attr(data-amount);
 }
 
+.basket-link-data:hover + .popover-basket,
+.popover-basket:hover {
+  display: block;
+}
+
 /** Поповер. Корзина */
 
 .popover-basket {
+  display: none;
   position: absolute;
+  left: 27px;
+  top: 37px;
   z-index: 2;   /*  z-index: 1; присвоено .promo-title   */
   box-sizing: border-box;
   width: 320px;
@@ -420,19 +431,38 @@ button:hover {
   background-color: var(--basic-black);
 }
 
+.popover-basket::before {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom: 6px solid var(--basic-black);
+}
+
 .basket-list {
   padding: 0;
-  margin: 0 20px;
+  margin: 0;
   list-style-type: none;
 }
 
 .basket-item {
   display: flex;
-  padding: 20px 0;
+  padding: 20px;
+  border-bottom: 1px solid rgba(var(--basic-white-rgb), 0.1);
+}
+
+.basket-item:last-of-type {
+  border-bottom: 0;
 }
 
 .basket-item-link {
   display: flex;
+  margin-right: 20px;
   color: inherit;
   text-decoration: none;
 }
@@ -442,6 +472,7 @@ button:hover {
 }
 
 .basket-item-desc {
+  word-break: break-word;
   margin: 0;
 }
 
@@ -460,6 +491,19 @@ button:hover {
   display: block;   /* Если не преобразовать svg смещается в кнопке */
 }
 
+.basket-item-link:hover {
+  opacity: 0.6;
+}
+
+.basket-item-link:active {
+  opacity: 0.3;
+}
+
+.basket-item-link:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 3px;
+}
+
 .basket-item-delete:hover path {
   fill: rgba(var(--basic-white-rgb), 0.6);
 }
@@ -470,6 +514,7 @@ button:hover {
 
 .basket-item-delete:focus-visible {
   outline: 2px solid var(--special-purple);
+  outline-offset: 3px;
 }
 
 .basket-item-total {
@@ -497,6 +542,26 @@ button:hover {
   text-align: center;
   line-height: 50px;
   background-color: var(--basic-white);
+}
+
+.basket-item-open:hover {
+  background-color: var(--special-yellow-light);
+}
+
+.basket-item-open:active {
+  color: rgba(var(--basic-black-rgb), 0.3);
+}
+
+.basket-item-open:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 3px;
+}
+
+.basket-item-open:disabled,
+.basket-item-open.action-disabled {
+  opacity: 1;
+  /* Маленький костыль. По умолчанию в классе .action-disabled прописано opacity: 0.3; а у нас фон ссылки должен оставаться белым. Поэтому восстанавливаю цвет фона и задаю прозрачность только тексту */
+  color: rgba(var(--basic-black-rgb), 0.3);
 }
 
 /* Навигационное меню */
@@ -1966,10 +2031,6 @@ button:hover {
 
 .sorting-order-button svg {
   opacity: 0.3;
-}
-
-.sorting-order-dn svg {
-  transform: scaleY(-1);
 }
 
 .sorting-order-button:hover svg {

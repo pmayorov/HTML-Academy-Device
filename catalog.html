@@ -29,7 +29,45 @@
           <li class="account-navigation-item"><a class="account-navigation-link entry-link " href="#">Коля Петухов</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link exit-link" href="index.html">Выйти</a></li>
           <li class="account-navigation-item"><a class="account-navigation-link compare-link" href="#">Сравнить</a></li>
-          <li class="account-navigation-item"><a class="account-navigation-link basket-link-data" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a></li>
+          <li class="account-navigation-item"><a class="account-navigation-link basket-link-data" href="#"><span data-amount="99" class="icon-basket"></span>Корзина</a>
+
+            <!-- Поповер. Корзина -->
+            <article class="popover-basket">
+              <h2 class="visually-hidden">Корзина товаров</h2>
+              <ul class="basket-list text-small">
+                <li class="basket-item">
+                  <a class="basket-item-link" href="#">
+                    <img class="basket-item-image" width="39" height="43" src="images/content/product-01-smallest.jpg" alt="Фото товара">
+                    <p class="basket-item-desc">Любительская селфи-палка</p>
+                  </a>
+                  <button class="basket-item-delete">
+                    <span class="visually-hidden">Удалить</span>
+                    <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 .9 9.1 0 5 4.1.9 0 0 .9 4.1 5 0 9.1l.9.9L5 5.9 9.1 10l.9-.9L5.9 5 10 .9Z" fill="#fff" />
+                    </svg>
+                  </button>
+                </li>
+                <li class="basket-item">
+                  <a class="basket-item-link" href="#">
+                    <img class="basket-item-image" width="39" height="43" src="images/content/product-02-smallest.jpg" alt="Фото товара">
+                    <p class="basket-item-desc">Профессиональная селфи-палка</p>
+                  </a>
+                  <button class="basket-item-delete">
+                    <span class="visually-hidden">Удалить</span>
+                    <svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M10 .9 9.1 0 5 4.1.9 0 0 .9 4.1 5 0 9.1l.9.9L5 5.9 9.1 10l.9-.9L5.9 5 10 .9Z" fill="#fff" />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <p class="basket-item-total text-small">
+                <span class="basket-goods-amount">Товаров: 2</span>
+                <span class="basket-goods-sum">Сумма: 2000 &#8381;</span>
+              </p>
+              <a class="link-style basket-item-open" href="#">Открыть корзину</a>
+            </article>
+
+          </li>
         </ul>
 
       </div>
@@ -182,8 +220,8 @@
             </li>
             <li class="sorting-order-item">
               <button type="button" class="sorting-order-button sorting-order-dn">
-                <svg width="12" height="10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 10">
-                  <path d="M6,10,0,0H12" fill="#000" />
+                <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 10 .5 0h11" fill="#000" />
                 </svg>
                 <span class="visually-hidden">По убыванию</span>
               </button>
