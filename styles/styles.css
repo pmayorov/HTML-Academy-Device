@@ -408,6 +408,97 @@ button:hover {
   content: attr(data-amount);
 }
 
+/** Поповер. Корзина */
+
+.popover-basket {
+  position: absolute;
+  z-index: 2;   /*  z-index: 1; присвоено .promo-title   */
+  box-sizing: border-box;
+  width: 320px;
+  transform: translateX(-150px);
+  color: var(--basic-white);
+  background-color: var(--basic-black);
+}
+
+.basket-list {
+  padding: 0;
+  margin: 0 20px;
+  list-style-type: none;
+}
+
+.basket-item {
+  display: flex;
+  padding: 20px 0;
+}
+
+.basket-item-link {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+}
+
+.basket-item-image {
+  margin-right: 23px;
+}
+
+.basket-item-desc {
+  margin: 0;
+}
+
+.basket-item-delete {
+  display: block;
+  margin: 0;
+  padding: 0;
+  margin-left: auto;
+  min-width: 10px;
+  height: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.basket-item-delete svg {
+  display: block;   /* Если не преобразовать svg смещается в кнопке */
+}
+
+.basket-item-delete:hover path {
+  fill: rgba(var(--basic-white-rgb), 0.6);
+}
+
+.basket-item-delete:active path {
+  fill: rgba(var(--basic-white-rgb), 0.3);
+}
+
+.basket-item-delete:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
+
+.basket-item-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 44px;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #1a1a1a;
+}
+
+.basket-goods-amount,
+.basket-goods-sum {
+  margin: 0;
+}
+
+.basket-item-open {
+  align-self: center;
+  display: block;
+  box-sizing: border-box;
+  width: 280px;
+  height: 50px;
+  margin: 20px auto;
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--basic-white);
+}
+
 /* Навигационное меню */
 
 .main-navigation-item {
