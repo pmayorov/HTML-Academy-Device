@@ -1627,7 +1627,279 @@ button:hover {
 
 /** FOOTER - END **/
 
-/** СТИЛИ КАТАЛОГА ТОВАРОВ **/
+/** ФОРМА ЗАКАЗА ТОВАРОВ. МОДАЛЬНОЕ ОКНО.  **/
+
+/* .modal-container {} */
+
+.modal-order {
+  box-sizing: border-box;
+  width: 920px;
+  padding: 72px 80px;
+  outline: 10px solid var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.order-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 42px;
+}
+
+.order-close {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  background: url("../images/order-close.svg") no-repeat center transparent;
+}
+
+.order-close:hover {
+  opacity: 0.6;
+}
+
+.order-close:active {
+  opacity: 0.3;
+}
+
+.order-close:focus-visible {
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.order-form {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 42px;
+}
+
+.field-group {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+
+.field-group-name,
+.field-group-email {
+  width: 360px;
+}
+
+.field-notice {
+  font-family: var(--text-font);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.field-group-product {
+  width: 540px;
+}
+
+.field-group-number {
+  position: relative;
+  width: 180px;
+}
+
+.order-form-label {
+  position: relative;
+  padding-bottom: 14px;
+  font-family: var(--titles-font);
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: -0.02em;
+  color: var(--basic-black);
+}
+
+.label-group {
+  position: relative;
+  /* Уменьшаем границы фрейма по размеру содержимого, чтобы по отношению к нему позиционировать кнопку .label-info */
+  width: fit-content;
+  margin-bottom: auto;
+}
+
+.label-info {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -34px;
+  border: 0;
+  border-radius: 50%;
+  background: url("../images/info.svg") no-repeat center var(--special-yellow-light);
+}
+
+.label-info:focus-visible::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
+  outline-offset: 2px;
+}
+
+.label-info:focus {
+  outline: none;
+}
+
+.order-form-field {
+  box-sizing: border-box;
+  height: 60px;
+  margin: 0;
+  padding: 0 20px;
+  border: 0;
+  background-color: var(--basic-light);
+  font-family: var(--text-font);
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--basic-black);
+  outline: none;
+}
+
+.order-form-field::placeholder {
+  color: rgba(var(--basic-black-rgb), 0.3);
+}
+
+/* Общая проверка на ввод информации */
+.order-form-field:not(:placeholder-shown) {
+  background-color: var(--basic-lightgray);
+}
+
+.order-form-field:hover {
+  background-color: var(--basic-gray);
+}
+
+.order-form-field:focus-visible {
+  outline: 2px solid var(--special-purple);
+}
+
+.form-field-email:invalid {
+  outline: 2px solid var(--status-error);
+  outline-offset: -2px;
+}
+
+/* Поле e-mail */
+
+.form-field-email:invalid + .field-notice {
+  color: var(--status-error);
+}
+
+.form-field-name,
+.form-field-email {
+  background-repeat: no-repeat;
+  background-position: 325px 50%;
+  padding-right: 48px;
+}
+
+.form-field-name {
+  background-image: url("../images/account-entry-gray.svg");
+}
+
+.form-field-email {
+  background-image: url("../images/email-gray.svg");
+}
+
+/* .form-field-product {} */
+
+/* Ввод количества товаров */
+
+.field-number-container {
+  display: flex;
+  position: relative;
+}
+
+/* Поле ввода */
+.form-field-number {
+  position: relative;
+  z-index: 1;
+  width: 60px;
+  padding: 0;
+  text-align: center;
+  appearance: textfiled;
+}
+
+.form-field-number::placeholder {
+  color: var(--basic-black);
+}
+
+/* Убираем браузерные кнопки */
+.form-field-number::-webkit-outer-spin-button,
+.form-field-number::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+/* Добавляем свои */
+.button-number-count {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  border: none;
+}
+
+.button-number-count svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.button-number-count:hover path {
+  fill: rgba(var(--basic-black-rgb), 0.6);
+}
+
+.button-number-count:active path {
+  fill: rgba(var(--basic-black-rgb), 0.3);
+}
+
+.button-number-count:focus-visible::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--special-purple);
+  outline-offset: -2px;
+}
+
+.button-number-count:focus {
+  outline: none;
+}
+
+/* Стилизация ввода в поле "0" количества товаров.
+0. Если в поле введен "0" то срабатывает свойство :not(:in-range)
+1. Снимаем фокусную обводку
+2. Тег <span class="status-error-outline"> расположенный за полем input позиционируется абсолютно по всей площади блока ввода и обводится красным
+P.S. Такая "костыльная" реализация из-за того что input-у нельзя навесить псевдоэлемент. Как вариант этот функционал оформляем через JS */
+
+.form-field-number:not(:in-range) {
+  outline: none;
+}
+
+.form-field-number:not(:in-range) + .status-error-outline {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  outline: 2px solid var(--status-error);
+}
+
+/* Отправить информацию */
+
+.order-modal-button {
+  width: 200px;
+  border: 0;
+  background-color: transparent;
+  font-size: 18px;
+}
+
+/** КАТАЛОГ ТОВАРОВ **/
 
 .main-catalog {
   background-color: var(--basic-light);
