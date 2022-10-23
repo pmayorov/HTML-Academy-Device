@@ -389,8 +389,62 @@
   </footer>
 
   <!-- * ФОРМА ЗАКАЗА ТОВАРОВ. МОДАЛЬНОЕ ОКНО.  * -->
-  <div class="modal-container">
-    <!-- ... -->
+  <div class="modal-container modal-container-off">
+    <article class="modal-order">
+      <!-- Заголовок формы -->
+      <div class="order-title-container">
+        <h2 class="section-title">Доставка под заказ</h2>
+        <button class="order-close" type="button"><span class="visually-hidden">Закрыть форму заказа</span></button>
+      </div>
+      <!-- Форма заказа -->
+      <form class="order-form" name="order-form" action="https://echo.htmlacademy.ru/courses">
+        <div class="field-group field-group-name">
+          <!-- Имя заказчика -->
+          <label class="order-form-label" for="order-name">Ваше имя:</label>
+          <input class="order-form-field form-field-name" type="text" name="order-name" id="order-name" placeholder="Введите имя">
+          <span class="field-notice">Добавьте имя</span>
+        </div>
+        <!-- E-mail заказчика -->
+        <div class="field-group field-group-email">
+          <label class="order-form-label" for="order-email">Ваш e-mail:</label>
+          <input class="order-form-field form-field-email" type="email" name="order-email" id="order-email" placeholder="Введите e-mail" required>
+          <span class="field-notice">Забавный у вас адрес</span>
+        </div>
+        <!-- Заказываемый товар -->
+        <div class="field-group field-group-product">
+          <label class="order-form-label" for="order-product">Что нужно привезти:</label>
+          <input class="order-form-field form-field-product" type="text" name="order-product" id="order-product" placeholder="В свободной форме">
+        </div>
+        <!-- Количество товара -->
+        <div class="field-group field-group-number">
+          <span class="label-group">
+            <label class="order-form-label" for="order-number">Количество:</label>
+            <button class="label-info" type="button">
+              <span class="visually-hidden">Посмотреть дополнительную информацию</span>
+            </button>
+            <!-- Поповер в количестве товаров -->
+            <span class="label-group-popover">Постараемся найти, сколько нужно. Привезём сколько получится по требованиям к провозу багажа.</span>
+          </span>
+          <div class="field-number-container">
+            <button class="button-number-count count-minus" type="button">
+              <svg width="16" height="3" viewBox="0 0 16 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 .36H0v2h16v-2Z" fill="#000" />
+              </svg>
+              <span class="visually-hidden">Уменьшить</span>
+            </button>
+            <input class="order-form-field form-field-number" type="number" name="order-number" id="order-number" min="1" placeholder="1">
+            <span class="status-error-outline"></span>
+            <button class="button-number-count count-plus" type="button">
+              <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 7.36H9v-7H7v7H0v2h7v7h2v-7h7v-2Z" fill="#000" />
+              </svg>
+              <span class="visually-hidden">Увеличить</span>
+            </button>
+          </div>
+        </div>
+        <!-- Отправить информацию -->
+        <button class="link-style page-link order-modal-button" for="order-form" type="submit">Отправить</button>
+      </form>
   </div>
 
 </body>

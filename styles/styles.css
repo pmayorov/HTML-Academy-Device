@@ -31,6 +31,7 @@
   --basic-gray: #dcdcdc;
   --basic-lightgray: #ebebeb;
   --basic-light: #f0f0f0;
+  --basic-light-rgb: 240, 240, 240;
   --basic-white: #ffffff;
   --basic-white-rgb: 255, 255, 255;
   --status-success: #08af00;
@@ -1629,7 +1630,23 @@ button:hover {
 
 /** ФОРМА ЗАКАЗА ТОВАРОВ. МОДАЛЬНОЕ ОКНО.  **/
 
-/* .modal-container {} */
+.modal-container {
+  position: fixed;
+  /* Устанавливаю z-index, т.к. некоторые элементы на странице перекрывает модальное окно */
+  z-index: 1;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--basic-light-rgb), 0.9);
+}
+
+.modal-container-off {
+  display: none;
+}
 
 .modal-order {
   box-sizing: border-box;
@@ -1717,6 +1734,38 @@ button:hover {
   margin-bottom: auto;
 }
 
+/* Поповер в количестве товаров */
+.label-group-popover {
+  position: absolute;
+  box-sizing: border-box;
+  top: 34px;
+  left: -22px;
+  width: 200px;
+  padding: 19px;
+  /* z-index: 1 назначен .form-field-number для вывода :focus-visible outline */
+  z-index: 2;
+  color: var(--basic-white);
+  background-color: var(--basic-black);
+  font-family: var(--text-font);
+  font-size: 16px;
+  line-height: 20px;
+  display: none;
+}
+
+/* Уголок над поповером */
+.label-group-popover::before {
+  position: absolute;
+  top: -13px;
+  left: 70%;
+  transform: translateX(-50%);
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  border: 7px solid transparent;
+  border-bottom: 6px solid var(--basic-black);
+}
+
 .label-info {
   position: absolute;
   width: 26px;
@@ -1731,19 +1780,19 @@ button:hover {
   background: url("../images/info.svg") no-repeat center var(--special-yellow-light);
 }
 
-.label-info:focus-visible::after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  outline: 2px solid var(--special-purple);
-  outline-offset: 2px;
+.label-info:hover {
+  background-color: var(--special-yellow-dark);
 }
 
-.label-info:focus {
+.label-info:focus,
+.label-info:focus-visible {
   outline: none;
+  background-color: var(--special-yellow-dark);
+}
+
+.label-info:hover + .label-group-popover,
+.label-info:focus-visible + .label-group-popover {
+  display: block;
 }
 
 .order-form-field {
