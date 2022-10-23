@@ -1863,7 +1863,7 @@ button:hover {
 
 /* Поле ввода */
 .form-field-number {
-  position: relative;
+  /* z-index установлен чтобы при :focus-visible outline не перекрывался боковой кнопкой. position не дублирую, т.к. в соседнем классе .field-group уже задан position: relative */
   z-index: 1;
   width: 60px;
   padding: 0;
