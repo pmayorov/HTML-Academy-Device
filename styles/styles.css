@@ -644,7 +644,6 @@ button:hover {
   opacity: 1;
 }
 
-
 .catalog-link:hover .catalog-link-button,
 .catalog-link:focus .catalog-link-button,
 .main-navigation-item:focus-within .catalog-link-button {
@@ -709,7 +708,6 @@ button:hover {
   text-decoration: inherit;
   color: var(--basic-black);
 }
-
 
 /** Главная **/
 
@@ -959,7 +957,6 @@ button:hover {
 .category-goods-link:focus-visible {
   outline: 2px solid var(--special-purple);
 }
-
 
 .category-goods-logo {
   grid-row: 1 / 2;
@@ -1478,7 +1475,6 @@ button:hover {
 .page-footer a {
   color: var(--basic-white);
 }
-
 
 .page-footer .divider {
   width: 80px;
@@ -2438,7 +2434,7 @@ P.S. Такая "костыльная" реализация из-за того �
   position: absolute;
   top: 27px;
   right: 27px;
-  z-index: 1;
+  /*! z-index: 1; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2463,7 +2459,7 @@ P.S. Такая "костыльная" реализация из-за того �
 .goods-cards-link:hover .goods-image-box::after {
   position: absolute;
   /* z-index: 1 - присвоен логотипу (NEW) */
-  z-index: 2;
+  /*! z-index: 2; */
   content: "";
   top: 0;
   left: 0;
@@ -2485,11 +2481,13 @@ P.S. Такая "костыльная" реализация из-за того �
   text-align: center;
 }
 
+/*! Рефакторил! Еще раз перепроверить! Вроде как и не надо нагромождать z-index-ы
 /* Строка "ПОДРОБНЕЕ" – показываем при hover над карточкой (z-index: 3), т.к. z-index: 1 - присвоен логотипу (NEW); z-index: 2 – полупрозрачному фону над фотографией */
 
 .goods-cards-link:hover .goods-more-link {
   display: block;
-  z-index: 3;
+  /*! z-index: 3; */
+  z-index: 1;
 }
 
 /* Осветляем название товара при hover над карточкой */
