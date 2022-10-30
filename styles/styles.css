@@ -777,6 +777,8 @@ button:hover {
   /* Position + z-index: может лишнее, но размещаю промо-фото над нумерацией .promo-desc-item. При многоцифровом переполнении это видно */
   position: relative;
   z-index: 1;
+  pointer-events: none;
+  /* --- */
   display: block;
   width: 560px;
   height: 547px;
@@ -1508,11 +1510,6 @@ button:hover {
   row-gap: 20px;
 }
 
-/* Ограничил ширину после проверки на переполнение */
-.footer-navigation-item {
-  max-width: 190px;
-}
-
 .footer-social-list {
   gap: 15px;
 }
@@ -1991,7 +1988,6 @@ P.S. Такая "костыльная" реализация из-за того �
 
 .catalog-breadcrumbs-item {
   position: relative;
-  max-width: 300px;
 }
 
 .catalog-breadcrumbs-item:not(:last-of-type)::after {
