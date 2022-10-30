@@ -914,12 +914,6 @@ button:hover {
   max-width: 173px;
 }
 
-/*
-.features-list-box:not(:last-of-type),
-.features-list-box:not(:nth-of-type(3)) {
-  margin-right: 20px;
-} */
-
 .features-name {
   font-size: 16px;
 }
@@ -936,7 +930,6 @@ button:hover {
 
 .category-goods {
   margin-bottom: var(--section-bottom-margin);
-  /* outline: 1px solid #fa8072; */
 }
 
 .category-goods-list {
