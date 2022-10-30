@@ -265,7 +265,7 @@ button:hover {
   position: relative;
   margin: 0 0 0 -2px;
   width: 158px;
-  height: 40px;
+  min-height: 40px;
   border: 2px solid var(--basic-black);
   border-radius: 0 50px 50px 0;
   font-family: var(--text-font);
@@ -774,6 +774,9 @@ button:hover {
 }
 
 .promo-image {
+  /* Position + z-index: может лишнее, но размещаю промо-фото над нумерацией .promo-desc-item. При многоцифровом переполнении это видно */
+  position: relative;
+  z-index: 1;
   display: block;
   width: 560px;
   height: 547px;
@@ -900,16 +903,22 @@ button:hover {
   padding: 0;
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
 }
 
 .features-list-box {
   display: flex;
   flex-direction: column-reverse;
+  max-width: 173px;
 }
 
-.features-list-box:not(:last-of-type) {
+/*
+.features-list-box:not(:last-of-type),
+.features-list-box:not(:nth-of-type(3)) {
   margin-right: 20px;
-}
+} */
 
 .features-name {
   font-size: 16px;
@@ -920,6 +929,7 @@ button:hover {
   margin-bottom: 12px;
   font-size: 36px;
   color: var(--basic-black);
+  overflow-wrap: anywhere;
 }
 
 /** Горизонтальный блок с категориями товаров **/
@@ -1319,6 +1329,7 @@ button:hover {
 .subscribe-container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .subscribe-container:first-of-type {
@@ -1343,7 +1354,7 @@ button:hover {
 .subscribe-input {
   box-sizing: border-box;
   width: 557px;
-  height: 57px;
+  min-height: 57px;
   padding: 0;
   padding-left: 16px;
   border: 0;
@@ -1369,9 +1380,9 @@ button:hover {
 .subscribe-button {
   box-sizing: border-box;
   margin: 0;
-  padding: 0 10px;
+  padding: 10px;
   width: 253px;
-  height: 57px;
+  min-height: 57px;
   border: 3px solid #cecece;
   font-size: inherit;
 }
@@ -1400,6 +1411,7 @@ button:hover {
 .subscribe-notice {
   position: relative;
   padding-left: 32px;
+  margin-left: 30px;
   align-self: center;
 }
 
@@ -1407,8 +1419,7 @@ button:hover {
   position: absolute;
   content: url("../images/status-sucess.svg");
   left: 2px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 2px;
 }
 
 /** FOOTER **/
@@ -1454,9 +1465,9 @@ button:hover {
   width: 240px;
 }
 
-/* footer-align-bottom-box. Выравниваю по вертикали размещенные в левой и правой колонках элементы по отношению к кнопкам соцсетей центральной колонки. Привязываюсь к высоте логотипов соц.сетей в 40px  */
+/* footer-align-box. Выравниваю по вертикали размещенные в левой и правой колонках элементы по отношению к кнопкам соцсетей центральной колонки. Привязываюсь к высоте логотипов соц.сетей в 40px  */
 
-.footer-align-bottom-box {
+.footer-align-box {
   display: flex;
   height: 40px;
   margin-top: auto;
@@ -1497,9 +1508,16 @@ button:hover {
 /* В данном проекте установил для body line-height: 30px принимая во внимание, что такая высота строки у основного текста, но не учел что этот же параметр будет влиять и на списки с их элементами. Что в свою очередь потом влияет на вертикальные марджины. И если потом марджины устанавливать по макетным цифрам, то в итоге получаем несовпадения. Приходится потом в списках возращать нативный line-height или компенсировать разницу перерасчитывая отступ :(( */
 
 .footer-navigation-list {
+  padding: 0 20px;
   column-gap: 35px;
-  /* line-height: normal; */
-  margin-bottom: 57px;
+  line-height: normal;
+  margin-bottom: 62px;
+  row-gap: 20px;
+}
+
+/* Ограничил ширину после проверки на переполнение */
+.footer-navigation-item {
+  max-width: 190px;
 }
 
 .footer-social-list {
@@ -1574,7 +1592,7 @@ button:hover {
 /* Номер телефона */
 
 .page-footer .phone {
-  align-self: flex-end;
+  text-align: right;
 }
 
 .page-footer .phone:hover {
@@ -1655,13 +1673,13 @@ button:hover {
 .order-title-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 42px;
 }
 
 .order-close {
-  width: 26px;
+  min-width: 26px;
   height: 26px;
+  margin-top: 15px;
   padding: 0;
   border: 0;
   background: url("../images/order-close.svg") no-repeat center transparent;
@@ -1691,6 +1709,8 @@ button:hover {
   display: flex;
   position: relative;
   flex-direction: column;
+  /* Если текстовое содержимое label в две и более строк, то соседнее поле по горизонтали выравнивается на один уровень с текужим (многострочным)*/
+  justify-content: flex-end;
 }
 
 .field-group-name,
@@ -1714,6 +1734,7 @@ button:hover {
 }
 
 .order-form-label {
+  display: block;
   position: relative;
   padding-bottom: 14px;
   font-family: var(--titles-font);
@@ -1727,7 +1748,8 @@ button:hover {
   position: relative;
   /* Уменьшаем границы фрейма по размеру содержимого, чтобы по отношению к нему позиционировать кнопку .label-info */
   width: fit-content;
-  margin-bottom: auto;
+  max-width: 140px;
+  overflow-wrap: anywhere;
 }
 
 /* Поповер в количестве товаров */
@@ -1768,8 +1790,7 @@ button:hover {
   height: 26px;
   margin: 0;
   padding: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: -4px;
   right: -34px;
   border: 0;
   border-radius: 50%;
@@ -1965,22 +1986,25 @@ P.S. Такая "костыльная" реализация из-за того �
 }
 
 .catalog-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 36px;
+  row-gap: 15px;
   margin: 0;
   padding: 0;
   list-style-type: none;
-  display: flex;
   line-height: 0;
 }
 
-.catalog-breadcrumbs-item + .catalog-breadcrumbs-item {
+.catalog-breadcrumbs-item {
   position: relative;
-  margin-left: 36px;
+  max-width: 300px;
 }
 
-.catalog-breadcrumbs-item:not(:first-of-type)::before {
+.catalog-breadcrumbs-item:not(:last-of-type)::after {
   position: absolute;
   content: url("../images/breadcrumbs-arrow.svg");
-  left: -20px;
+  right: -20px;
   top: 7px;
   opacity: 0.3;
 }
@@ -2022,7 +2046,7 @@ P.S. Такая "костыльная" реализация из-за того �
 .catalog-goods-subtitle {
   padding: 0;
   margin: 0;
-  width: 230px;
+  min-width: 230px;
   line-height: 20px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -2130,6 +2154,9 @@ P.S. Такая "костыльная" реализация из-за того �
 
 .range-price-container {
   position: relative;
+  /* Пока закостылил макс. ширину инфо-блока под ползунками рейндж-слайдера*/
+  max-width: 251px;
+  overflow: auto;
   display: flex;
   margin-left: -16px;
 }
@@ -2250,12 +2277,17 @@ P.S. Такая "костыльная" реализация из-за того �
 /* Сортировка */
 
 .sorting-container {
-  height: 70px;
-  padding: 0 40px;
+  box-sizing: border-box;
+  min-height: 70px;
+  padding: 10px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--basic-light);
+}
+
+.sorting-title {
+  max-width: 300px;
 }
 
 .sorting-details {
@@ -2266,7 +2298,7 @@ P.S. Такая "костыльная" реализация из-за того �
 .sorting-summary {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  max-width: 200px;
   padding-right: 50px;
   /* Если задать ниже указанный padding-left то фокусная обводка будет равномерной со всех сторон пункта, но тогда не будет совпадения с макетом по PP */
   /* padding-left: 12px; */
@@ -2276,8 +2308,10 @@ P.S. Такая "костыльная" реализация из-за того �
 
 .sorting-summary::after {
   position: absolute;
-  margin-left: 30px;
   right: 12px;
+  bottom: 50%;
+  transform: translateY(50%);
+  margin-left: 30px;
   content: url("../images/sorting-ico.svg");
 }
 
@@ -2422,6 +2456,7 @@ P.S. Такая "костыльная" реализация из-за того �
 }
 
 .item-price {
+  margin-left: 20px;
   line-height: 21px;
   text-decoration: none;
   color: var(--basic-dark);
@@ -2557,18 +2592,21 @@ P.S. Такая "костыльная" реализация из-за того �
 }
 
 .pagination-list {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  display: flex;
   list-style-type: none;
 }
 
 .pagination-item-link {
   display: flex;
-  align-items: center;
+  box-sizing: border-box;
+  min-width: 40px;
+  min-height: 40px;
+  padding: 0 5px;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  align-items: center;
   font-size: 16px;
   line-height: 20px;
   color: rgba(var(--basic-dark-rgb), 0.3);
@@ -2578,6 +2616,7 @@ P.S. Такая "костыльная" реализация из-за того �
 .pagination-link-back,
 .pagination-link-forward {
   padding: 25px;
+  max-width: 150px;
 }
 
 .pagination-link-back:hover,
